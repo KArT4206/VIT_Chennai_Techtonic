@@ -1,0 +1,8 @@
+*.blend
+*.blend1
+textures/udim/
+textures/skin_*.png
+*.log
+renders/compare/*.log
+renders/compare/*_zoom200_src.png
+__pycache__/

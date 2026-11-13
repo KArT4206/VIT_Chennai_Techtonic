@@ -1,0 +1,51 @@
+{
+ "model": "gnm",
+ "device": "METAL",
+ "samples": 256,
+ "views": {
+  "front": {
+   "seconds": 19.05,
+   "resolution": 1024
+  },
+  "gaze_h-1": {
+   "seconds": 18.13,
+   "resolution": 1024
+  },
+  "gaze_h+1": {
+   "seconds": 17.6,
+   "resolution": 1024
+  },
+  "gaze_v+1": {
+   "seconds": 18.8,
+   "resolution": 1024
+  },
+  "gaze_v-1": {
+   "seconds": 17.99,
+   "resolution": 1024
+  },
+  "blink": {
+   "seconds": 17.37,
+   "resolution": 1024
+  },
+  "half_blink": {
+   "seconds": 17.11,
+   "resolution": 1024
+  },
+  "front_seed2": {
+   "seconds": 17.0,
+   "resolution": 1024
+  },
+  "zoom200_src": {
+   "seconds": 64.63,
+   "resolution": 2048
+  },
+  "eyes": {
+   "seconds": 30.85,
+   "resolution": 1024
+  },
+  "three_quarter": {
+   "seconds": 21.17,
+   "resolution": 1024
+  }
+ }
+}
