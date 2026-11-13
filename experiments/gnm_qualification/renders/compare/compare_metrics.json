@@ -1,0 +1,36 @@
+{
+ "neutral": {
+  "vergence_deg_mh": 9.584,
+  "vergence_deg_gnm": 10.075
+ },
+ "right_h+1": {
+  "vergence_deg_mh": 9.395,
+  "vergence_deg_gnm": 9.878
+ },
+ "up_v+1": {
+  "vergence_deg_mh": 9.488,
+  "vergence_deg_gnm": 9.975
+ },
+ "blink": {
+  "vergence_deg_mh": 9.584,
+  "vergence_deg_gnm": 10.075
+ },
+ "render_seconds": {
+  "mh": [
+   11.88,
+   12.21,
+   12.07,
+   11.79
+  ],
+  "gnm": [
+   5.91,
+   5.7,
+   5.63,
+   5.62
+  ]
+ },
+ "ipd_mm": {
+  "mh": 58.77,
+  "gnm": 61.71
+ }
+}

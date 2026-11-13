@@ -5,3 +5,5 @@ build/
 *.npz
 *.blend
 *.blend1
+textures/gnm_udim/
+__pycache__/
