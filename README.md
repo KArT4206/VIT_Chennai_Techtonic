@@ -3,10 +3,17 @@
 A textured, rigged human face in Blender with a Python wrapper that rotates both eyeballs
 about their true centres and renders calibrated 1024×1024 frames with per-frame ground truth.
 
+## Repository vs evaluator package
+
+This is the **development repository**. The evaluator ZIP contains only the brief's core layout
+(`scene.blend`, `wrapper/eyes.py`, `renders/`, `metadata.json`, `README.md`), and its README is
+`packaging/README.md`. Build it with `tools/build_package.sh <new_staging_dir>`. The `tools/` and
+`directions/` folders described below exist only in this repository.
+
 ## Requirements
 
-- Blender 4.2 or newer (developed and tested on **Blender 5.3.0**). No add-ons are needed:
-  every texture is packed inside `scene.blend`.
+- **Blender 5.3.0** (the only version tested; older versions are not verified). No add-ons are
+  needed: every texture is packed inside `scene.blend`.
 - Optional, for `tools/verify.py` only: Python 3 with `numpy` and `pillow`.
 
 ## Run
