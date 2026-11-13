@@ -1,0 +1,6 @@
+# 3D Scan Store Free HD Head: licensed for personal use; NEVER commit or redistribute
+original/
+extracted/
+build/
+*.blend
+*.blend1
