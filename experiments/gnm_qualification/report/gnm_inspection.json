@@ -1,0 +1,566 @@
+{
+ "file": "/Users/b.karthik/Desktop/Projects/SyntheticEyes-Track1/experiments/gnm_qualification/model/v3_0/gnm_head.npz",
+ "npz_keys": {
+  "template_vertex_positions": [
+   [
+    17821,
+    3
+   ],
+   "float32"
+  ],
+  "template_joint_positions": [
+   [
+    4,
+    3
+   ],
+   "float32"
+  ],
+  "vertex_identity_basis": [
+   [
+    253,
+    17821,
+    3
+   ],
+   "float32"
+  ],
+  "identity_names": [
+   [
+    253
+   ],
+   "<U9"
+  ],
+  "joint_identity_basis": [
+   [
+    253,
+    4,
+    3
+   ],
+   "float32"
+  ],
+  "expression_names": [
+   [
+    383
+   ],
+   "<U21"
+  ],
+  "expression_basis": [
+   [
+    383,
+    17821,
+    3
+   ],
+   "float32"
+  ],
+  "joint_names": [
+   [
+    4
+   ],
+   "<U9"
+  ],
+  "joint_parent_indices": [
+   [
+    4
+   ],
+   "int32"
+  ],
+  "skinning_weights": [
+   [
+    4,
+    17821
+   ],
+   "float32"
+  ],
+  "quads": [
+   [
+    17662,
+    4
+   ],
+   "int32"
+  ],
+  "quad_uvs": [
+   [
+    17662,
+    4,
+    2
+   ],
+   "float32"
+  ],
+  "triangles": [
+   [
+    35324,
+    3
+   ],
+   "int32"
+  ],
+  "triangle_uvs": [
+   [
+    35324,
+    3,
+    2
+   ],
+   "float32"
+  ],
+  "vertex_group_names": [
+   [
+    46
+   ],
+   "<U32"
+  ],
+  "vertex_groups": [
+   [
+    46,
+    17821
+   ],
+   "float32"
+  ],
+  "mirror_indices": [
+   [
+    17821
+   ],
+   "int32"
+  ],
+  "version": [
+   [],
+   "<U3"
+  ],
+  "joint_regressor": [
+   [
+    4,
+    17821
+   ],
+   "float32"
+  ],
+  "variant": [
+   [],
+   "<U4"
+  ],
+  "mesh_component_names": [
+   [
+    6
+   ],
+   "<U20"
+  ],
+  "pose_correctives_regressor": [
+   [
+    36,
+    53463
+   ],
+   "float32"
+  ],
+  "bone_aligned_template_joint_orientations": [
+   [
+    4,
+    3,
+    3
+   ],
+   "float32"
+  ]
+ },
+ "version": "3.0",
+ "variant": "head",
+ "major_version": "3",
+ "num_vertices": 17821,
+ "template_vertices_shape": [
+  17821,
+  3
+ ],
+ "quads_shape": [
+  17662,
+  4
+ ],
+ "triangles_shape": [
+  35324,
+  3
+ ],
+ "bbox_m": [
+  [
+   -0.12780000269412994,
+   0.06560000032186508,
+   -0.09220000356435776
+  ],
+  [
+   0.12759999930858612,
+   0.40709999203681946,
+   0.14650000631809235
+  ]
+ ],
+ "identity_dim": 253,
+ "expression_dim": 383,
+ "num_joints": 4,
+ "mesh_component_names": [
+  "skin",
+  "left_eye",
+  "right_eye",
+  "upper_teeth_and_gums",
+  "lower_teeth_and_gums",
+  "tongue"
+ ],
+ "vertex_group_names": [
+  "skin",
+  "skin_exterior",
+  "left",
+  "right",
+  "hockey_mask",
+  "upper_lip",
+  "lower_lip",
+  "mouth_sock",
+  "tongue",
+  "gums",
+  "teeth",
+  "upper_teeth_and_gums",
+  "lower_teeth_and_gums",
+  "eyes",
+  "left_eye",
+  "right_eye",
+  "eye_sockets",
+  "eye_interiors",
+  "eye_exteriors",
+  "scleras",
+  "irises",
+  "pupils",
+  "ears",
+  "expression_basis_left_eye",
+  "expression_basis_right_eye",
+  "expression_basis_mouth_nose_ears",
+  "forehead_region",
+  "left_brow_region",
+  "middle_brow_region",
+  "right_brow_region",
+  "left_temple_region",
+  "right_temple_region",
+  "left_orbital_region",
+  "right_orbital_region",
+  "left_zygomatic_region",
+  "right_zygomatic_region",
+  "nose_region",
+  "left_parotid_region",
+  "right_parotid_region",
+  "left_infraorbital_region",
+  "right_infraorbital_region",
+  "left_cheek_region",
+  "right_cheek_region",
+  "upper_lip_region",
+  "lower_lip_region",
+  "chin_region"
+ ],
+ "vertex_group_sizes": {
+  "skin": 12466,
+  "skin_exterior": 11460,
+  "left": 9068,
+  "right": 9068,
+  "hockey_mask": 4592,
+  "upper_lip": 145,
+  "lower_lip": 145,
+  "mouth_sock": 406,
+  "tongue": 933,
+  "gums": 1404,
+  "teeth": 1868,
+  "upper_teeth_and_gums": 1440,
+  "lower_teeth_and_gums": 1440,
+  "eyes": 1542,
+  "left_eye": 771,
+  "right_eye": 771,
+  "eye_sockets": 608,
+  "eye_interiors": 770,
+  "eye_exteriors": 772,
+  "scleras": 480,
+  "irises": 290,
+  "pupils": 98,
+  "ears": 1054,
+  "expression_basis_left_eye": 1919,
+  "expression_basis_right_eye": 1919,
+  "expression_basis_mouth_nose_ears": 8495,
+  "forehead_region": 371,
+  "left_brow_region": 152,
+  "middle_brow_region": 110,
+  "right_brow_region": 152,
+  "left_temple_region": 62,
+  "right_temple_region": 62,
+  "left_orbital_region": 668,
+  "right_orbital_region": 668,
+  "left_zygomatic_region": 105,
+  "right_zygomatic_region": 105,
+  "nose_region": 889,
+  "left_parotid_region": 125,
+  "right_parotid_region": 125,
+  "left_infraorbital_region": 142,
+  "right_infraorbital_region": 142,
+  "left_cheek_region": 182,
+  "right_cheek_region": 182,
+  "upper_lip_region": 338,
+  "lower_lip_region": 372,
+  "chin_region": 136
+ },
+ "joint_names": [
+  "neck",
+  "head",
+  "left_eye",
+  "right_eye"
+ ],
+ "joint_parents": [
+  -1,
+  0,
+  1,
+  1
+ ],
+ "joint_positions_template": [
+  [
+   -7.999999797903001e-05,
+   0.13381999731063843,
+   -0.00686000008136034
+  ],
+  [
+   -3.9999998989515007e-05,
+   0.20993000268936157,
+   0.017559999600052834
+  ],
+  [
+   0.03084000013768673,
+   0.30316001176834106,
+   0.09888999909162521
+  ],
+  [
+   -0.030869999900460243,
+   0.3031100034713745,
+   0.09898000210523605
+  ]
+ ],
+ "expression_names_head": [
+  "left_eye_region_000",
+  "left_eye_region_001",
+  "left_eye_region_002",
+  "left_eye_region_003",
+  "left_eye_region_004",
+  "left_eye_region_005"
+ ],
+ "expression_name_prefixes": {
+  "left_eye_region": 100,
+  "right_eye_region": 100,
+  "lower_face_region": 150,
+  "tongue": 32,
+  "pupils": 1
+ },
+ "identity_name_prefixes": {
+  "head": 170,
+  "eyes": 3,
+  "teeth": 80
+ },
+ "triangles_are_ordered_quad_splits_012_023": false,
+ "index_range_ok": true,
+ "degenerate_quads": 0,
+ "vertices_unused_by_quads": 0,
+ "quad_uvs_shape": [
+  17662,
+  4,
+  2
+ ],
+ "quad_uvs_nan": 0,
+ "quad_uvs_range": [
+  [
+   0.004900000058114529,
+   0.007199999876320362
+  ],
+  [
+   0.9904999732971191,
+   0.9980000257492065
+  ]
+ ],
+ "quad_uvs_udim_shape": [
+  17662,
+  4,
+  2
+ ],
+ "quad_uvs_udim_nan": 0,
+ "quad_uvs_udim_range": [
+  [
+   0.010400000028312206,
+   0.007199999876320362
+  ],
+  [
+   6.98829984664917,
+   0.9980000257492065
+  ]
+ ],
+ "triangle_uvs_shape": [
+  35324,
+  3,
+  2
+ ],
+ "triangle_uvs_nan": 0,
+ "triangle_uvs_range": [
+  [
+   0.004900000058114529,
+   0.007199999876320362
+  ],
+  [
+   0.9904999732971191,
+   0.9980000257492065
+  ]
+ ],
+ "triangle_uvs_udim_shape": [
+  35324,
+  3,
+  2
+ ],
+ "triangle_uvs_udim_nan": 0,
+ "triangle_uvs_udim_range": [
+  [
+   0.010400000028312206,
+   0.007199999876320362
+  ],
+  [
+   6.98829984664917,
+   0.9980000257492065
+  ]
+ ],
+ "quad_tiles_attr_vs_uv_mismatch": 0,
+ "tri_tiles_attr_vs_uv_mismatch": 0,
+ "quads_straddling_tiles": 0,
+ "quad_tile_counts": {
+  "1001": 12410,
+  "1002": 372,
+  "1003": 384,
+  "1004": 372,
+  "1005": 384,
+  "1006": 2828,
+  "1007": 912
+ },
+ "tri_tile_counts": {
+  "1001": 24820,
+  "1002": 744,
+  "1003": 768,
+  "1004": 744,
+  "1005": 768,
+  "1006": 5656,
+  "1007": 1824
+ },
+ "triangle_uvs_equal_quad_split_uvs": false,
+ "quad_corner_uv_outside_own_tile": 0,
+ "uv_winding_per_tile": {
+  "1001": {
+   "positive": 12410,
+   "negative": 0,
+   "zero": 0
+  },
+  "1002": {
+   "positive": 372,
+   "negative": 0,
+   "zero": 0
+  },
+  "1003": {
+   "positive": 384,
+   "negative": 0,
+   "zero": 0
+  },
+  "1004": {
+   "positive": 372,
+   "negative": 0,
+   "zero": 0
+  },
+  "1005": {
+   "positive": 384,
+   "negative": 0,
+   "zero": 0
+  },
+  "1006": {
+   "positive": 2828,
+   "negative": 0,
+   "zero": 0
+  },
+  "1007": {
+   "positive": 912,
+   "negative": 0,
+   "zero": 0
+  }
+ },
+ "tile_vertex_group_overlap": {
+  "1001": {
+   "skin": 1.0,
+   "skin_exterior": 0.9193,
+   "left": 0.5084,
+   "right": 0.5084,
+   "hockey_mask": 0.3684,
+   "upper_lip": 0.0116,
+   "lower_lip": 0.0116,
+   "mouth_sock": 0.0326,
+   "eye_sockets": 0.0488,
+   "ears": 0.0845,
+   "expression_basis_left_eye": 0.1539,
+   "expression_basis_right_eye": 0.1539,
+   "expression_basis_mouth_nose_ears": 0.6815,
+   "forehead_region": 0.0298,
+   "left_brow_region": 0.0122,
+   "middle_brow_region": 0.0088,
+   "right_brow_region": 0.0122,
+   "left_temple_region": 0.005,
+   "right_temple_region": 0.005,
+   "left_orbital_region": 0.0536,
+   "right_orbital_region": 0.0536,
+   "left_zygomatic_region": 0.0084,
+   "right_zygomatic_region": 0.0084,
+   "nose_region": 0.0713,
+   "left_parotid_region": 0.01,
+   "right_parotid_region": 0.01,
+   "left_infraorbital_region": 0.0114,
+   "right_infraorbital_region": 0.0114,
+   "left_cheek_region": 0.0146,
+   "right_cheek_region": 0.0146,
+   "upper_lip_region": 0.0271,
+   "lower_lip_region": 0.0298,
+   "chin_region": 0.0109
+  },
+  "1002": {
+   "left": 1.0,
+   "eyes": 1.0,
+   "left_eye": 1.0,
+   "eye_interiors": 1.0,
+   "scleras": 0.6234,
+   "irises": 0.3766,
+   "pupils": 0.1273
+  },
+  "1003": {
+   "left": 1.0,
+   "eyes": 1.0,
+   "left_eye": 1.0,
+   "eye_exteriors": 1.0
+  },
+  "1004": {
+   "right": 1.0,
+   "eyes": 1.0,
+   "right_eye": 1.0,
+   "eye_interiors": 1.0,
+   "scleras": 0.6234,
+   "irises": 0.3766,
+   "pupils": 0.1273
+  },
+  "1005": {
+   "right": 1.0,
+   "eyes": 1.0,
+   "right_eye": 1.0,
+   "eye_exteriors": 1.0
+  },
+  "1006": {
+   "left": 0.5069,
+   "right": 0.5069,
+   "gums": 0.4875,
+   "teeth": 0.6486,
+   "upper_teeth_and_gums": 0.5,
+   "lower_teeth_and_gums": 0.5
+  },
+  "1007": {
+   "left": 0.5348,
+   "right": 0.5348,
+   "tongue": 1.0
+  }
+ },
+ "seam_vertices_multi_uv": 614,
+ "doc_tiles": {
+  "1001": "skin",
+  "1002": "left eye interior",
+  "1003": "left eye exterior (cornea)",
+  "1004": "right eye interior",
+  "1005": "right eye exterior (cornea)",
+  "1006": "teeth and gums",
+  "1007": "tongue"
+ }
+}

@@ -1,0 +1,7 @@
+vendor/
+model/
+env/
+build/
+*.npz
+*.blend
+*.blend1
