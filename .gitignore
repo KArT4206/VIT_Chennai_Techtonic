@@ -1,0 +1,6 @@
+vendor/
+.DS_Store
+__pycache__/
+*.blend1
+.codeatlas/
+dist/
