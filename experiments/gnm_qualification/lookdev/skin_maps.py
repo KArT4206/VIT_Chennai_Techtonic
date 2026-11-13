@@ -257,3 +257,12 @@ def bake(kind, colour, path, space):
 bake("EMIT", mul.outputs[2], os.path.join(out, "skin_albedo.1001.png"), "sRGB")
 bake("EMIT", rgb(rough, rough, rough), os.path.join(out, "skin_roughness.1001.png"), "Non-Color")
 bake("NORMAL", None, os.path.join(out, "skin_normal.1001.png"), "Non-Color")
+# neutral height (same units as the bump input; x 0.15 mm = metres) for the wrinkle pipeline's
+# neutral subtraction (Phase 2D); OpenEXR float so negative values survive
+_h = bpy.data.images.new("skin_height", res, res, float_buffer=True); _h.colorspace_settings.name = "Non-Color"
+target.image = _h; N.active = target
+Lk.new(rgb(height, height, height), emit.inputs["Color"]); Lk.new(emit.outputs[0], outn.inputs["Surface"])
+bpy.ops.object.select_all(action="DESELECT"); ob.select_set(True); bpy.context.view_layer.objects.active = ob
+bpy.ops.object.bake(type="EMIT", margin=16, target="IMAGE_TEXTURES")
+_h.filepath_raw = os.path.join(out, "skin_height.1001.exr"); _h.file_format = "OPEN_EXR"; _h.save()
+print("BAKED", _h.filepath_raw, res)

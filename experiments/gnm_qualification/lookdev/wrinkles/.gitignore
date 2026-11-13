@@ -1,0 +1,9 @@
+*.blend
+*.blend1
+*.log
+maps/_*.exr
+maps/delta_*.exr
+maps/mask_*.exr
+renders/*_200src.png
+*.npz
+__pycache__/

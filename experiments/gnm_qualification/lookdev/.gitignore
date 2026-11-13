@@ -6,3 +6,6 @@ textures/skin_*.png
 renders/compare/*.log
 renders/compare/*_zoom200_src.png
 __pycache__/
+baseline_v1/*.png
+baseline_v1/*.exr
+textures/skin_*.exr
