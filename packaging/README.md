@@ -140,9 +140,14 @@ refracted at the cornea, lands on the anatomical pupil centre.
 
 ## Known limitations
 
-- **Rotation reference.** `eye_rotation_*` is measured from the model's rest-pose gaze axis, which
-  points about 8° down and 3.4° outwards. At `reset()` the rotation is therefore about
-  (−8.1°, ±0.1°, ∓8.1°), not zero. Directions and pupil positions are unaffected.
+- **Rotation reference.** `eye_rotation_*` is the world-frame rotation from each eye's rest-pose
+  gaze axis (eye centre → pupil centre with the eye bones unposed). Those axes are
+  L = (0.0585, −0.9884, −0.1405) and R = (−0.0585, −0.9884, −0.1405): 8.08° down and 3.39°
+  outwards. At `reset()` the eyes look at the centre target, so the rotation is about
+  (−8.1°, ±0.1°, ∓8.1°), not zero: the eyes turn 8° up and 8° inwards from the rest axis.
+  These are the true rotations and are left as they are. To get gaze relative to the centre
+  fixation, compose with the inverse of the `reset()` quaternion. Directions and pupil positions
+  are unaffected.
 - **Gaze range.** ±5 cm at 35 cm is about ±8° of eye rotation, so the pupils move about 8–10 px
   in the 1024 px image.
 - **No blink or eyebrow motion.** The lids follow gaze only.
