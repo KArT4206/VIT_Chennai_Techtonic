@@ -1,8 +1,6 @@
 import type { ContentStore, StoredEntry } from "./types";
 import type { CheckedEntry } from "./validate";
 
-export const STORAGE_KEY = "fes.content.v1";
-
 export interface ApplyOptions {
   /** Conflicting fields are only replaced for these "locale\0id" keys. Everything else keeps the stored text. */
   overwrite: ReadonlySet<string>;
@@ -76,24 +74,4 @@ export function removeEntry(store: ContentStore, locale: string, id: string): Co
   const next = { ...store, [locale]: rest };
   if (!Object.keys(rest).length) delete next[locale];
   return next;
-}
-
-export function loadStore(): ContentStore {
-  try {
-    const raw = typeof window !== "undefined" ? window.localStorage.getItem(STORAGE_KEY) : null;
-    if (!raw) return {};
-    const data = JSON.parse(raw);
-    return data && typeof data === "object" ? (data as ContentStore) : {};
-  } catch {
-    return {};
-  }
-}
-
-export function saveStore(store: ContentStore): boolean {
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
-    return true;
-  } catch {
-    return false;
-  }
 }

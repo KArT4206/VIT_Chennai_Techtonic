@@ -138,7 +138,9 @@ export const EXPRESSIONS: readonly Expression[] = (() => {
       });
     }
   }
-  return out;
+  // Deep-frozen: content (descriptions, translations) lives in the content store and can never change
+  // an ID, category or animation field here.
+  return Object.freeze(out.map((e) => Object.freeze({ ...e, tags: Object.freeze([...e.tags]) as unknown as string[] })));
 })();
 
 export const EXPRESSION_IDS: ReadonlySet<string> = new Set(EXPRESSIONS.map((e) => e.id));

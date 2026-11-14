@@ -38,7 +38,7 @@ Three Fiber 9.
 - **Export:** JSON or Markdown per language, CSV for all languages, and a 60-ID template.
 - **Format guide:** `public/templates/CONTENT_FORMAT.md`; example files are in `public/templates/`.
 
-Content is stored in the browser (`localStorage`), so export it to keep it or move it.
+Content is stored in the browser's IndexedDB (database `facial-expression-studio`). Use **Download full backup** to keep a copy or move it. Phase 2M `localStorage` content is migrated automatically on first load (see `REPORT_PHASE2M1.md`).
 
 ## Structure
 
@@ -46,6 +46,7 @@ Content is stored in the browser (`localStorage`), so export it to keep it or mo
 |---|---|
 | `src/data/expressions.ts` | Canonical manifest: 60 stable IDs, categories, tags. `animationClip` and `thumbnail` are null until real assets exist |
 | `src/lib/content/` | Parsers, validation, non-destructive merge, export (pure functions with tests) |
+| `src/lib/storage/` | IndexedDB repository, memory fallback, localStorage migration, backup, plain-text sanitizer |
 | `src/lib/character/adapter.ts` | `CharacterAdapter` contract and `PendingCharacterAdapter` |
 | `src/lib/character/registry.ts` | Which adapter is active (currently pending) |
 | `src/lib/character/cameras.ts` | Camera presets in a head-centred frame |

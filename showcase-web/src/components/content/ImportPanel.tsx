@@ -2,7 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import { detectFormat, parseContent } from "@/lib/content/parse";
-import { applyEntries, entryKey } from "@/lib/content/store";
+import { entryKey } from "@/lib/content/store";
 import type { ParsedContent } from "@/lib/content/types";
 import { displayNameOf, validate, type CheckedEntry, type EntryStatus } from "@/lib/content/validate";
 import { useContent } from "@/lib/state/content-context";
@@ -24,18 +24,21 @@ export function ImportPanel() {
   const input = useRef<HTMLInputElement>(null);
 
   const accept = async (list: FileList | File[]) => {
-    const bad: string[] = [];
+    const all = Array.from(list);
+    // Decide rejections synchronously so overlapping drops can't clear each other's messages.
+    const bad = all.flatMap((f) => (!detectFormat(f.name) ? [`${f.name}: unsupported type (use .json, .csv, .md or .txt)`] : f.size > MAX_BYTES ? [`${f.name}: larger than 2 MB`] : []));
+    setRejected(bad);
     const ok: Pending[] = [];
-    for (const f of Array.from(list)) {
-      if (!detectFormat(f.name)) bad.push(`${f.name}: unsupported type (use .json, .csv, .md or .txt)`);
-      else if (f.size > MAX_BYTES) bad.push(`${f.name}: larger than 2 MB`);
-      else {
+    for (const f of all) {
+      if (!detectFormat(f.name) || f.size > MAX_BYTES) continue;
+      try {
         const text = await f.text();
         ok.push({ key: `${f.name}-${f.lastModified}-${Math.random().toString(36).slice(2, 7)}`, parsed: parseContent(f.name, text), text, size: f.size });
+      } catch (e) {
+        setRejected((r) => [...r, `${f.name}: could not be read (${(e as Error).message})`]);
       }
     }
-    setRejected(bad);
-    setFiles((cur) => [...ok, ...cur]);
+    if (ok.length) setFiles((cur) => [...ok, ...cur]);
   };
 
   return (
@@ -103,18 +106,25 @@ const STATUS_STYLE: Record<EntryStatus, string> = {
 const STATUS_LABEL: Record<EntryStatus, string> = { new: "New / fills empty", unchanged: "Unchanged", conflict: "Conflict", invalid: "Invalid ID", duplicate: "Duplicate" };
 
 function FileReview({ file, onClose }: { file: Pending; onClose: () => void }) {
-  const { store, setStore } = useContent();
+  const { store, commitImport, hydrated } = useContent();
   const report = useMemo(() => validate(file.parsed, store), [file.parsed, store]);
   const [overwrite, setOverwrite] = useState<Set<string>>(new Set());
   const [tab, setTab] = useState<"entries" | "preview">("entries");
-  const [result, setResult] = useState<string | null>(null);
+  const [result, setResult] = useState<{ ok: boolean; text: string } | null>(null);
+  const [busy, setBusy] = useState(false);
   const conflicts = report.entries.filter((e) => e.status === "conflict");
 
-  const apply = () => {
-    const { store: next, applied, skipped } = applyEntries(store, report.entries, { overwrite, origin: file.parsed.fileName });
-    setStore(next);
-    setOverwrite(new Set());
-    setResult(`Applied ${applied} entr${applied === 1 ? "y" : "ies"}; ${skipped} left unchanged or skipped.`);
+  const apply = async () => {
+    setBusy(true);
+    try {
+      const r = await commitImport(report.entries, overwrite, { fileName: file.parsed.fileName, format: file.parsed.format, size: file.size, text: file.text });
+      setOverwrite(new Set());
+      setResult({ ok: true, text: `Applied ${r.applied} entr${r.applied === 1 ? "y" : "ies"} (${r.overwritten} overwritten on request); ${r.skipped} left unchanged or skipped.` });
+    } catch (e) {
+      setResult({ ok: false, text: `Nothing was saved: ${(e as Error).message}` });
+    } finally {
+      setBusy(false);
+    }
   };
 
   const toggle = (e: CheckedEntry) =>
@@ -135,7 +145,7 @@ function FileReview({ file, onClose }: { file: Pending; onClose: () => void }) {
         <span className="text-xs text-ink-500">{(file.size / 1024).toFixed(1)} KB</span>
         <span className="text-xs text-ink-400">Languages: {report.locales.join(", ") || "none"}</span>
         <div className="ml-auto flex items-center gap-2">
-          <button type="button" onClick={apply} disabled={!report.canApply} className="rounded-md bg-accent-500 px-3 py-1.5 text-sm font-medium text-ink-950 hover:bg-accent-400 disabled:cursor-not-allowed disabled:opacity-40">
+          <button type="button" onClick={apply} disabled={!report.canApply || busy || !hydrated} className="rounded-md bg-accent-500 px-3 py-1.5 text-sm font-medium text-ink-950 hover:bg-accent-400 disabled:cursor-not-allowed disabled:opacity-40">
             Apply{overwrite.size ? ` (overwrite ${overwrite.size})` : ""}
           </button>
           <button type="button" onClick={onClose} className="rounded-md border border-ink-700 px-3 py-1.5 text-sm text-ink-300 hover:text-ink-100">
@@ -152,8 +162,8 @@ function FileReview({ file, onClose }: { file: Pending; onClose: () => void }) {
           ))}
         </div>
         {result && (
-          <p role="status" className="rounded-md bg-ok-500/10 px-3 py-2 text-sm text-ok-500">
-            {result}
+          <p role="status" className={`rounded-md px-3 py-2 text-sm ${result.ok ? "bg-ok-500/10 text-ok-500" : "bg-err-500/10 text-err-500"}`}>
+            {result.text}
           </p>
         )}
         {errors.length > 0 && (

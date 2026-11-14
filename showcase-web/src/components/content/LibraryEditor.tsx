@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { CATEGORIES, EXPRESSIONS, type Expression } from "@/data/expressions";
-import { editEntry, removeEntry } from "@/lib/content/store";
 import { useContent } from "@/lib/state/content-context";
 
 export function LibraryEditor() {
@@ -58,18 +57,24 @@ export function LibraryEditor() {
 }
 
 function EditRow({ e, onDone }: { e: Expression; onDone: () => void }) {
-  const { store, setStore, locale } = useContent();
+  const { store, saveEntry, deleteEntry, locale } = useContent();
   const cur = store[locale]?.[e.id];
   const [title, setTitle] = useState(cur?.title ?? "");
   const [description, setDescription] = useState(cur?.description ?? "");
   const [tags, setTags] = useState((cur?.tags ?? []).join(", "));
   const [notes, setNotes] = useState(cur?.notes ?? "");
   const [confirmClear, setConfirmClear] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const save = () => {
-    setStore(editEntry(store, locale, e.id, { title: title.trim(), description: description.trim(), notes: notes.trim(), tags: tags.split(",").map((t) => t.trim()).filter(Boolean) }));
-    onDone();
+  const run = async (fn: () => Promise<void>) => {
+    try {
+      await fn();
+      onDone();
+    } catch (err) {
+      setError(`Not saved: ${(err as Error).message}`);
+    }
   };
+  const save = () => run(() => saveEntry(locale, e.id, { title: title.trim(), description: description.trim(), notes: notes.trim(), tags: tags.split(",").map((t) => t.trim()).filter(Boolean) }));
 
   return (
     <li className="space-y-3 bg-ink-850 px-4 py-4">
@@ -87,6 +92,12 @@ function EditRow({ e, onDone }: { e: Expression; onDone: () => void }) {
         <textarea value={description} onChange={(ev) => setDescription(ev.target.value)} rows={3} className="mt-1 w-full rounded-md border border-ink-700 bg-ink-900 px-3 py-2 text-sm text-ink-100" />
       </label>
       <Field label="Notes" value={notes} onChange={setNotes} />
+      <p className="text-[11px] text-ink-500">Plain text only. Any HTML or script markup is removed when saved.</p>
+      {error && (
+        <p role="alert" className="text-sm text-err-500">
+          {error}
+        </p>
+      )}
       <div className="flex flex-wrap gap-2">
         <button type="button" onClick={save} className="rounded-md bg-accent-500 px-3 py-1.5 text-sm font-medium text-ink-950 hover:bg-accent-400">
           Save
@@ -98,10 +109,7 @@ function EditRow({ e, onDone }: { e: Expression; onDone: () => void }) {
           (confirmClear ? (
             <button
               type="button"
-              onClick={() => {
-                setStore(removeEntry(store, locale, e.id));
-                onDone();
-              }}
+              onClick={() => run(() => deleteEntry(locale, e.id))}
               className="ml-auto rounded-md border border-err-500/60 px-3 py-1.5 text-sm text-err-500"
             >
               Confirm: clear {locale} text

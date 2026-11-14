@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { exportCsv, exportJson, exportMarkdown, templateJson } from "@/lib/content/export";
+import { exportBackup } from "@/lib/storage/backup";
 import { LOCALE_PATTERN } from "@/lib/content/validate";
 import { useContent } from "@/lib/state/content-context";
 import { download } from "./download";
@@ -9,7 +10,7 @@ import { ImportPanel } from "./ImportPanel";
 import { LibraryEditor } from "./LibraryEditor";
 
 export function ContentManager() {
-  const { store, locale, setLocale, locales, persistError, hydrated } = useContent();
+  const { store, locale, setLocale, locales, storage, migration, imports, hydrated } = useContent();
   const [newLocale, setNewLocale] = useState("");
   const count = (l: string) => Object.keys(store[l] ?? {}).length;
   const total = Object.values(store).reduce((n, m) => n + Object.keys(m).length, 0);
@@ -38,10 +39,36 @@ export function ContentManager() {
         </div>
       </header>
 
-      {persistError && (
-        <p role="alert" className="rounded-md border border-err-500/40 bg-err-500/10 px-4 py-3 text-sm text-err-500">
-          This browser is blocking local storage, so changes will be lost when the page reloads. Export your content to keep it.
-        </p>
+      <StorageBanner kind={storage.kind} error={storage.error} />
+      {migration && (migration.status === "migrated" || migration.status === "failed") && (
+        <div role="status" className={`rounded-md border px-4 py-3 text-sm ${migration.status === "failed" ? "border-err-500/40 bg-err-500/10 text-err-500" : "border-info-500/40 bg-info-500/10 text-info-500"}`}>
+          {migration.status === "failed" ? (
+            migration.error
+          ) : (
+            <>
+              Moved earlier browser content into IndexedDB: {migration.migrated} added, {migration.identical} already identical
+              {migration.rejected ? `, ${migration.rejected} skipped (unknown ID or language)` : ""}
+              {migration.sanitized ? `, ${migration.sanitized} cleaned of markup` : ""}.
+              {migration.conflicts.length > 0 && (
+                <details className="mt-1">
+                  <summary className="cursor-pointer">
+                    {migration.conflicts.length} older entr{migration.conflicts.length === 1 ? "y differs" : "ies differ"} from what IndexedDB already holds; the IndexedDB text was kept.
+                  </summary>
+                  <ul className="mt-1 space-y-1 text-xs">
+                    {migration.conflicts.map((c) => (
+                      <li key={`${c.locale}-${c.id}`}>
+                        <span className="font-mono">
+                          {c.locale}/{c.id}
+                        </span>{" "}
+                        old text: “{c.legacy.description || c.legacy.title || "(empty)"}”
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+            </>
+          )}
+        </div>
       )}
 
       <section aria-labelledby="stats" className="grid grid-cols-2 gap-3 md:grid-cols-4">
@@ -90,11 +117,69 @@ export function ContentManager() {
           <ActionButton disabled={!count(locale)} onClick={() => download(`expression-content.${locale}.json`, exportJson(store, locale), "application/json")} label={`Export ${locale} as JSON`} />
           <ActionButton disabled={!count(locale)} onClick={() => download(`expression-content.${locale}.md`, exportMarkdown(store, locale), "text/markdown")} label={`Export ${locale} as Markdown`} />
           <ActionButton disabled={!total} onClick={() => download("expression-content.all-languages.csv", exportCsv(store), "text/csv")} label="Export all languages as CSV" />
+          <ActionButton
+            disabled={!total}
+            onClick={() => download(`expression-studio-backup.${new Date().toISOString().slice(0, 10)}.json`, exportBackup(store, imports), "application/json")}
+            label="Download full backup"
+          />
         </div>
+        <p className="text-xs text-ink-500">To restore a backup, import it above like any other file: it is reviewed first and conflicts are only overwritten where you tick them.</p>
         <LibraryEditor />
+      </section>
+
+      <section aria-labelledby="history" className="space-y-3">
+        <h2 id="history" className="text-lg font-semibold text-ink-100">
+          Import history
+        </h2>
+        {imports.length === 0 ? (
+          <p className="text-sm text-ink-400">No files imported yet.</p>
+        ) : (
+          <div className="overflow-hidden rounded-xl border border-ink-800">
+            <table className="w-full text-left text-xs">
+              <thead className="bg-ink-850 text-ink-400">
+                <tr>
+                  <th className="px-3 py-2 font-medium">When</th>
+                  <th className="px-3 py-2 font-medium">File</th>
+                  <th className="px-3 py-2 font-medium">Format</th>
+                  <th className="px-3 py-2 font-medium">Languages</th>
+                  <th className="px-3 py-2 font-medium">Applied</th>
+                  <th className="px-3 py-2 font-medium">Overwritten</th>
+                  <th className="px-3 py-2 font-medium">Skipped</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-ink-800 bg-ink-900 text-ink-300">
+                {imports.map((r) => (
+                  <tr key={r.importId}>
+                    <td className="px-3 py-2">{new Date(r.importedAt).toLocaleString()}</td>
+                    <td className="px-3 py-2 font-mono text-ink-200">
+                      {r.fileName}
+                      {r.sanitized && <span className="ml-2 text-warn-500">markup removed</span>}
+                    </td>
+                    <td className="px-3 py-2">{r.format}</td>
+                    <td className="px-3 py-2 font-mono">{r.locales.join(", ")}</td>
+                    <td className="px-3 py-2">{r.applied}</td>
+                    <td className="px-3 py-2">{r.overwritten}</td>
+                    <td className="px-3 py-2">{r.skipped}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </section>
     </div>
   );
+}
+
+function StorageBanner({ kind, error }: { kind: "indexeddb" | "memory" | "loading"; error?: string }) {
+  if (kind === "loading") return <p className="text-xs text-ink-500">Opening browser storage…</p>;
+  if (error)
+    return (
+      <p role="alert" className="rounded-md border border-err-500/40 bg-err-500/10 px-4 py-3 text-sm text-err-500">
+        {error}
+      </p>
+    );
+  return <p className="text-xs text-ink-500">Saved in this browser&apos;s IndexedDB. Use “Download full backup” to keep a copy or move it to another browser.</p>;
 }
 
 function Stat({ label, value }: { label: string; value: string }) {

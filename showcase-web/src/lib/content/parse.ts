@@ -1,3 +1,5 @@
+import { BACKUP_VERSION, isBackup, type BackupFile } from "@/lib/storage/backup";
+import { sanitizeText } from "@/lib/storage/sanitize";
 import { SCHEMA_VERSION, type ContentEntry, type ContentFormat, type ParsedContent, type ParseIssue } from "./types";
 
 export const DEFAULT_LOCALE = "en";
@@ -16,9 +18,26 @@ export function parseContent(fileName: string, text: string): ParsedContent {
   if (!format) {
     return { format: "txt", fileName, entries: [], issues: [{ level: "error", message: `Unsupported file type: ${fileName}. Use .json, .csv, .md or .txt.` }] };
   }
-  const clean = text.replace(/^﻿/, "").replace(/\r\n?/g, "\n");
-  const result = format === "json" ? parseJson(clean) : format === "csv" ? parseCsv(clean) : format === "markdown" ? parseMarkdown(clean) : parseTxt(clean);
-  return { format, fileName, ...result };
+  const normalised = text.replace(/^﻿/, "").replace(/\r\n?/g, "\n");
+  const result = format === "json" ? parseJson(normalised) : format === "csv" ? parseCsv(normalised) : format === "markdown" ? parseMarkdown(normalised) : parseTxt(normalised);
+  return { format, fileName, ...sanitizeEntries(result) };
+}
+
+/** Plain text only: strip HTML/script markup from every field before it can be stored. */
+function sanitizeEntries({ entries, issues }: Partial_): Partial_ {
+  const out = entries.map((e) => {
+    let changed = false;
+    const s = (v: string | undefined) => {
+      if (v === undefined) return v;
+      const r = sanitizeText(v);
+      changed ||= r.changed;
+      return r.text;
+    };
+    const next: ContentEntry = { ...e, id: e.id, title: s(e.title), description: s(e.description), notes: s(e.notes), tags: e.tags?.map((t) => s(t)!).filter(Boolean) };
+    if (changed) issues.push({ level: "warning", message: `HTML or script markup was removed from "${e.id}" (content is stored as plain text).`, source: e.source });
+    return next;
+  });
+  return { entries: out, issues };
 }
 
 type Partial_ = { entries: ContentEntry[]; issues: ParseIssue[] };
@@ -42,6 +61,7 @@ export function parseJson(text: string): Partial_ {
   if (!data || typeof data !== "object" || Array.isArray(data)) {
     return { entries: [], issues: [{ level: "error", message: 'The JSON root must be an object with "schema_version", "locale" and "expressions".' }] };
   }
+  if (isBackup(data)) return parseBackup(data);
   const obj = data as Record<string, unknown>;
   if (obj.schema_version === undefined) issues.push({ level: "warning", message: `"schema_version" is missing; assuming ${SCHEMA_VERSION}.` });
   else if (obj.schema_version !== SCHEMA_VERSION) issues.push({ level: "error", message: `Unsupported schema_version ${String(obj.schema_version)} (this app reads ${SCHEMA_VERSION}).` });
@@ -84,6 +104,23 @@ export function parseJson(text: string): Partial_ {
       notes: str("notes"),
       source,
     });
+  });
+  return { entries, issues };
+}
+
+function parseBackup(b: BackupFile): Partial_ {
+  const issues: ParseIssue[] = [];
+  if (b.version !== BACKUP_VERSION) issues.push({ level: "error", message: `Unsupported backup version ${String(b.version)}.` });
+  if (!Array.isArray(b.entries)) return { entries: [], issues: [...issues, { level: "error", message: "Backup has no entries array." }] };
+  issues.push({ level: "info", message: `Studio backup from ${b.exportedAt ?? "unknown date"} with ${b.entries.length} entries. Review conflicts before applying.` });
+  const entries: ContentEntry[] = [];
+  b.entries.forEach((e, i) => {
+    if (!e || typeof e.id !== "string" || typeof e.locale !== "string") {
+      issues.push({ level: "error", message: `entries[${i}] needs string "id" and "locale".`, source: i + 1 });
+      return;
+    }
+    const str = (v: unknown) => (typeof v === "string" ? v : undefined);
+    entries.push({ id: e.id, locale: e.locale, title: str(e.title), description: str(e.description), notes: str(e.notes), tags: Array.isArray(e.tags) ? e.tags.filter((t): t is string => typeof t === "string") : undefined, source: i + 1 });
   });
   return { entries, issues };
 }
