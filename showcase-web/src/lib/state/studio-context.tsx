@@ -5,6 +5,7 @@ import { EXPRESSIONS } from "@/data/expressions";
 import type { CharacterAdapter, PlaybackState, PlayOptions } from "@/lib/character/adapter";
 import type { CameraPresetId } from "@/lib/character/cameras";
 import { createCharacterAdapter } from "@/lib/character/registry";
+import { useSettings } from "@/lib/state/settings-context";
 
 const FAV_KEY = "fes.favourites.v1";
 const RECENT_KEY = "fes.recent.v1";
@@ -63,6 +64,17 @@ export function StudioProvider({ children }: { children: ReactNode }) {
     setFavourites(readList(FAV_KEY));
     setRecent(readList(RECENT_KEY));
   }, []);
+
+  // Apply the saved defaults (Settings & Export) once they have loaded.
+  const { settings, hydrated } = useSettings();
+  const appliedDefaults = useRef(false);
+  useEffect(() => {
+    if (!hydrated || appliedDefaults.current) return;
+    appliedDefaults.current = true;
+    setOptsState((o) => ({ ...o, intensity: settings.defaultIntensity, speed: settings.playbackSpeed }));
+    setCameraState(settings.defaultCamera);
+    setNonce((n) => n + 1);
+  }, [hydrated, settings]);
 
   const select = useCallback(
     (id: string) => {

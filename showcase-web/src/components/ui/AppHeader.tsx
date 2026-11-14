@@ -7,12 +7,14 @@ import { LocaleSelect } from "./LocaleSelect";
 const NAV = [
   { href: "/", label: "Studio" },
   { href: "/content", label: "Content Manager" },
+  { href: "/assets", label: "Character & Assets" },
+  { href: "/settings", label: "Settings & Export" },
 ];
 
 export function AppHeader() {
   const path = usePathname();
   return (
-    <header className="flex h-14 shrink-0 items-center gap-6 border-b border-ink-800 bg-ink-900/80 px-4 backdrop-blur md:px-6">
+    <header className="flex min-h-14 shrink-0 flex-wrap items-center gap-x-6 gap-y-2 border-b border-ink-800 bg-ink-900/80 px-4 py-2 backdrop-blur md:px-6">
       <Link href="/" className="flex items-center gap-2.5">
         <span aria-hidden className="grid h-7 w-7 place-items-center rounded-md bg-accent-900 text-accent-400">
           <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -22,7 +24,7 @@ export function AppHeader() {
         </span>
         <span className="text-sm font-semibold tracking-tight text-ink-100">Facial Expression Studio</span>
       </Link>
-      <nav className="flex items-center gap-1" aria-label="Main">
+      <nav className="flex flex-wrap items-center gap-1" aria-label="Main">
         {NAV.map((n) => {
           const active = n.href === "/" ? path === "/" : path.startsWith(n.href);
           return (

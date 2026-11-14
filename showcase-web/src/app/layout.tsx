@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import { AppHeader } from "@/components/ui/AppHeader";
+import { AssetsProvider } from "@/lib/state/assets-context";
 import { ContentProvider } from "@/lib/state/content-context";
+import { SettingsProvider } from "@/lib/state/settings-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,10 +17,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="flex min-h-full flex-col">
-        <ContentProvider>
-          <AppHeader />
-          <main className="flex min-h-0 flex-1 flex-col">{children}</main>
-        </ContentProvider>
+        <SettingsProvider>
+          <ContentProvider>
+            <AssetsProvider>
+              <AppHeader />
+              <main className="flex min-h-0 flex-1 flex-col">{children}</main>
+            </AssetsProvider>
+          </ContentProvider>
+        </SettingsProvider>
       </body>
     </html>
   );

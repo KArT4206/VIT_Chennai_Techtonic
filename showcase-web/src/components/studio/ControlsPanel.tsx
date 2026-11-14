@@ -4,11 +4,13 @@ import Link from "next/link";
 import { categoryById, expressionById } from "@/data/expressions";
 import { CAMERA_PRESETS, type CameraPresetId } from "@/lib/character/cameras";
 import { useContent } from "@/lib/state/content-context";
+import { useSettings } from "@/lib/state/settings-context";
 import { useStudio } from "@/lib/state/studio-context";
 
 export function ControlsPanel() {
   const { selectedId, adapter, opts, setOpts, camera, setCamera, playback, play, pause, neutral, replay, favourites, toggleFavourite } = useStudio();
   const { entry, locale } = useContent();
+  const { settings } = useSettings();
   const e = expressionById(selectedId)!;
   const c = entry(e.id);
   const ready = adapter.status === "ready";
@@ -76,16 +78,18 @@ export function ControlsPanel() {
           onChange={(v) => setOpts({ asymmetry: v })}
           hint={ready && !adapter.supportsAsymmetry ? "The loaded character has no left/right controls." : undefined}
         />
-        <button type="button" onClick={() => setOpts({ intensity: 1, speed: 1, asymmetry: 0 })} className="text-xs text-ink-400 hover:text-ink-100">
-          Reset sliders
+        <button type="button" onClick={() => setOpts({ intensity: settings.defaultIntensity, speed: settings.playbackSpeed, asymmetry: 0 })} className="text-xs text-ink-400 hover:text-ink-100">
+          Reset sliders to defaults
         </button>
       </div>
 
       <div className="space-y-3 p-5">
         <div className="grid grid-cols-2 gap-2">
-          <TransportButton primary disabled={!hasClip || playback === "playing"} onClick={play} label={playback === "paused" ? "Resume" : "Play expression"} />
-          <TransportButton disabled={!hasClip || playback !== "playing"} onClick={pause} label="Pause" />
-          <TransportButton disabled={!hasClip} onClick={replay} label="Replay" />
+          <div className="col-span-2 grid">
+            <TransportButton primary disabled={!hasClip || playback === "playing"} onClick={play} label={playback === "paused" ? "Resume" : "Play expression"} reason={reason || "Already playing"} />
+          </div>
+          <TransportButton disabled={!hasClip || playback !== "playing"} onClick={pause} label="Pause" reason={reason || "Nothing is playing"} />
+          <TransportButton disabled={!hasClip} onClick={replay} label="Replay" reason={reason} />
           <TransportButton disabled={false} onClick={neutral} label="Return to neutral" />
         </div>
         {reason && (
@@ -122,13 +126,28 @@ function Slider({ label, value, min, max, step, format, onChange, hint }: { labe
   );
 }
 
-function TransportButton({ label, onClick, disabled, primary }: { label: string; onClick: () => void; disabled: boolean; primary?: boolean }) {
+function TransportButton({ label, onClick, disabled, primary, reason }: { label: string; onClick: () => void; disabled: boolean; primary?: boolean; reason?: string }) {
+  if (disabled)
+    return (
+      <button
+        type="button"
+        disabled
+        aria-disabled="true"
+        title={reason || `${label} is unavailable`}
+        className="flex cursor-not-allowed items-center justify-center gap-1.5 rounded-md border border-dashed border-ink-700 bg-ink-900 px-3 py-2 text-sm font-medium text-ink-500"
+      >
+        <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden>
+          <rect x="3.5" y="7" width="9" height="6.5" rx="1.2" />
+          <path d="M5.5 7V5.2a2.5 2.5 0 0 1 5 0V7" />
+        </svg>
+        {label}
+      </button>
+    );
   return (
     <button
       type="button"
       onClick={onClick}
-      disabled={disabled}
-      className={`rounded-md px-3 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-40 ${primary ? "bg-accent-500 text-ink-950 enabled:hover:bg-accent-400" : "border border-ink-700 text-ink-200 enabled:hover:border-ink-500 enabled:hover:text-ink-100"}`}
+      className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${primary ? "bg-accent-500 text-ink-950 hover:bg-accent-400" : "border border-ink-700 text-ink-200 hover:border-ink-500 hover:text-ink-100"}`}
     >
       {label}
     </button>

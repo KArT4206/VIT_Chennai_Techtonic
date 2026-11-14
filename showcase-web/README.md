@@ -29,6 +29,14 @@ Three Fiber 9.
   and left/right asymmetry sliders, and Play, Pause, Replay and Return to neutral. Play, Pause and Replay
   are enabled only when the character adapter has a real clip.
 
+**Character & Assets (`/assets`)**
+- Import a glTF 2.0 character (`.glb`), validated in the browser before anything is stored: head mesh, UV maps, materials and textures, armature, morph targets, eye pivots, facial clips.
+- Inventories of textures, facial rig, shape keys and animations; static three.js preview; licence and source record; replace and remove with confirmation.
+- `.blend` files are refused with a pointer to `docs/BLENDER_TO_GLTF.md`.
+
+**Settings & Export (`/settings`)**
+- Default camera, playback speed, default intensity, animation quality, content language; backup and restore; configuration export and import.
+
 **Content Manager (`/content`)**
 - **Import:** JSON, CSV, Markdown or TXT, by drag and drop or browsing.
 - **Review:** each file is previewed and validated: unknown IDs (with typo suggestions), duplicates,
