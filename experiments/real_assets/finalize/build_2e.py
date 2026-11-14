@@ -33,7 +33,12 @@ import numpy as np
 import OpenImageIO as oiio
 from mathutils import Matrix, Vector
 
-out_dir = os.path.abspath(sys.argv[sys.argv.index("--") + 1]); os.makedirs(out_dir, exist_ok=True)
+_a = sys.argv[sys.argv.index("--") + 1:]
+out_dir = os.path.abspath(_a[0]); os.makedirs(out_dir, exist_ok=True)
+# Sclera-edge threshold on the vendor map's pinkness. 2E used 0.2, which counted the vendor's soft
+# white-to-pink transition as sclera and stretched it to 72-78 deg (measured 0.25 there vs 0.10-0.15
+# for the sclera body). Phase 2F passes 0.15, the sclera body's own level.
+PINK_EDGE = float(_a[1]) if len(_a) > 1 else 0.2
 HERE = os.path.dirname(os.path.abspath(__file__))
 BUILD = os.path.join(HERE, "..", "3dscanstore", "build")
 TEX = os.path.join(HERE, "..", "3dscanstore", "extracted", "Textures")
@@ -89,7 +94,7 @@ def bake_eye(side, name, slot, u_shift, iris_turn):
     nb = 36; ab = np.zeros(nb)
     for k in range(nb):
         sel = (np.abs(((phi - (k + 0.5) * 360 / nb + 180) % 360) - 180) < 360 / nb) & (alpha > ALPHA_KEEP) & (alpha < 95)
-        ok = sel & (pink < 0.2)
+        ok = sel & (pink < PINK_EDGE)
         ab[k] = alpha[ok].max() if ok.any() else ALPHA_KEEP + 12
     ab = np.array([np.median(np.take(ab, [k - 1, k, (k + 1) % nb])) for k in range(nb)])
     ab = np.maximum(ab, ALPHA_KEEP + 8)
@@ -199,7 +204,7 @@ for i in (1, 3):
             n.image = img
 
 # brow lowerer keys
-off = np.load(os.path.join(out_dir, "brow_furrow_offsets.npz"))
+off = np.load(os.path.join(BUILD, "phase2e", "brow_furrow_offsets.npz"))
 for k in ("brow_furrow_L", "brow_furrow_R"):
     kb = me.shape_keys.key_blocks.get(k) or gh.shape_key_add(name=k, from_mix=False)
     kb.data.foreach_set("co", (basis + off[k]).reshape(-1)); kb.slider_min, kb.slider_max = 0.0, 1.0; kb.value = 0.0
@@ -230,6 +235,7 @@ print("CHECK faces identical", bool((f2 == fp_faces).all()), "| UV identical", b
       "| material idx identical", bool((m2 == fp_mi).all()), "| basis identical", bool((b2.reshape(-1, 3) == basis).all()),
       "| vertices", nv, "| polygons", len(me.polygons))
 import json  # noqa: E402
+log["pink_edge"] = PINK_EDGE
 json.dump(log, open(os.path.join(out_dir, "build_2e.json"), "w"), indent=1)
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(out_dir, "gnm_scan_2e.blend"), relative_remap=True)
 print("SAVED")

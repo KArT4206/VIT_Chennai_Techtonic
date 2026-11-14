@@ -10,7 +10,8 @@ import bpy
 import numpy as np
 import OpenImageIO as oiio
 
-BUILD = os.path.abspath(sys.argv[sys.argv.index("--") + 1]); E = os.path.join(BUILD, "phase2e")
+_a = sys.argv[sys.argv.index("--") + 1:]
+BUILD = os.path.abspath(_a[0]); E = os.path.join(BUILD, _a[1] if len(_a) > 1 else "phase2e")
 res = []
 
 
@@ -101,7 +102,7 @@ check(pk(cn[side_band]).mean() < 0.2 and pk(co[side_band]).mean() > 0.3,
 keep = theta < 28
 check(np.abs(cn[keep] - co[keep]).mean() < 0.02, f"iris / limbus / near sclera (theta < 28 deg) unchanged: mean |new-old| {np.abs(cn[keep] - co[keep]).mean():.4f}")
 # expression geometry (exact, from expr_geometry.py)
-G = json.load(open(os.path.join(E, "expr_geometry.json")))
+G = json.load(open(os.path.join(BUILD, "phase2e", "expr_geometry.json")))
 for k in ("blink", "blink_up12", "blink_down7", "blink_left15"):
     ap = max(max(G[k]["left"]["aperture_mm"]), max(G[k]["right"]["aperture_mm"]))
     check(ap <= 0.151, f"{k}: lids closed (largest gap {ap:.2f} mm)")

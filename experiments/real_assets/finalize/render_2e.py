@@ -170,6 +170,24 @@ elif section == "iris":
         lo.matrix_world = cw @ Matrix.Translation((0, 0.0, 2.0))
         bpy.context.view_layer.update()
         shot(f"iris_{side}.png", cam, 1024)
+elif section == "evenlight":
+    # diagnostic only, NOT the look: every scene light off, uniform grey world (identical exposure for
+    # all shots), so iris and sclera texture can be compared without the vendor key/fill shadows.
+    for o in bpy.data.objects:
+        if o.type == "LIGHT":
+            o.hide_render = True
+    w = bpy.data.worlds.new("even"); w.use_nodes = True
+    bg = next(n for n in w.node_tree.nodes if n.type == "BACKGROUND"); bg.inputs[0].default_value = (1, 1, 1, 1); bg.inputs[1].default_value = 1.0
+    sc.world = w; sc.view_settings.exposure = 0.0
+    for side, cam, c in (("left", eyeL, cL), ("right", eyeR, cR)):
+        tgt = Vector((c.x, c.y, c.z + 0.11))
+        for s2 in ("left", "right"):
+            G.set_eye_quat(s2, G.eye_rotation(s2, tgt))
+        bpy.context.view_layer.update()
+        shot(f"even_iris_{side}.png", cam, 1024)
+    for name, kw in (("neutral", {}), ("left10", dict(yaw=10)), ("left15", dict(yaw=15)), ("left20", dict(yaw=20)),
+                     ("right10", dict(yaw=-10)), ("right15", dict(yaw=-15)), ("right20", dict(yaw=-20))):
+        pose(**kw); shot(f"even_eyes_{name}.png", "V_eyes", 1024)
 elif section == "closeups":
     pose()
     shot("three_quarter.png", "V_34", 1024); shot("eye_closeup.png", "V_eyes", 1024); shot("skin_closeup.png", "V_skin", 2048)
