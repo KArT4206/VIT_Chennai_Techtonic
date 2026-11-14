@@ -1,0 +1,4 @@
+# One entry per line: "id: description" or "id | title | description"
+locale: es
+fear | Miedo | Ojos muy abiertos y cejas levantadas.
+lip_press: Los labios se presionan entre sí.

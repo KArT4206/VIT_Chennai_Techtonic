@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-mono-face), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-ink-950: #0b0c0f;
+  --color-ink-900: #111318;
+  --color-ink-850: #161920;
+  --color-ink-800: #1c2029;
+  --color-ink-700: #262b36;
+  --color-ink-600: #343a48;
+  --color-ink-500: #4a5163;
+  --color-ink-400: #6b7387;
+  --color-ink-300: #9aa1b2;
+  --color-ink-200: #c6cbd6;
+  --color-ink-100: #e7e9ef;
+
+  --color-accent-500: #d9a35b;
+  --color-accent-400: #e6b877;
+  --color-accent-300: #f0cf9e;
+  --color-accent-900: #3a2c19;
+
+  --color-ok-500: #4fbf8b;
+  --color-warn-500: #e0a33a;
+  --color-err-500: #e5636b;
+  --color-info-500: #6aa6e8;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--color-ink-950);
+  color: var(--color-ink-100);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-ink-600) transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 2px;
+}
+
+input[type="range"] {
+  accent-color: var(--color-accent-500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
