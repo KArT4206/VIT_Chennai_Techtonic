@@ -284,7 +284,11 @@ export function inspectGltf(fileName: string, buf: ArrayBuffer): AssetReport {
     const bytes = im?.bufferView !== undefined ? (views[im.bufferView]?.byteLength ?? null) : im?.uri?.startsWith("data:") ? Math.floor((im.uri.length - im.uri.indexOf(",") - 1) * 0.75) : null;
     return { name: nm(t.name ?? im?.name, `texture ${ti}`), mimeType: im?.mimeType ?? (im?.uri?.match(/^data:([^;,]+)/)?.[1] ?? "unknown"), bytes, source, usedBy: texUse.get(ti) ?? [] };
   });
-  const headMats = head ? r.materials.filter((m) => head.materials.includes(m.name)) : [];
+  // When the whole character is one mesh (common for generator exports), judge only its skin/face
+  // material, not every material on the mesh (a normal-mapped blouse must not count as skin detail).
+  const allHeadMats = head ? r.materials.filter((m) => head.materials.includes(m.name)) : [];
+  const skinMats = allHeadMats.filter((m) => /(skin|face|head)/i.test(m.name) && !/detail/i.test(m.name));
+  const headMats = skinMats.length ? skinMats : allHeadMats;
   const headHasColour = headMats.some((m) => m.maps.includes("baseColor"));
   checks.push(
     !r.materials.length

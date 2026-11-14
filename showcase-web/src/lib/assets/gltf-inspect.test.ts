@@ -68,6 +68,35 @@ describe("GLB/glTF compatibility validator", () => {
     expect(check(inspectGltf("x.gltf", new TextEncoder().encode("{oops").buffer as ArrayBuffer), "container").status).toBe("fail");
   });
 
+  it("judges only the skin material of a merged single-mesh character", () => {
+    const glb = buildGlb({ normalMap: false });
+    // add a second, normal-mapped "Blouse" material to the same mesh by patching the JSON chunk
+    const dv = new DataView(glb);
+    const jl = dv.getUint32(12, true);
+    const json = JSON.parse(new TextDecoder().decode(new Uint8Array(glb, 20, jl)));
+    json.materials.push({ name: "Silk blouse", pbrMetallicRoughness: { baseColorTexture: { index: 0 } }, normalTexture: { index: 0 } });
+    json.meshes[0].primitives.push({ ...json.meshes[0].primitives[0], material: 1 });
+    let enc = new TextEncoder().encode(JSON.stringify(json));
+    const pad = (4 - (enc.length % 4)) % 4;
+    const j2 = new Uint8Array(enc.length + pad).fill(0x20);
+    j2.set(enc);
+    enc = j2;
+    const binStart = 20 + jl;
+    const bin = new Uint8Array(glb, binStart);
+    const out = new ArrayBuffer(20 + enc.length + bin.length);
+    const o = new DataView(out);
+    o.setUint32(0, 0x46546c67, true);
+    o.setUint32(4, 2, true);
+    o.setUint32(8, out.byteLength, true);
+    o.setUint32(12, enc.length, true);
+    o.setUint32(16, 0x4e4f534a, true);
+    new Uint8Array(out, 20).set(enc);
+    new Uint8Array(out, 20 + enc.length).set(bin);
+    const r = inspectGltf("merged.glb", out);
+    expect(check(r, "materials").status).toBe("warn");
+    expect(check(r, "materials").evidence.join()).toMatch(/^Skin:/);
+  });
+
   it("reads .gltf JSON with embedded data URIs", () => {
     const gltf = { asset: { version: "2.0" }, meshes: [{ name: "Head", primitives: [{ attributes: { POSITION: 0 } }] }], accessors: [{ count: 3, min: [0, 0, 0], max: [1, 1, 1] }], buffers: [{ uri: "data:application/octet-stream;base64,AAAA", byteLength: 3 }], nodes: [{ name: "Head", mesh: 0 }] };
     const r = inspectGltf("x.gltf", new TextEncoder().encode(JSON.stringify(gltf)).buffer as ArrayBuffer);

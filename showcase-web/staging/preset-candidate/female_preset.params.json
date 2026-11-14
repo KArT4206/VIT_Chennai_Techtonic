@@ -1,0 +1,10 @@
+{
+  "name": "female_preset",
+  "gender": 0, "age": 0.52, "muscle": 0.65, "weight": 0.38, "height": 0.58, "proportions": 0.85, "breastSize": 0.55,
+  "african": 0.24, "asian": 0.68, "caucasian": 0, "eyebrows": "eyebrow010", "eyelashes": "eyelashes02", "hair": "long01",
+  "earrings": "studs", "earringMetal": "gold",
+  "outfit": "set_pantsuit", "shoes": "heels", "carry": "none", "accessories": ["fine_pendant", "watch_gold"],
+  "garmentStyles": { "heels": { "pattern": "patent", "color": "#e2c6ab" } },
+  "detail": "high", "rig": "game", "faceBones": true, "animations": false,
+  "faceShapes": true, "speechShapes": true, "expression": "neutral", "teeth": "teeth_base", "tongue": true
+}

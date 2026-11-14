@@ -1,0 +1,316 @@
+{
+ "candidate": "female_preset.glb",
+ "status": "under review (Phase 2N) - not bundled, not used by the Studio",
+ "file": {
+  "bytes": 12750480,
+  "sha256": "472850e8c96e1ac4250ff3bb617010bb1407d1093bfe485f87ba50b93af6f18f"
+ },
+ "generator": {
+  "name": "Ara 3D Gen",
+  "repo": "https://github.com/olatunde85/3d-gen",
+  "commit": "fc0cf3fdc8f845420b01674e9bbbd61f460255c9",
+  "tag": "v0.3.0",
+  "command": "npm run export -- --params female_preset.params.json --formats glb --out gen",
+  "code_licence": "MIT (Copyright (c) 2026 Josh Ola and Ara 3D Gen contributors) - see ARA3DGEN_LICENSE.txt"
+ },
+ "character_data": {
+  "source": "MakeHuman (makehumancommunity/makehuman data + makehuman_system_assets_cc0.zip)",
+  "licence": "CC0 1.0 (released Sept 2020 by Data Collection AB, Joel Palmius, Jonas Hauquier) - see ARA3DGEN_ASSETS_LICENSE.txt",
+  "makehuman_repo_commit": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+  "system_assets_zip_bytes": 280737770,
+  "system_assets_zip_sha256": "b542127a8e25547c7c29c19f2d1d2adb9a664c80396ecd694095dbc8028a0107"
+ },
+ "excluded": {
+  "cmu_motion_capture": "animations=false: no CMU-derived clips are in the file",
+  "music_voice_speech_audio": "not used",
+  "aviators_handbag": "removed from the published preset (sunglasses cover the eyes)"
+ },
+ "base_preset": "The Female Executive (src/core/params.ts) with detail=high, animations=false, carry=none, accessories=[fine_pendant, watch_gold]",
+ "params": {
+  "name": "female_preset",
+  "gender": 0,
+  "age": 0.52,
+  "muscle": 0.65,
+  "weight": 0.38,
+  "height": 0.58,
+  "proportions": 0.85,
+  "breastSize": 0.55,
+  "african": 0.24,
+  "asian": 0.68,
+  "caucasian": 0,
+  "eyebrows": "eyebrow010",
+  "eyelashes": "eyelashes02",
+  "hair": "long01",
+  "earrings": "studs",
+  "earringMetal": "gold",
+  "outfit": "set_pantsuit",
+  "shoes": "heels",
+  "carry": "none",
+  "accessories": [
+   "fine_pendant",
+   "watch_gold"
+  ],
+  "garmentStyles": {
+   "heels": {
+    "pattern": "patent",
+    "color": "#e2c6ab"
+   }
+  },
+  "detail": "high",
+  "rig": "game",
+  "faceBones": true,
+  "animations": false,
+  "faceShapes": true,
+  "speechShapes": true,
+  "expression": "neutral",
+  "teeth": "teeth_base",
+  "tongue": true
+ },
+ "reference_export_as_published": {
+  "file": "female_executive_as_published.glb (scratch only, not kept)",
+  "sha256": "3356de848a24efca52f9de25c2b58cf92d03c9b37da2e1e598344bbfdf7e8afc"
+ },
+ "inventory": {
+  "textures": [
+   [
+    "skin_young_asian_female.jpg",
+    "image/jpeg",
+    251777,
+    "Skin.baseColor"
+   ],
+   [
+    "skin_roughness.png",
+    "image/png",
+    59597,
+    "Skin.metallicRoughness"
+   ],
+   [
+    "look_15k5c1j.png",
+    "image/png",
+    34390,
+    "Skin details.baseColor"
+   ],
+   [
+    "eyes_brownlight.png",
+    "image/png",
+    292436,
+    "Eyes.baseColor"
+   ],
+   [
+    "eyebrows_eyebrow010.png",
+    "image/png",
+    34540,
+    "Eyebrows.baseColor"
+   ],
+   [
+    "eyelashes_eyelashes02.png",
+    "image/png",
+    76926,
+    "Eyelashes.baseColor"
+   ],
+   [
+    "teeth_teeth_base.png",
+    "image/png",
+    697030,
+    "Teeth.baseColor"
+   ],
+   [
+    "tongue_tongue01.jpg",
+    "image/jpeg",
+    46643,
+    "Tongue.baseColor"
+   ],
+   [
+    "gen_10bpwex.png",
+    "image/png",
+    214554,
+    "Suit trousers.baseColor|Suit trousers creases.baseColor|Suit jacket.baseColor"
+   ],
+   [
+    "gen_s3xu1f.png",
+    "image/png",
+    257645,
+    "Silk blouse.baseColor"
+   ],
+   [
+    "outfit_female_elegantsuit01_normal.jpg",
+    "image/jpeg",
+    178187,
+    "Silk blouse.normal"
+   ],
+   [
+    "gen_pb8lyy.png",
+    "image/png",
+    15687,
+    "Heels.baseColor|Heels.baseColor|Heels.baseColor"
+   ],
+   [
+    "gen_pb8lyy_n.png",
+    "image/png",
+    1809,
+    "Heels.normal|Heels.normal|Heels.normal"
+   ],
+   [
+    "hair_long01.png",
+    "image/png",
+    1205118,
+    "Hair.baseColor"
+   ]
+  ],
+  "bones": [
+   "Hips",
+   "Spine",
+   "Spine1",
+   "Spine2",
+   "Neck",
+   "Head",
+   "HeadTop_End",
+   "Jaw",
+   "LeftEye",
+   "RightEye",
+   "LeftShoulder",
+   "LeftArm",
+   "LeftForeArm",
+   "LeftHand",
+   "LeftHandThumb1",
+   "LeftHandThumb2",
+   "LeftHandThumb3",
+   "LeftHandThumb4",
+   "LeftHandIndex1",
+   "LeftHandIndex2",
+   "LeftHandIndex3",
+   "LeftHandIndex4",
+   "LeftHandMiddle1",
+   "LeftHandMiddle2",
+   "LeftHandMiddle3",
+   "LeftHandMiddle4",
+   "LeftHandRing1",
+   "LeftHandRing2",
+   "LeftHandRing3",
+   "LeftHandRing4",
+   "LeftHandPinky1",
+   "LeftHandPinky2",
+   "LeftHandPinky3",
+   "LeftHandPinky4",
+   "LeftUpLeg",
+   "LeftLeg",
+   "LeftFoot",
+   "LeftToeBase",
+   "LeftToe_End",
+   "RightShoulder",
+   "RightArm",
+   "RightForeArm",
+   "RightHand",
+   "RightHandThumb1",
+   "RightHandThumb2",
+   "RightHandThumb3",
+   "RightHandThumb4",
+   "RightHandIndex1",
+   "RightHandIndex2",
+   "RightHandIndex3",
+   "RightHandIndex4",
+   "RightHandMiddle1",
+   "RightHandMiddle2",
+   "RightHandMiddle3",
+   "RightHandMiddle4",
+   "RightHandRing1",
+   "RightHandRing2",
+   "RightHandRing3",
+   "RightHandRing4",
+   "RightHandPinky1",
+   "RightHandPinky2",
+   "RightHandPinky3",
+   "RightHandPinky4",
+   "RightUpLeg",
+   "RightLeg",
+   "RightFoot",
+   "RightToeBase",
+   "RightToe_End",
+   "WeaponR"
+  ],
+  "morph_targets": [
+   "eyeBlinkLeft",
+   "eyeBlinkRight",
+   "eyeWideLeft",
+   "eyeWideRight",
+   "eyeSquintLeft",
+   "eyeSquintRight",
+   "browDownLeft",
+   "browDownRight",
+   "browInnerUp",
+   "browOuterUpLeft",
+   "browOuterUpRight",
+   "jawOpen",
+   "mouthSmile",
+   "mouthFrown",
+   "mouthPucker",
+   "mouthPress",
+   "mouthStretch",
+   "noseSneerLeft",
+   "noseSneerRight",
+   "mouthUpperUp",
+   "viseme_PP",
+   "viseme_FF",
+   "viseme_TH",
+   "viseme_DD",
+   "viseme_kk",
+   "viseme_CH",
+   "viseme_SS",
+   "viseme_nn",
+   "viseme_RR",
+   "viseme_aa",
+   "viseme_E",
+   "viseme_I",
+   "viseme_O",
+   "viseme_U"
+  ],
+  "checker_verdict": "not-compatible",
+  "checks": [
+   [
+    "container",
+    "pass",
+    "glTF 2.0 (GLB)"
+   ],
+   [
+    "resources",
+    "pass",
+    "All buffers and images are embedded."
+   ],
+   [
+    "head",
+    "warn",
+    "No mesh or node is named \"head\" or \"face\"; the largest candidate was assumed. Name the head mesh explicitly in Blender."
+   ],
+   [
+    "uv",
+    "pass",
+    "Head mesh has 1 UV set(s)."
+   ],
+   [
+    "materials",
+    "warn",
+    "Head material has a colour texture but no normal map; skin detail will be limited."
+   ],
+   [
+    "armature",
+    "pass",
+    "1 skin(s), 69 joints, 3 facial joints."
+   ],
+   [
+    "morphs",
+    "pass",
+    "34 named morph targets on the head mesh."
+   ],
+   [
+    "eyes",
+    "warn",
+    "Eye bones exist, but their pivot against the eyeball cannot be verified without evaluating the skin; check in the preview."
+   ],
+   [
+    "clips",
+    "fail",
+    "No animation clips. Each expression needs a clip named with its expression ID (e.g. gentle_smile)."
+   ]
+  ]
+ }
+}
