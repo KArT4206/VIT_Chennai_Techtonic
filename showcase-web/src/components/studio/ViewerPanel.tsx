@@ -66,7 +66,7 @@ export function ViewerPanel() {
 
       <div className="relative min-h-0 flex-1">
         <div className="absolute inset-0">
-          <ViewerScene camera={camera} nonce={cameraNonce} quality={settings.quality} />
+          <ViewerScene camera={camera} nonce={cameraNonce} quality={settings.quality} adapter={adapter} />
         </div>
 
         {pending && <EmptyState storedName={character?.fileName ?? null} verdict={character?.report.verdict ?? null} />}

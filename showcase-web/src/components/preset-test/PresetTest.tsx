@@ -49,7 +49,18 @@ function regionOf(y: number, eyeY: number): string {
   return "jaw / chin";
 }
 
+export interface Combo {
+  id: string;
+  label: string;
+  weights: Weights;
+}
+
+/** Rejected Ara candidate (Phase 2N), kept as a staging record. */
 export function PresetTest() {
+  return <CharacterTest src="/api/staging/preset" banner="STAGING TEST · rejected Ara preset candidate" fileLabel="female_preset.glb · Ara 3D Gen export" combos={TEST_COMBOS} />;
+}
+
+export function CharacterTest({ src, banner, fileLabel, combos }: { src: string; banner: string; fileLabel: string; combos: Combo[] }) {
   const [status, setStatus] = useState<string>("Loading candidate GLB…");
   const [scene, setScene] = useState<THREE.Group | null>(null);
   const [morphNames, setMorphNames] = useState<string[]>([]);
@@ -67,14 +78,14 @@ export function PresetTest() {
     if (v && VIEWS.some(([id]) => id === v)) setView(v);
     const c = q.get("combo");
     if (c) {
-      const found = TEST_COMBOS.find((x) => x.id === c);
+      const found = combos.find((x) => x.id === c);
       if (found) {
         setWeights(found.weights);
         setCombo(found.id);
       }
     }
     let alive = true;
-    fetch("/api/staging/preset")
+    fetch(src)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.arrayBuffer();
@@ -129,13 +140,13 @@ export function PresetTest() {
         </Canvas>
         {ui && (
           <div className="pointer-events-none absolute left-3 top-3 rounded-lg bg-ink-900/85 px-3 py-2 text-xs backdrop-blur">
-            <p className="font-semibold text-warn-500">STAGING TEST · preset candidate under review</p>
-            <p className="text-ink-300">female_preset.glb · Ara 3D Gen export · {status}</p>
+            <p className="font-semibold text-warn-500">{banner}</p>
+            <p className="text-ink-300">{fileLabel} · {status}</p>
           </div>
         )}
         {!ui && (
           <div className="pointer-events-none absolute bottom-3 left-3 rounded bg-ink-900/80 px-2 py-1 font-mono text-[11px] text-ink-200">
-            {TEST_COMBOS.find((c) => c.id === combo)?.label ?? "Neutral"} · {view} · real morph targets
+            {combos.find((c) => c.id === combo)?.label ?? "Neutral"} · {view} · real morph targets
           </div>
         )}
       </div>
@@ -159,7 +170,7 @@ export function PresetTest() {
               </button>
             </div>
             <div className="grid grid-cols-2 gap-1">
-              {TEST_COMBOS.map((c) => (
+              {combos.map((c) => (
                 <button key={c.id} type="button" aria-pressed={combo === c.id} onClick={() => apply(c.id, c.weights)} className={`rounded px-2 py-1.5 text-left text-xs ${combo === c.id ? "bg-accent-900 text-accent-300" : "border border-ink-700 text-ink-300"}`}>
                   {c.label}
                 </button>
@@ -220,13 +231,16 @@ function Measurements({ frame }: { frame: FaceFrame }) {
 
 /** Eye pivots and per-target deformation, computed from the loaded geometry (rest pose). */
 function measure(root: THREE.Object3D, names: string[]): FaceFrame {
-  const bone = (n: string) => {
-    const o = root.getObjectByName(n);
-    return o ? new THREE.Vector3().setFromMatrixPosition(o.matrixWorld) : null;
+  const bone = (n: RegExp) => {
+    let found: THREE.Object3D | undefined;
+    root.traverse((o) => {
+      if (!found && n.test(o.name)) found = o;
+    });
+    return found ? new THREE.Vector3().setFromMatrixPosition(found.matrixWorld) : null;
   };
-  const le = bone("LeftEye");
-  const re = bone("RightEye");
-  const head = bone("Head") ?? new THREE.Vector3(0, 1.6, 0);
+  const le = bone(/^(LeftEye|left_eye)$/);
+  const re = bone(/^(RightEye|right_eye)$/);
+  const head = bone(/^(Head|head)$/) ?? new THREE.Vector3(0, 1.6, 0);
   const eyeMid = le && re ? le.clone().add(re).multiplyScalar(0.5) : head;
   const eyes: FaceFrame["eyes"] = [];
   const deltas = new Map<string, { max: number; sum: THREE.Vector3; w: number; xs: number }>();
@@ -235,17 +249,24 @@ function measure(root: THREE.Object3D, names: string[]): FaceFrame {
     if (!m.isMesh) return;
     const mat = (Array.isArray(m.material) ? m.material[0] : m.material) as THREE.Material;
     const pos = m.geometry.getAttribute("position") as THREE.BufferAttribute;
-    const toWorld = (i: number, v = new THREE.Vector3()) => v.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld);
+    // Rendered (skinned) rest position in world space. For skinned meshes the raw attribute is in
+    // bind space; getVertexPosition applies the bind matrix and bone transforms (morphs are 0 here).
+    const toWorld = (i: number, v = new THREE.Vector3()) => {
+      if ((m as THREE.SkinnedMesh).isSkinnedMesh) return m.localToWorld((m as THREE.SkinnedMesh).getVertexPosition(i, v));
+      return v.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld);
+    };
     // glTF primitives often share one vertex buffer: only this primitive's indexed vertices count.
     const own: number[] = m.geometry.index ? [...new Set(Array.from(m.geometry.index.array as ArrayLike<number>))] : Array.from({ length: pos.count }, (_, i) => i);
-    if (mat?.name === "Eyes" && le && re) {
+    if (mat && /^Eye/.test(mat.name) && le && re) {
       for (const [nm, b] of [["LeftEye", le], ["RightEye", re]] as const) {
+        if (eyes.some((e) => e.name === nm)) continue;
         const box = new THREE.Box3();
         const v = new THREE.Vector3();
         for (const i of own) {
           toWorld(i, v);
           if ((v.x > eyeMid.x) === (b.x > eyeMid.x)) box.expandByPoint(v);
         }
+        if (box.isEmpty()) continue; // this primitive holds only the other eye
         const c = box.getCenter(new THREE.Vector3());
         const s = box.getSize(new THREE.Vector3());
         eyes.push({ name: nm, bone: b, centre: c, radiusMm: (Math.max(s.x, s.y) / 2) * 1000, offsetMm: c.distanceTo(b) * 1000 });

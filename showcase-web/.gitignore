@@ -3,3 +3,6 @@ node_modules/
 out/
 *.tsbuildinfo
 next-env.d.ts
+
+# 3D Scan Store head: one-time licence for this publication only, never commit
+public/characters/*.glb

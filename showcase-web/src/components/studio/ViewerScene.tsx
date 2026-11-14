@@ -1,19 +1,21 @@
 "use client";
 
-import { Grid, OrbitControls } from "@react-three/drei";
+import { Grid, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { Suspense, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { presetById, type CameraPresetId } from "@/lib/character/cameras";
 import { QUALITY_INFO, type Quality } from "@/lib/settings/settings";
+import type { CharacterAdapter } from "@/lib/character/adapter";
+import { SCAN_HEAD_URL, ScanHeadAdapter, type MorphBinding } from "@/lib/character/scan-head";
 
 /**
  * Real-time viewport. With no character connected it renders only an empty stage (floor grid); the
- * empty-state card is drawn by ViewerPanel. A future character mounts at <CharacterSlot/> with its
- * eye midpoint at the origin (docs/CHARACTER_INTEGRATION.md). Nothing face-like is ever drawn here.
+ * empty-state card is drawn by ViewerPanel. The built-in scan head mounts at <CharacterSlot/> with its
+ * eye midpoint at the origin (docs/CHARACTER_INTEGRATION.md).
  */
-export default function ViewerScene({ camera, nonce, quality }: { camera: CameraPresetId; nonce: number; quality: Quality }) {
+export default function ViewerScene({ camera, nonce, quality, adapter }: { camera: CameraPresetId; nonce: number; quality: Quality; adapter: CharacterAdapter }) {
   const p = presetById("front");
   const q = QUALITY_INFO[quality];
   return (
@@ -28,7 +30,7 @@ export default function ViewerScene({ camera, nonce, quality }: { camera: Camera
       <hemisphereLight args={["#cfd6e6", "#1a1c22", 0.6]} />
       <directionalLight position={[0.6, 0.8, 1]} intensity={1.2} />
       <CameraRig preset={camera} nonce={nonce} />
-      <CharacterSlot />
+      <Suspense fallback={null}>{adapter instanceof ScanHeadAdapter && <CharacterSlot adapter={adapter} />}</Suspense>
       <Grid
         position={[0, -0.33, 0]}
         args={[3, 3]}
@@ -46,9 +48,39 @@ export default function ViewerScene({ camera, nonce, quality }: { camera: Camera
   );
 }
 
-/** Integration point for the real character (docs/CHARACTER_INTEGRATION.md). Empty until connected. */
-function CharacterSlot() {
-  return null;
+/** The built-in scan head, placed with its eye midpoint at the origin; its morphs are driven by the adapter. */
+function CharacterSlot({ adapter }: { adapter: ScanHeadAdapter }) {
+  const { scene } = useGLTF(SCAN_HEAD_URL);
+  const offset = useMemo(() => {
+    scene.updateMatrixWorld(true);
+    const a = new THREE.Vector3(), b = new THREE.Vector3();
+    const l = scene.getObjectByName("left_eye"), r = scene.getObjectByName("right_eye");
+    if (!l || !r) return new THREE.Vector3();
+    l.getWorldPosition(a);
+    r.getWorldPosition(b);
+    return a.add(b).multiplyScalar(-0.5);
+  }, [scene]);
+
+  useEffect(() => {
+    const map = new Map<string, MorphBinding[]>();
+    scene.traverse((o) => {
+      const m = o as THREE.Mesh;
+      if (!m.isMesh) return;
+      m.frustumCulled = false;
+      if (!m.morphTargetDictionary || !m.morphTargetInfluences) return;
+      for (const [name, index] of Object.entries(m.morphTargetDictionary)) {
+        if (!map.has(name)) map.set(name, []);
+        map.get(name)!.push({ influences: m.morphTargetInfluences, index });
+      }
+    });
+    adapter.attach(map);
+    (window as unknown as { __studioScene?: THREE.Object3D }).__studioScene = scene;
+    return () => adapter.detach();
+  }, [scene, adapter]);
+
+  useFrame((_, dt) => adapter.tick(Math.min(dt, 0.1)));
+
+  return <primitive object={scene} position={offset} />;
 }
 
 /** Animates the camera to the selected preset; orbit and zoom stay free afterwards. */
