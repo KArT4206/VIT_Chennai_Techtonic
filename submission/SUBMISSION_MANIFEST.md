@@ -1,17 +1,17 @@
 # Submission manifest: Team Techtonic (VIT Chennai), Samsung PRISM XR Hackathon 2026, Track 1
 
-Built 2026-11-19. Deadline: 20 Nov 2026 (Google Form, submitted by the registered primary member).
+Built 2026-11-19, updated 2026-11-22. Deadline: 20 Nov 2026 (Google Form, submitted by the registered primary member).
 
 ## Upload these three files
 
 | File | Size | SHA-256 |
 |---|---|---|
 | `Techtonic.zip` | 145.3 MB | `acccb548c270bfab4719c3f173eda544a1b818fd858f56b1fe2d67a07790a0dc` |
-| `VIT_Chennai_Techtonic.pptx` | 5.5 MB | `db97cc463a8815fdbce2bf71f1f85b9d226eac42d2ccac3629c650702e8f820b` |
-| `Techtonic_Track1_demo.mp4` (2:09, captioned) | 9.2 MB | `4a49c58b1c12066c5dc1436af1d84abd1e3f0231bd040ae8b6c70419093ff3da` |
+| `VIT_Chennai_Techtonic.pptx` (official template, 9 slides; PDF copy alongside) | 1.5 MB | `9ef3f011dbd32018fa6d6dddfc70af4c7edfa9fc588cc0311b0f0d9e8aa3a1f2` |
+| `VIT_Chennai_Techtonic.mp4` (2:05, 1920×1080, team voice-over) | 8.6 MB | `a7cf7e5bd2e6cd8a18d44096e902e8b9ec7f5f8a21f8d5f7bc7a5badcf54df55` |
 
-Also here: `VIT_Chennai_Techtonic.pdf` (PDF copy of the deck), `NARRATION_voiceover_script.md` (the script
-the burned-in captions follow; the video has captions and no audio), `evidence/`.
+Also here: `VIT_Chennai_Techtonic.pdf` (PDF copy of the deck), `VIT_Chennai_Techtonic_detailed_deck.pptx` (longer technical deck), `evidence/`.
+Public repository: https://github.com/KArT4206/VIT_Chennai_Techtonic (release v1.0 holds `Techtonic.zip`).
 
 ## What Techtonic.zip contains
 
