@@ -21,7 +21,7 @@ from mathutils import Vector
 CAMERA_DISTANCE_M = 0.40
 FIXATION_DISTANCE_M = 0.35
 RESOLUTION_PX = 1024
-FOCAL_LENGTH_MM = 60.0       # 36 mm sensor -> 0.24 m wide field at 0.40 m: whole face, eyes large
+FOCAL_LENGTH_MM = 96.0       # 36 mm sensor -> 0.15 m wide field at 0.40 m: whole face width, pupil shifts ~1.6x larger than 60 mm
 SENSOR_WIDTH_MM = 36.0
 
 HUMAN_INFO = {

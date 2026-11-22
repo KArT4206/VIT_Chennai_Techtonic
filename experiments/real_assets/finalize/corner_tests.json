@@ -1,0 +1,99 @@
+{
+ "01_neutral": {},
+ "02_jaw25": {
+  "jaw_open": 0.25
+ },
+ "03_jaw50": {
+  "jaw_open": 0.5
+ },
+ "04_jaw75": {
+  "jaw_open": 0.75
+ },
+ "05_jaw100": {
+  "jaw_open": 1.0
+ },
+ "06_gentle_smile": {
+  "mouth_smile_L": 0.6,
+  "mouth_smile_R": 0.6,
+  "cheek_raise_L": 0.25,
+  "cheek_raise_R": 0.25
+ },
+ "07_happy_smile": {
+  "mouth_smile_L": 0.85,
+  "mouth_smile_R": 0.85,
+  "cheek_raise_L": 0.5,
+  "cheek_raise_R": 0.5,
+  "upper_lip_raise_L": 0.3,
+  "upper_lip_raise_R": 0.3,
+  "squint_L": 0.15,
+  "squint_R": 0.15
+ },
+ "08_big_grin": {
+  "mouth_smile_L": 1,
+  "mouth_smile_R": 1,
+  "cheek_raise_L": 0.8,
+  "cheek_raise_R": 0.8,
+  "upper_lip_raise_L": 0.7,
+  "upper_lip_raise_R": 0.7,
+  "lower_lip_depress_L": 0.6,
+  "lower_lip_depress_R": 0.6,
+  "jaw_open": 0.12,
+  "squint_L": 0.3,
+  "squint_R": 0.3,
+  "corr_jaw_smile_L": 0.12,
+  "corr_jaw_smile_R": 0.12
+ },
+ "09_pout": {
+  "lip_pout_L": 1,
+  "lip_pout_R": 1,
+  "lips_pucker_L": 0.2,
+  "lips_pucker_R": 0.2,
+  "mouth_frown_L": 0.3,
+  "mouth_frown_R": 0.3
+ },
+ "10_lip_press": {
+  "lips_press_L": 1,
+  "lips_press_R": 1,
+  "mouth_frown_L": 0.15,
+  "mouth_frown_R": 0.15
+ },
+ "11_asymmetric_smirk": {
+  "mouth_smile_L": 0.8,
+  "cheek_raise_L": 0.35,
+  "lips_press_R": 0.3,
+  "squint_L": 0.1
+ },
+ "12_smile_jaw50": {
+  "mouth_smile_L": 0.8,
+  "mouth_smile_R": 0.8,
+  "cheek_raise_L": 0.5,
+  "cheek_raise_R": 0.5,
+  "jaw_open": 0.5,
+  "corr_jaw_smile_L": 0.5,
+  "corr_jaw_smile_R": 0.5
+ },
+ "13_smile_jaw100": {
+  "mouth_smile_L": 0.8,
+  "mouth_smile_R": 0.8,
+  "cheek_raise_L": 0.5,
+  "cheek_raise_R": 0.5,
+  "jaw_open": 1.0,
+  "corr_jaw_smile_L": 0.8,
+  "corr_jaw_smile_R": 0.8
+ },
+ "14_laughter": {
+  "mouth_smile_L": 1,
+  "mouth_smile_R": 1,
+  "cheek_raise_L": 0.9,
+  "cheek_raise_R": 0.9,
+  "upper_lip_raise_L": 0.6,
+  "upper_lip_raise_R": 0.6,
+  "lower_lip_depress_L": 0.5,
+  "lower_lip_depress_R": 0.5,
+  "jaw_open": 0.4,
+  "squint_L": 0.35,
+  "squint_R": 0.35,
+  "corr_jaw_smile_L": 0.4,
+  "corr_jaw_smile_R": 0.4
+ }
+}

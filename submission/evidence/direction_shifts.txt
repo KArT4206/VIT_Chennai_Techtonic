@@ -1,0 +1,10 @@
+left L shift 14.47 px vector [-14.47, 0.0]
+left R shift 14.93 px vector [-14.93, 0.0]
+right L shift 14.85 px vector [14.85, -0.0]
+right R shift 14.55 px vector [14.55, 0.0]
+up L shift 14.67 px vector [0.01, -14.67]
+up R shift 14.75 px vector [-0.01, -14.75]
+down L shift 14.67 px vector [0.01, 14.67]
+down R shift 14.75 px vector [-0.01, 14.75]
+reset L offset from mean of 4 directions 0.10 px
+reset R offset from mean of 4 directions 0.10 px

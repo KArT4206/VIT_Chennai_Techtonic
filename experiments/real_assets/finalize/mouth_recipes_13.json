@@ -1,0 +1,109 @@
+{
+ "01_neutral": {},
+ "02_gentle_smile": {
+  "mouth_smile_L": 0.6,
+  "mouth_smile_R": 0.6,
+  "cheek_raise_L": 0.25,
+  "cheek_raise_R": 0.25
+ },
+ "03_happy_smile": {
+  "mouth_smile_L": 0.85,
+  "mouth_smile_R": 0.85,
+  "cheek_raise_L": 0.5,
+  "cheek_raise_R": 0.5,
+  "upper_lip_raise_L": 0.3,
+  "upper_lip_raise_R": 0.3,
+  "squint_L": 0.15,
+  "squint_R": 0.15
+ },
+ "04_big_grin": {
+  "mouth_smile_L": 1,
+  "mouth_smile_R": 1,
+  "cheek_raise_L": 0.8,
+  "cheek_raise_R": 0.8,
+  "upper_lip_raise_L": 0.7,
+  "upper_lip_raise_R": 0.7,
+  "lower_lip_depress_L": 0.6,
+  "lower_lip_depress_R": 0.6,
+  "jaw_open": 0.12,
+  "squint_L": 0.3,
+  "squint_R": 0.3,
+  "corr_jaw_smile_L": 0.12,
+  "corr_jaw_smile_R": 0.12
+ },
+ "05_laughter": {
+  "mouth_smile_L": 1,
+  "mouth_smile_R": 1,
+  "cheek_raise_L": 0.9,
+  "cheek_raise_R": 0.9,
+  "upper_lip_raise_L": 0.6,
+  "upper_lip_raise_R": 0.6,
+  "lower_lip_depress_L": 0.5,
+  "lower_lip_depress_R": 0.5,
+  "jaw_open": 0.4,
+  "squint_L": 0.35,
+  "squint_R": 0.35,
+  "corr_jaw_smile_L": 0.4,
+  "corr_jaw_smile_R": 0.4
+ },
+ "06_open_mouth": {
+  "jaw_open": 0.45,
+  "upper_lip_raise_L": 0.2,
+  "upper_lip_raise_R": 0.2
+ },
+ "07_jaw_drop": {
+  "jaw_open": 1.0,
+  "brow_raise_L": 0.3,
+  "brow_raise_R": 0.3
+ },
+ "08_pout": {
+  "lip_pout_L": 1,
+  "lip_pout_R": 1,
+  "lips_pucker_L": 0.2,
+  "lips_pucker_R": 0.2,
+  "mouth_frown_L": 0.3,
+  "mouth_frown_R": 0.3
+ },
+ "09_lip_press": {
+  "lips_press_L": 1,
+  "lips_press_R": 1,
+  "mouth_frown_L": 0.15,
+  "mouth_frown_R": 0.15
+ },
+ "10_asymmetric_smirk": {
+  "mouth_smile_L": 0.8,
+  "cheek_raise_L": 0.35,
+  "lips_press_R": 0.3,
+  "squint_L": 0.1
+ },
+ "11_pursed_lips": {
+  "lips_pucker_L": 1,
+  "lips_pucker_R": 1,
+  "lips_press_L": 0.3,
+  "lips_press_R": 0.3
+ },
+ "12_smile_plus_jaw": {
+  "mouth_smile_L": 0.8,
+  "mouth_smile_R": 0.8,
+  "cheek_raise_L": 0.5,
+  "cheek_raise_R": 0.5,
+  "jaw_open": 0.35,
+  "corr_jaw_smile_L": 0.35,
+  "corr_jaw_smile_R": 0.35
+ },
+ "13_laughter_plus_squint": {
+  "mouth_smile_L": 1,
+  "mouth_smile_R": 1,
+  "cheek_raise_L": 1,
+  "cheek_raise_R": 1,
+  "upper_lip_raise_L": 0.6,
+  "upper_lip_raise_R": 0.6,
+  "lower_lip_depress_L": 0.5,
+  "lower_lip_depress_R": 0.5,
+  "jaw_open": 0.4,
+  "squint_L": 0.7,
+  "squint_R": 0.7,
+  "corr_jaw_smile_L": 0.4,
+  "corr_jaw_smile_R": 0.4
+ }
+}

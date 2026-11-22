@@ -1,4 +1,31 @@
-# Synthetic Eye Movement & Virtual Camera Rendering (Track 1)
+# VIT_Chennai_Techtonic: Synthetic Eye Movement & Virtual Camera Rendering (Track 1)
+
+**Samsung PRISM XR Hackathon 2026, Track 1. Team Techtonic, VIT Chennai.**
+
+## Submission checklist
+
+| Item | Where |
+|---|---|
+| Submission package (`Techtonic.zip`: `scene.blend`, `wrapper/eyes.py`, `renders/`, `metadata.json`, `README.md`) | [Release v1.0](../../releases/tag/v1.0) (145 MB, too large for a git file) |
+| Source code | this repository: `wrapper/`, `tools/`, `demo/`, `expression/`, `packaging/` |
+| Presentation | `submission/VIT_Chennai_Techtonic.pptx` and `.pdf` (official template), plus `submission/VIT_Chennai_Techtonic_detailed_deck.pptx` |
+| Video | `submission/VIT_Chennai_Techtonic.mp4` (also attached to the release) |
+| AI disclosure | [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md) |
+| README | this file; the evaluator README is `packaging/README_scan.md` (inside the zip as `README.md`) |
+| APK/SDK | not applicable (Blender + Python) |
+| Other | `submission/evidence/` (contact sheet, direction proof, validation logs), `submission/SUBMISSION_MANIFEST.md` |
+
+**Quick start:** download `Techtonic.zip` from the release, unzip, then run
+`blender -b scene.blend -P wrapper/eyes.py` (Blender 5.3). It renders the 10 clockwise frames to `renders/` and writes `metadata.json`.
+
+**Verified results:** pupil ground truth vs a lighting-free mask, mean 0.24 px / max 0.39 px; 19/19 API tests; regenerated metadata byte-identical; all five directions pass (14.5–14.9 px shifts, reset within 0.10 px).
+
+**Licence note:** the scanned head is the 3D Scan Store Free HD Head, used with the vendor's permission for this hackathon submission only. It may not be reused or redistributed outside this project.
+
+---
+
+## Development notes
+
 
 A textured, rigged human face in Blender with a Python wrapper that rotates both eyeballs
 about their true centres and renders calibrated 1024×1024 frames with per-frame ground truth.

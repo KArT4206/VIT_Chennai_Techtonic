@@ -12,7 +12,7 @@ import sys
 
 from PIL import Image, ImageDraw
 
-CROP = (300, 455, 724, 575)          # eye region of the 1024x1024 render
+CROP = (172, 418, 852, 610)          # eye region of the 1024x1024 render (96 mm lens)
 SCALE = 1.0
 TILE_W = int((CROP[2] - CROP[0]) * SCALE)
 TILE_H = int((CROP[3] - CROP[1]) * SCALE)

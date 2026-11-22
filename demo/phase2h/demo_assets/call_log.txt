@@ -1,0 +1,20 @@
+# demo_scene.py  Blender 5.3.0  device METAL  samples 512
+# package: /Users/b.karthik/Desktop/Projects/SyntheticEyes-Track1/demo/phase2h/work/pkg
+>>> eyes.reset()
+>>> eyes.render('00_reset.png')   # 33.2 s
+    input {"h": 0.0, "v": 0.0}  pupil_center_2D_L [636.57, 512.41]  pupil_center_2D_R [387.43, 512.41]
+>>> eyes.move(-1, 0)
+>>> eyes.render('01_left.png')   # 35.0 s
+    input {"h": -1.0, "v": 0.0}  pupil_center_2D_L [627.98, 512.41]  pupil_center_2D_R [378.62, 512.41]
+>>> eyes.move(1, 0)
+>>> eyes.render('02_right.png')   # 36.5 s
+    input {"h": 1.0, "v": 0.0}  pupil_center_2D_L [645.38, 512.41]  pupil_center_2D_R [396.02, 512.41]
+>>> eyes.move(0, 1)
+>>> eyes.render('03_up.png')   # 36.6 s
+    input {"h": 0.0, "v": 1.0}  pupil_center_2D_L [636.57, 503.7]  pupil_center_2D_R [387.43, 503.7]
+>>> eyes.move(0, -1)
+>>> eyes.render('04_down.png')   # 37.5 s
+    input {"h": 0.0, "v": -1.0}  pupil_center_2D_L [636.57, 521.12]  pupil_center_2D_R [387.43, 521.12]
+>>> eyes.reset()
+>>> eyes.render('05_reset_again.png')   # 36.6 s
+    input {"h": 0.0, "v": 0.0}  pupil_center_2D_L [636.57, 512.41]  pupil_center_2D_R [387.43, 512.41]

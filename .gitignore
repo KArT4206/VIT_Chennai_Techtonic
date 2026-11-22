@@ -4,3 +4,8 @@ __pycache__/
 *.blend1
 .codeatlas/
 dist/
+
+# generated demo working dirs
+demo/*/work/
+demo/*/rerun.log
+demo/*/work_run.log

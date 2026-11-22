@@ -1,0 +1,24 @@
+pose     0 L: metadata (713.71, 498.46)  mask (713.85, 498.73)  error 0.31 px
+pose     0 R: metadata (310.37, 496.04)  mask (310.36, 496.35)  error 0.31 px
+pose     1 L: metadata (722.38, 501.17)  mask (722.50, 501.42)  error 0.27 px
+pose     1 R: metadata (318.97, 498.94)  mask (318.87, 499.32)  error 0.39 px
+pose     2 L: metadata (727.81, 508.54)  mask (727.79, 508.69)  error 0.16 px
+pose     2 R: metadata (324.23, 506.29)  mask (324.06, 506.47)  error 0.24 px
+pose     3 L: metadata (727.81, 517.71)  mask (727.77, 517.80)  error 0.10 px
+pose     3 R: metadata (324.23, 515.30)  mask (324.02, 515.39)  error 0.23 px
+pose     4 L: metadata (722.39, 525.08)  mask (722.47, 525.13)  error 0.10 px
+pose     4 R: metadata (318.97, 522.64)  mask (318.78, 522.63)  error 0.19 px
+pose     5 L: metadata (713.71, 527.79)  mask (713.84, 527.94)  error 0.20 px
+pose     5 R: metadata (310.37, 525.55)  mask (310.33, 525.60)  error 0.07 px
+pose     6 L: metadata (705.16, 524.90)  mask (705.40, 525.01)  error 0.26 px
+pose     6 R: metadata (301.64, 522.82)  mask (301.67, 522.91)  error 0.10 px
+pose     7 L: metadata (699.93, 517.60)  mask (700.26, 517.71)  error 0.35 px
+pose     7 R: metadata (296.19, 515.41)  mask (296.39, 515.59)  error 0.27 px
+pose     8 L: metadata (699.93, 508.64)  mask (700.27, 508.78)  error 0.37 px
+pose     8 R: metadata (296.19, 506.18)  mask (296.39, 506.37)  error 0.27 px
+pose     9 L: metadata (705.16, 501.34)  mask (705.50, 501.47)  error 0.37 px
+pose     9 R: metadata (301.64, 498.77)  mask (301.69, 499.08)  error 0.31 px
+pose reset L: metadata (713.70, 513.12)  mask (713.82, 513.31)  error 0.22 px
+pose reset R: metadata (310.38, 510.80)  mask (310.37, 510.94)  error 0.14 px
+
+PUPIL MASK: 22 pupils, mean error 0.24 px, max 0.39 px

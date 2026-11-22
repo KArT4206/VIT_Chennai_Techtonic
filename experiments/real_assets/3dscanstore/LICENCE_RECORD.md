@@ -55,3 +55,30 @@ Add the vendor's actual reply (`.eml`, `.pdf` or screenshot) next to this file a
 - repository use;
 - attribution;
 - any other conditions.
+
+## Update 2026-11-14: user statement on vendor permission
+
+The user states (chat, 2026-11-14): "they told me i can use it for only this time so use the 8k skin colour".
+
+Recorded scope (as stated, not yet in writing):
+- One-time use of the Free HD Head for this project, including its 8K skin colour texture.
+- Not stated: public website hosting, redistribution, GitHub, downloads, or reuse beyond this project.
+
+Handling until the written message is on file:
+- The scan-derived web GLB lives only in `build/web/` (git-ignored) and is served only to a
+  local preview on the user's machine (`PRIVATE_CHARACTER_GLB` env var). It is not committed,
+  not placed in any app's public folder, not deployed and not shared.
+- Please add the vendor's actual message next to this file; public use waits for it.
+
+## Clarification (2026-11-14)
+
+User's words: "only one time means only for this publication can be used from next on i cant use it".
+
+* Scope: this one publication only (Samsung PRISM Hackathon 2026, Track 1).
+* No reuse after it: not in later projects, versions, demos or publications.
+* Once this publication is finished, delete `build/web/gnm_scan_private.glb` and the other scan-derived builds, and remove the `expression-studio-private` launch entry.
+* Still not stated: whether public hosting or redistribution is allowed. Until the user confirms, it stays local only.
+
+## Public use (2026-11-14)
+
+User's words: "Public is allowed". The scan head may be shown publicly as part of this one publication only. After it, no reuse. The rule against pushing to GitHub stays in force until the user lifts it.
