@@ -1,0 +1,60 @@
+{
+ "all_match": true,
+ "note": "every figure shown on the research dashboard is a byte-identical copy of a result file in AUDIT/results; the hackathon deck/video figures belong to the submission and are not part of this research release",
+ "figures": [
+  {
+   "figure": "dashboard/img/ws1_depth__depth_fit_curves.png",
+   "source": "ws1_depth/depth_fit_curves.png",
+   "sha256": "98e2b9ab0783b1762d4ca777edf8fa14525d43df70c9364f571c4a47950a9f98",
+   "matches_source": true
+  },
+  {
+   "figure": "dashboard/img/release_overlays.png",
+   "source": "release_overlays.png",
+   "sha256": "09317e3a74b99ba6ecc02ad2279e471f27309efc94ca16fcc2f1ad6f3fbff8a9",
+   "matches_source": true
+  },
+  {
+   "figure": "dashboard/img/full_roi_overlays.png",
+   "source": "full_roi_overlays.png",
+   "sha256": "4c49f91c1f4a73154adb55c7b0c27e7a8644f37858c99b3e92a288762a961892",
+   "matches_source": true
+  },
+  {
+   "figure": "dashboard/img/ws2_degradation__degradation_levels_frame03_L.png",
+   "source": "ws2_degradation/degradation_levels_frame03_L.png",
+   "sha256": "aada0f96a67c56512ece1d2e5cf7a2a9a206253c83252e7ce8927ab4dc8fe688",
+   "matches_source": true
+  },
+  {
+   "figure": "dashboard/img/ws5_dynamics__saccade.png",
+   "source": "ws5_dynamics/saccade.png",
+   "sha256": "521768b9ed34f6532a3e28b8795cae720dce95b1cf646fc366b95bf4d902fe6b",
+   "matches_source": true
+  },
+  {
+   "figure": "dashboard/img/ws5_dynamics__pursuit.png",
+   "source": "ws5_dynamics/pursuit.png",
+   "sha256": "d5c45720dab340b8c8e320a544c50773ab6280e5ebba800ddf0d0a30cf318c35",
+   "matches_source": true
+  },
+  {
+   "figure": "dashboard/img/ws5_dynamics__vergence.png",
+   "source": "ws5_dynamics/vergence.png",
+   "sha256": "3cc65714b7a820de0dab5436265838e73416e3ac6dbe4ef08e60e9ce3b562fd1",
+   "matches_source": true
+  },
+  {
+   "figure": "dashboard/img/ws8_comparison__comparison_sheet.png",
+   "source": "ws8_comparison/comparison_sheet.png",
+   "sha256": "8438643f7a71aeb05c4bb3a0e870881c5f078a010decd74dfeb4eccda1695028",
+   "matches_source": true
+  },
+  {
+   "figure": "dashboard/img/ws4_dataset__coverage.png",
+   "source": "ws4_dataset/coverage.png",
+   "sha256": "a915c1bf44942063482113388a7e6c99b6529d50d583c82d655fc1bc562b60f5",
+   "matches_source": true
+  }
+ ]
+}

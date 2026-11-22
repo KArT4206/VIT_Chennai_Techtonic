@@ -1,0 +1,1 @@
+WS1 depth fit on the first renders (scratchpad, 2026-11-22/23), before the clean-extraction run. Kept for comparison only; the authoritative fit is ../ws1_depth/. Differences: ../run_comparison.json -> depth_fit.
