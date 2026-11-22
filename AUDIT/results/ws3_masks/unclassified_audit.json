@@ -1,0 +1,762 @@
+{
+ "summary": {
+  "frames": 11,
+  "unclassified_fraction_range": [
+   0.13104,
+   0.1311
+  ],
+  "max_unclassified_in_eye_band": 0.010943,
+  "min_grey_share": 0.9804,
+  "interpretation": "About 98% of unclassified pixels are neutral grey, concentrated in the outer left/right image columns outside the head silhouette. Up to ~1.1% of eye-band pixels are also unclassified (see eye_band_unclassified_grey_share; their cause is not established here). The grey pixels are consistent with the world background still rendering grey (masks.py sets world.use_nodes=False, which Blender 5.3 deprecates). They are NOT reassigned here; segmentation metrics stay provisional until masks.py renders a true black background."
+ },
+ "frames": {
+  "frame_00.png": {
+   "unclassified_fraction": 0.1311,
+   "neutral_grey_fraction_of_unclassified": 0.9804,
+   "unclassified_in_eye_band": 0.010858,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0139,
+    0.0057,
+    0.0013,
+    0.0011,
+    0.0062,
+    0.0151,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.107,
+    0.0738,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_01.png": {
+   "unclassified_fraction": 0.13105,
+   "neutral_grey_fraction_of_unclassified": 0.9807,
+   "unclassified_in_eye_band": 0.010497,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0139,
+    0.0053,
+    0.0013,
+    0.0011,
+    0.0061,
+    0.0152,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.1067,
+    0.0737,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_02.png": {
+   "unclassified_fraction": 0.13105,
+   "neutral_grey_fraction_of_unclassified": 0.9808,
+   "unclassified_in_eye_band": 0.0103,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0139,
+    0.005,
+    0.0013,
+    0.0011,
+    0.0061,
+    0.0155,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.107,
+    0.0733,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_03.png": {
+   "unclassified_fraction": 0.13104,
+   "neutral_grey_fraction_of_unclassified": 0.9808,
+   "unclassified_in_eye_band": 0.010223,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0139,
+    0.005,
+    0.0013,
+    0.0011,
+    0.0062,
+    0.0154,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.1073,
+    0.073,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_04.png": {
+   "unclassified_fraction": 0.13108,
+   "neutral_grey_fraction_of_unclassified": 0.9805,
+   "unclassified_in_eye_band": 0.010678,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0139,
+    0.0053,
+    0.0013,
+    0.0011,
+    0.0064,
+    0.0153,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.1079,
+    0.0727,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_05.png": {
+   "unclassified_fraction": 0.13108,
+   "neutral_grey_fraction_of_unclassified": 0.9805,
+   "unclassified_in_eye_band": 0.010798,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0139,
+    0.0056,
+    0.0013,
+    0.0011,
+    0.0063,
+    0.015,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.108,
+    0.0726,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_06.png": {
+   "unclassified_fraction": 0.1311,
+   "neutral_grey_fraction_of_unclassified": 0.9804,
+   "unclassified_in_eye_band": 0.010926,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.014,
+    0.0058,
+    0.0013,
+    0.0011,
+    0.0061,
+    0.015,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.1079,
+    0.0728,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_07.png": {
+   "unclassified_fraction": 0.13107,
+   "neutral_grey_fraction_of_unclassified": 0.9806,
+   "unclassified_in_eye_band": 0.010635,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0141,
+    0.0057,
+    0.0013,
+    0.0011,
+    0.006,
+    0.0149,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.1074,
+    0.0731,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_08.png": {
+   "unclassified_fraction": 0.13107,
+   "neutral_grey_fraction_of_unclassified": 0.9806,
+   "unclassified_in_eye_band": 0.01054,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0142,
+    0.0057,
+    0.0013,
+    0.0011,
+    0.006,
+    0.0149,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.107,
+    0.0734,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_09.png": {
+   "unclassified_fraction": 0.1311,
+   "neutral_grey_fraction_of_unclassified": 0.9804,
+   "unclassified_in_eye_band": 0.010858,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.014,
+    0.0058,
+    0.0013,
+    0.0011,
+    0.0061,
+    0.015,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.107,
+    0.0737,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  },
+  "frame_10.png": {
+   "unclassified_fraction": 0.1311,
+   "neutral_grey_fraction_of_unclassified": 0.9804,
+   "unclassified_in_eye_band": 0.010943,
+   "eye_band_unclassified_grey_share": 0.0,
+   "by_column_band": [
+    0.5014,
+    0.0139,
+    0.0055,
+    0.0013,
+    0.0011,
+    0.0064,
+    0.0151,
+    0.5041
+   ],
+   "by_row_band": [
+    0.2531,
+    0.1249,
+    0.0872,
+    0.1076,
+    0.0731,
+    0.0843,
+    0.1574,
+    0.1611
+   ],
+   "top_colours": [
+    [
+     [
+      113,
+      112,
+      111
+     ],
+     5279
+    ],
+    [
+     [
+      114,
+      113,
+      112
+     ],
+     4673
+    ],
+    [
+     [
+      109,
+      108,
+      108
+     ],
+     4557
+    ],
+    [
+     [
+      110,
+      109,
+      109
+     ],
+     4526
+    ],
+    [
+     [
+      108,
+      107,
+      107
+     ],
+     4445
+    ]
+   ]
+  }
+ }
+}

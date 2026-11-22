@@ -1,0 +1,366 @@
+{
+ "method": "WS1: attribute detector-minus-ground-truth offsets to pupil depth + a constant offset (reproducible).",
+ "note": "detector uses pixel-centre (i+0.5) convention (fixed 2026-11-22)",
+ "results": {
+  "full_roi": {
+   "n": 15,
+   "vs_wrapper_gt_refracted_14.19mm": {
+    "constant_offset_px": [
+     0.059,
+     2.857
+    ],
+    "residual_mean": 1.608,
+    "residual_max": 2.807
+   },
+   "vs_unrefracted_depth_14.19mm": {
+    "constant_offset_px": [
+     -0.031,
+     2.809
+    ],
+    "residual_mean": 2.1,
+    "residual_max": 3.301
+   },
+   "vs_unrefracted_depth_15mm": {
+    "constant_offset_px": [
+     0.08,
+     2.82
+    ],
+    "residual_mean": 1.364,
+    "residual_max": 2.494
+   },
+   "vs_unrefracted_depth_15.5mm": {
+    "constant_offset_px": [
+     0.149,
+     2.826
+    ],
+    "residual_mean": 0.967,
+    "residual_max": 2.003
+   },
+   "vs_unrefracted_depth_15.8mm": {
+    "constant_offset_px": [
+     0.19,
+     2.83
+    ],
+    "residual_mean": 0.776,
+    "residual_max": 1.715
+   },
+   "vs_unrefracted_depth_16mm": {
+    "constant_offset_px": [
+     0.218,
+     2.832
+    ],
+    "residual_mean": 0.675,
+    "residual_max": 1.527
+   },
+   "best_fit_depth_mm": 16.0,
+   "best_fit": {
+    "constant_offset_px": [
+     0.218,
+     2.832
+    ],
+    "residual_mean": 0.675,
+    "residual_max": 1.527
+   }
+  },
+  "no_lids_roi": {
+   "n": 19,
+   "vs_wrapper_gt_refracted_14.19mm": {
+    "constant_offset_px": [
+     0.572,
+     3.106
+    ],
+    "residual_mean": 1.445,
+    "residual_max": 1.866
+   },
+   "vs_unrefracted_depth_14.19mm": {
+    "constant_offset_px": [
+     0.537,
+     3.031
+    ],
+    "residual_mean": 1.945,
+    "residual_max": 2.477
+   },
+   "vs_unrefracted_depth_15mm": {
+    "constant_offset_px": [
+     0.566,
+     3.084
+    ],
+    "residual_mean": 1.198,
+    "residual_max": 1.588
+   },
+   "vs_unrefracted_depth_15.5mm": {
+    "constant_offset_px": [
+     0.584,
+     3.117
+    ],
+    "residual_mean": 0.743,
+    "residual_max": 1.049
+   },
+   "vs_unrefracted_depth_15.8mm": {
+    "constant_offset_px": [
+     0.595,
+     3.136
+    ],
+    "residual_mean": 0.479,
+    "residual_max": 0.738
+   },
+   "vs_unrefracted_depth_16mm": {
+    "constant_offset_px": [
+     0.602,
+     3.15
+    ],
+    "residual_mean": 0.318,
+    "residual_max": 0.547
+   },
+   "best_fit_depth_mm": 16.0,
+   "best_fit": {
+    "constant_offset_px": [
+     0.602,
+     3.15
+    ],
+    "residual_mean": 0.318,
+    "residual_max": 0.547
+   }
+  },
+  "no_lids_lens_roi": {
+   "n": 22,
+   "vs_wrapper_gt_refracted_14.19mm": {
+    "constant_offset_px": [
+     0.836,
+     2.894
+    ],
+    "residual_mean": 1.332,
+    "residual_max": 1.582
+   },
+   "vs_unrefracted_depth_14.19mm": {
+    "constant_offset_px": [
+     0.823,
+     2.853
+    ],
+    "residual_mean": 1.848,
+    "residual_max": 2.227
+   },
+   "vs_unrefracted_depth_15mm": {
+    "constant_offset_px": [
+     0.823,
+     2.853
+    ],
+    "residual_mean": 1.08,
+    "residual_max": 1.342
+   },
+   "vs_unrefracted_depth_15.5mm": {
+    "constant_offset_px": [
+     0.823,
+     2.853
+    ],
+    "residual_mean": 0.606,
+    "residual_max": 0.797
+   },
+   "vs_unrefracted_depth_15.8mm": {
+    "constant_offset_px": [
+     0.823,
+     2.852
+    ],
+    "residual_mean": 0.324,
+    "residual_max": 0.473
+   },
+   "vs_unrefracted_depth_16mm": {
+    "constant_offset_px": [
+     0.823,
+     2.853
+    ],
+    "residual_mean": 0.142,
+    "residual_max": 0.265
+   },
+   "best_fit_depth_mm": 16.0,
+   "best_fit": {
+    "constant_offset_px": [
+     0.823,
+     2.853
+    ],
+    "residual_mean": 0.142,
+    "residual_max": 0.265
+   }
+  },
+  "no_lids_lens_nodisp_roi": {
+   "n": 22,
+   "vs_wrapper_gt_refracted_14.19mm": {
+    "constant_offset_px": [
+     1.086,
+     2.527
+    ],
+    "residual_mean": 1.334,
+    "residual_max": 1.599
+   },
+   "vs_unrefracted_depth_14.19mm": {
+    "constant_offset_px": [
+     1.073,
+     2.486
+    ],
+    "residual_mean": 1.85,
+    "residual_max": 2.164
+   },
+   "vs_unrefracted_depth_15mm": {
+    "constant_offset_px": [
+     1.073,
+     2.486
+    ],
+    "residual_mean": 1.082,
+    "residual_max": 1.295
+   },
+   "vs_unrefracted_depth_15.5mm": {
+    "constant_offset_px": [
+     1.073,
+     2.486
+    ],
+    "residual_mean": 0.608,
+    "residual_max": 0.757
+   },
+   "vs_unrefracted_depth_15.8mm": {
+    "constant_offset_px": [
+     1.073,
+     2.486
+    ],
+    "residual_mean": 0.325,
+    "residual_max": 0.436
+   },
+   "vs_unrefracted_depth_16mm": {
+    "constant_offset_px": [
+     1.073,
+     2.486
+    ],
+    "residual_mean": 0.144,
+    "residual_max": 0.23
+   },
+   "best_fit_depth_mm": 16.0,
+   "best_fit": {
+    "constant_offset_px": [
+     1.073,
+     2.486
+    ],
+    "residual_mean": 0.144,
+    "residual_max": 0.23
+   }
+  },
+  "no_lids_lens_flat_roi": {
+   "n": 22,
+   "vs_wrapper_gt_refracted_14.19mm": {
+    "constant_offset_px": [
+     1.098,
+     2.444
+    ],
+    "residual_mean": 1.298,
+    "residual_max": 1.534
+   },
+   "vs_unrefracted_depth_14.19mm": {
+    "constant_offset_px": [
+     1.085,
+     2.403
+    ],
+    "residual_mean": 1.814,
+    "residual_max": 2.092
+   },
+   "vs_unrefracted_depth_15mm": {
+    "constant_offset_px": [
+     1.085,
+     2.403
+    ],
+    "residual_mean": 1.047,
+    "residual_max": 1.231
+   },
+   "vs_unrefracted_depth_15.5mm": {
+    "constant_offset_px": [
+     1.085,
+     2.403
+    ],
+    "residual_mean": 0.573,
+    "residual_max": 0.711
+   },
+   "vs_unrefracted_depth_15.8mm": {
+    "constant_offset_px": [
+     1.085,
+     2.403
+    ],
+    "residual_mean": 0.292,
+    "residual_max": 0.399
+   },
+   "vs_unrefracted_depth_16mm": {
+    "constant_offset_px": [
+     1.085,
+     2.403
+    ],
+    "residual_mean": 0.12,
+    "residual_max": 0.191
+   },
+   "best_fit_depth_mm": 16.0,
+   "best_fit": {
+    "constant_offset_px": [
+     1.085,
+     2.403
+    ],
+    "residual_mean": 0.12,
+    "residual_max": 0.191
+   }
+  },
+  "release": {
+   "n": 18,
+   "vs_wrapper_gt_refracted_14.19mm": {
+    "constant_offset_px": [
+     0.465,
+     3.079
+    ],
+    "residual_mean": 1.796,
+    "residual_max": 2.8
+   },
+   "vs_unrefracted_depth_14.19mm": {
+    "constant_offset_px": [
+     0.415,
+     3.088
+    ],
+    "residual_mean": 2.348,
+    "residual_max": 3.353
+   },
+   "vs_unrefracted_depth_15mm": {
+    "constant_offset_px": [
+     0.47,
+     3.013
+    ],
+    "residual_mean": 1.528,
+    "residual_max": 2.457
+   },
+   "vs_unrefracted_depth_15.5mm": {
+    "constant_offset_px": [
+     0.504,
+     2.966
+    ],
+    "residual_mean": 1.03,
+    "residual_max": 1.902
+   },
+   "vs_unrefracted_depth_15.8mm": {
+    "constant_offset_px": [
+     0.524,
+     2.938
+    ],
+    "residual_mean": 0.746,
+    "residual_max": 1.57
+   },
+   "vs_unrefracted_depth_16mm": {
+    "constant_offset_px": [
+     0.538,
+     2.92
+    ],
+    "residual_mean": 0.576,
+    "residual_max": 1.349
+   },
+   "best_fit_depth_mm": 16.0,
+   "best_fit": {
+    "constant_offset_px": [
+     0.538,
+     2.92
+    ],
+    "residual_mean": 0.576,
+    "residual_max": 1.349
+   }
+  }
+ }
+}

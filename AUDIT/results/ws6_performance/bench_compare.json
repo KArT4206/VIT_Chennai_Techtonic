@@ -1,0 +1,329 @@
+{
+ "eye_band_px": [
+  185,
+  386,
+  839,
+  638
+ ],
+ "original_repeat_mean_abs_diff_band": 0.0001,
+ "configs": {
+  "original": {
+   "init_s": 0.79,
+   "sequence_s": 120.25,
+   "first_frame_s": 19.977,
+   "mean_later_frame_s": 20.054,
+   "cpu_utilisation": 0.428,
+   "peak_rss_mb": 6634.6,
+   "samples": 128,
+   "device": "METAL",
+   "band_px": null,
+   "persistent": false,
+   "speedup_sequence_vs_original": 1.0,
+   "poses": [
+    {
+     "pose": "reset",
+     "gt_identical": true,
+     "band_max_abs_diff": 0.0,
+     "band_mean_abs_diff": 0.0,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "left",
+     "gt_identical": true,
+     "band_max_abs_diff": 0.0,
+     "band_mean_abs_diff": 0.0,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "right",
+     "gt_identical": true,
+     "band_max_abs_diff": 0.0,
+     "band_mean_abs_diff": 0.0,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "up",
+     "gt_identical": true,
+     "band_max_abs_diff": 0.0,
+     "band_mean_abs_diff": 0.0,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "down",
+     "gt_identical": true,
+     "band_max_abs_diff": 0.0,
+     "band_mean_abs_diff": 0.0,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "reset_again",
+     "gt_identical": true,
+     "band_max_abs_diff": 0.0,
+     "band_mean_abs_diff": 0.0,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    }
+   ],
+   "repeat_mean_abs_diff_band": 0.0001,
+   "accept": true
+  },
+  "band": {
+   "init_s": 0.83,
+   "sequence_s": 26.91,
+   "first_frame_s": 4.636,
+   "mean_later_frame_s": 4.453,
+   "cpu_utilisation": 1.301,
+   "peak_rss_mb": 6552.5,
+   "samples": 128,
+   "device": "METAL",
+   "band_px": [
+    185,
+    386,
+    839,
+    638
+   ],
+   "persistent": false,
+   "speedup_sequence_vs_original": 4.469,
+   "poses": [
+    {
+     "pose": "reset",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9191,
+     "detector_coord_diff_px": [
+      0.0628,
+      0.099
+     ]
+    },
+    {
+     "pose": "left",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9126,
+     "detector_coord_diff_px": [
+      0.1213,
+      0.1857
+     ]
+    },
+    {
+     "pose": "right",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9184,
+     "detector_coord_diff_px": [
+      0.1434,
+      0.0106
+     ]
+    },
+    {
+     "pose": "up",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.918,
+     "detector_coord_diff_px": [
+      0.1482,
+      31.7917
+     ]
+    },
+    {
+     "pose": "down",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9182,
+     "detector_coord_diff_px": [
+      0.041,
+      0.5267
+     ]
+    },
+    {
+     "pose": "reset_again",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9191,
+     "detector_coord_diff_px": [
+      0.0628,
+      0.099
+     ]
+    }
+   ],
+   "repeat_mean_abs_diff_band": 0.0001,
+   "accept": false
+  },
+  "persistent": {
+   "init_s": 0.75,
+   "sequence_s": 107.3,
+   "first_frame_s": 19.714,
+   "mean_later_frame_s": 17.517,
+   "cpu_utilisation": 0.214,
+   "peak_rss_mb": 6970.6,
+   "samples": 128,
+   "device": "METAL",
+   "band_px": null,
+   "persistent": true,
+   "speedup_sequence_vs_original": 1.121,
+   "poses": [
+    {
+     "pose": "reset",
+     "gt_identical": true,
+     "band_max_abs_diff": 1.0,
+     "band_mean_abs_diff": 0.0001,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "left",
+     "gt_identical": true,
+     "band_max_abs_diff": 1.0,
+     "band_mean_abs_diff": 0.0001,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "right",
+     "gt_identical": true,
+     "band_max_abs_diff": 1.0,
+     "band_mean_abs_diff": 0.0001,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "up",
+     "gt_identical": true,
+     "band_max_abs_diff": 1.0,
+     "band_mean_abs_diff": 0.0001,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "down",
+     "gt_identical": true,
+     "band_max_abs_diff": 1.0,
+     "band_mean_abs_diff": 0.0001,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "pose": "reset_again",
+     "gt_identical": true,
+     "band_max_abs_diff": 1.0,
+     "band_mean_abs_diff": 0.0001,
+     "detector_coord_diff_px": [
+      0.0,
+      0.0
+     ]
+    }
+   ],
+   "repeat_mean_abs_diff_band": 0.0001,
+   "accept": true
+  },
+  "combined": {
+   "init_s": 0.82,
+   "sequence_s": 17.63,
+   "first_frame_s": 4.75,
+   "mean_later_frame_s": 2.575,
+   "cpu_utilisation": 0.533,
+   "peak_rss_mb": 6980.8,
+   "samples": 128,
+   "device": "METAL",
+   "band_px": [
+    185,
+    386,
+    839,
+    638
+   ],
+   "persistent": true,
+   "speedup_sequence_vs_original": 6.821,
+   "poses": [
+    {
+     "pose": "reset",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9191,
+     "detector_coord_diff_px": [
+      0.0628,
+      0.099
+     ]
+    },
+    {
+     "pose": "left",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9126,
+     "detector_coord_diff_px": [
+      0.1213,
+      0.1857
+     ]
+    },
+    {
+     "pose": "right",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9184,
+     "detector_coord_diff_px": [
+      0.1434,
+      0.0106
+     ]
+    },
+    {
+     "pose": "up",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.918,
+     "detector_coord_diff_px": [
+      0.1482,
+      31.7917
+     ]
+    },
+    {
+     "pose": "down",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9182,
+     "detector_coord_diff_px": [
+      0.041,
+      0.5267
+     ]
+    },
+    {
+     "pose": "reset_again",
+     "gt_identical": true,
+     "band_max_abs_diff": 181.0,
+     "band_mean_abs_diff": 0.9191,
+     "detector_coord_diff_px": [
+      0.0628,
+      0.099
+     ]
+    }
+   ],
+   "repeat_mean_abs_diff_band": 0.0001,
+   "accept": false
+  }
+ }
+}

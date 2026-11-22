@@ -1,0 +1,13 @@
+{
+ "measured_on": "release Techtonic.zip acccb548..., Blender 5.3.0, 2026-11-22",
+ "scripts": "research/pupil_geometry_probe.py -> AUDIT/results/pupil_geometry_probe.json",
+ "gt_pupil_depth_from_eye_centre_mm": {"L": 14.187, "R": 14.291},
+ "eyeball_mesh_depth_at_pupil_uv_mm (r_uv<0.034, min/mean/max)": {"L": [15.314, 15.795, 16.142], "R": [15.197, 15.703, 16.087]},
+ "eyeball_mesh_depth_at_iris_uv_mm (0.034-0.112)": {"L": [12.725, 14.922, 16.159], "R": [12.597, 14.83, 16.12]},
+ "eyeball_front_mm": {"L": 16.159, "R": 16.12},
+ "texture_dark_centroid_uv_by_linear_threshold": {"0.05 (pupil, r_uv 0.0377)": [0.50126, 0.49513], "0.10": [0.50205, 0.49382], "0.30 (iris disc, r_uv 0.110)": [0.50019, 0.50021]},
+ "wrapper_pupil_uv_assumed": [0.5008, 0.4943],
+ "texture_resolution": [4096, 4096],
+ "eyeball_shader": "Principled BSDF, base colour from image (no parallax node), normal map, bump displacement",
+ "detector_on_emission_masks": "pupil_mask_check renders: mean detector-minus-GT bias (-0.12, +0.13) px; NOTE the mask threshold (<0.05 on linear BW in the shader) selects the whole dark iris disc, not only the pupil"
+}

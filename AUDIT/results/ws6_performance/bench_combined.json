@@ -1,0 +1,460 @@
+{
+ "config": "combined",
+ "device": "METAL",
+ "samples": 128,
+ "blender": "5.3.0",
+ "band_px": [
+  185,
+  386,
+  839,
+  638
+ ],
+ "persistent": true,
+ "init_s": 0.82,
+ "sequence_s": 17.63,
+ "first_frame_s": 4.75,
+ "mean_later_frame_s": 2.575,
+ "cpu_utilisation": 0.533,
+ "peak_rss_mb": 6980.8,
+ "gpu_utilisation": "not measured (needs root powermetrics on macOS)",
+ "frames": [
+  {
+   "pose": "reset",
+   "render_s": 4.75,
+   "state": {
+    "input": {
+     "h": 0.0,
+     "v": 0.0
+    },
+    "fixation_target": [
+     -0.0,
+     -0.476892,
+     1.620518
+    ],
+    "eye_rotation_L": [
+     2.5556,
+     0.0611,
+     -12.7197
+    ],
+    "eye_rotation_quat_L": [
+     0.993597,
+     0.022221,
+     -0.001941,
+     -0.110757
+    ],
+    "pupil_center_2D_L": [
+     713.698,
+     513.123
+    ],
+    "pupil_center_3D_L": [
+     0.028501,
+     -0.141133,
+     1.620354
+    ],
+    "pupil_center_cornea_3D_L": [
+     0.0283389,
+     -0.1432283,
+     1.6203604
+    ],
+    "pupil_center_2D_unrefracted_L": [
+     713.753,
+     513.164
+    ],
+    "eye_rotation_R": [
+     2.2913,
+     -0.0951,
+     14.1093
+    ],
+    "eye_rotation_quat_R": [
+     0.992229,
+     0.019945,
+     0.001632,
+     0.122808
+    ],
+    "pupil_center_2D_R": [
+     310.381,
+     510.796
+    ],
+    "pupil_center_3D_R": [
+     -0.028493,
+     -0.141027,
+     1.620683
+    ],
+    "pupil_center_cornea_3D_R": [
+     -0.0283379,
+     -0.1430917,
+     1.6206875
+    ],
+    "pupil_center_2D_unrefracted_R": [
+     310.359,
+     510.836
+    ]
+   }
+  },
+  {
+   "pose": "left",
+   "render_s": 2.644,
+   "state": {
+    "input": {
+     "h": -1.0,
+     "v": 0.0
+    },
+    "fixation_target": [
+     -0.05,
+     -0.476892,
+     1.620518
+    ],
+    "eye_rotation_L": [
+     2.5814,
+     -0.1218,
+     -20.6999
+    ],
+    "eye_rotation_quat_L": [
+     0.983483,
+     0.021968,
+     -0.005092,
+     -0.17959
+    ],
+    "pupil_center_2D_L": [
+     699.23,
+     513.123
+    ],
+    "pupil_center_3D_L": [
+     0.02655,
+     -0.14083,
+     1.620354
+    ],
+    "pupil_center_cornea_3D_L": [
+     0.0263265,
+     -0.1429313,
+     1.6203604
+    ],
+    "pupil_center_2D_unrefracted_L": [
+     699.795,
+     513.164
+    ],
+    "eye_rotation_R": [
+     2.2657,
+     -0.2527,
+     5.9419
+    ],
+    "eye_rotation_quat_R": [
+     0.998456,
+     0.019858,
+     -0.001177,
+     0.051863
+    ],
+    "pupil_center_2D_R": [
+     295.448,
+     510.796
+    ],
+    "pupil_center_3D_R": [
+     -0.030529,
+     -0.141054,
+     1.620683
+    ],
+    "pupil_center_cornea_3D_R": [
+     -0.0304336,
+     -0.1431321,
+     1.6206874
+    ],
+    "pupil_center_2D_unrefracted_R": [
+     295.941,
+     510.837
+    ]
+   }
+  },
+  {
+   "pose": "right",
+   "render_s": 2.563,
+   "state": {
+    "input": {
+     "h": 1.0,
+     "v": 0.0
+    },
+    "fixation_target": [
+     0.05,
+     -0.476892,
+     1.620518
+    ],
+    "eye_rotation_L": [
+     2.53,
+     0.2456,
+     -4.5476
+    ],
+    "eye_rotation_quat_L": [
+     0.998965,
+     0.022144,
+     0.001265,
+     -0.039713
+    ],
+    "pupil_center_2D_L": [
+     728.545,
+     513.122
+    ],
+    "pupil_center_3D_L": [
+     0.030523,
+     -0.14116,
+     1.620354
+    ],
+    "pupil_center_cornea_3D_L": [
+     0.0304218,
+     -0.1432678,
+     1.6203605
+    ],
+    "pupil_center_2D_unrefracted_L": [
+     728.079,
+     513.165
+    ],
+    "eye_rotation_R": [
+     2.3163,
+     0.0616,
+     22.085
+    ],
+    "eye_rotation_quat_R": [
+     0.981287,
+     0.019735,
+     0.004399,
+     0.191487
+    ],
+    "pupil_center_2D_R": [
+     324.933,
+     510.796
+    ],
+    "pupil_center_3D_R": [
+     -0.026529,
+     -0.140721,
+     1.620683
+    ],
+    "pupil_center_cornea_3D_R": [
+     -0.0263133,
+     -0.1427913,
+     1.6206876
+    ],
+    "pupil_center_2D_unrefracted_R": [
+     324.408,
+     510.836
+    ]
+   }
+  },
+  {
+   "pose": "up",
+   "render_s": 2.569,
+   "state": {
+    "input": {
+     "h": 0.0,
+     "v": 1.0
+    },
+    "fixation_target": [
+     -0.0,
+     -0.476892,
+     1.670518
+    ],
+    "eye_rotation_L": [
+     -5.3518,
+     -1.9312,
+     -12.526
+    ],
+    "eye_rotation_quat_L": [
+     0.992721,
+     -0.048237,
+     -0.011641,
+     -0.10974
+    ],
+    "pupil_center_2D_L": [
+     713.709,
+     498.457
+    ],
+    "pupil_center_3D_L": [
+     0.028513,
+     -0.140991,
+     1.622353
+    ],
+    "pupil_center_cornea_3D_L": [
+     0.0283501,
+     -0.1430967,
+     1.6224217
+    ],
+    "pupil_center_2D_unrefracted_L": [
+     713.764,
+     499.014
+    ],
+    "eye_rotation_R": [
+     -5.5464,
+     2.1851,
+     13.8956
+    ],
+    "eye_rotation_quat_R": [
+     0.991202,
+     -0.050323,
+     0.013054,
+     0.121717
+    ],
+    "pupil_center_2D_R": [
+     310.371,
+     496.041
+    ],
+    "pupil_center_3D_R": [
+     -0.028505,
+     -0.140886,
+     1.622696
+    ],
+    "pupil_center_cornea_3D_R": [
+     -0.028349,
+     -0.1429611,
+     1.622762
+    ],
+    "pupil_center_2D_unrefracted_R": [
+     310.348,
+     496.592
+    ]
+   }
+  },
+  {
+   "pose": "down",
+   "render_s": 2.551,
+   "state": {
+    "input": {
+     "h": 0.0,
+     "v": -1.0
+    },
+    "fixation_target": [
+     -0.0,
+     -0.476892,
+     1.570518
+    ],
+    "eye_rotation_L": [
+     10.4642,
+     2.0554,
+     -12.5096
+    ],
+    "eye_rotation_quat_L": [
+     0.989568,
+     0.092579,
+     0.007821,
+     -0.110105
+    ],
+    "pupil_center_2D_L": [
+     713.71,
+     527.79
+    ],
+    "pupil_center_3D_L": [
+     0.028513,
+     -0.140993,
+     1.618354
+    ],
+    "pupil_center_cornea_3D_L": [
+     0.0283502,
+     -0.1430968,
+     1.6182989
+    ],
+    "pupil_center_2D_unrefracted_L": [
+     713.764,
+     527.317
+    ],
+    "eye_rotation_R": [
+     10.1286,
+     -2.376,
+     13.8683
+    ],
+    "eye_rotation_quat_R": [
+     0.988377,
+     0.090102,
+     -0.009846,
+     0.122048
+    ],
+    "pupil_center_2D_R": [
+     310.369,
+     525.547
+    ],
+    "pupil_center_3D_R": [
+     -0.028506,
+     -0.140884,
+     1.61867
+    ],
+    "pupil_center_cornea_3D_R": [
+     -0.0283495,
+     -0.142957,
+     1.6186136
+    ],
+    "pupil_center_2D_unrefracted_R": [
+     310.348,
+     525.078
+    ]
+   }
+  },
+  {
+   "pose": "reset_again",
+   "render_s": 2.549,
+   "state": {
+    "input": {
+     "h": 0.0,
+     "v": 0.0
+    },
+    "fixation_target": [
+     -0.0,
+     -0.476892,
+     1.620518
+    ],
+    "eye_rotation_L": [
+     2.5556,
+     0.0611,
+     -12.7197
+    ],
+    "eye_rotation_quat_L": [
+     0.993597,
+     0.022221,
+     -0.001941,
+     -0.110757
+    ],
+    "pupil_center_2D_L": [
+     713.698,
+     513.123
+    ],
+    "pupil_center_3D_L": [
+     0.028501,
+     -0.141133,
+     1.620354
+    ],
+    "pupil_center_cornea_3D_L": [
+     0.0283389,
+     -0.1432283,
+     1.6203604
+    ],
+    "pupil_center_2D_unrefracted_L": [
+     713.753,
+     513.164
+    ],
+    "eye_rotation_R": [
+     2.2913,
+     -0.0951,
+     14.1093
+    ],
+    "eye_rotation_quat_R": [
+     0.992229,
+     0.019945,
+     0.001632,
+     0.122808
+    ],
+    "pupil_center_2D_R": [
+     310.381,
+     510.796
+    ],
+    "pupil_center_3D_R": [
+     -0.028493,
+     -0.141027,
+     1.620683
+    ],
+    "pupil_center_cornea_3D_R": [
+     -0.0283379,
+     -0.1430917,
+     1.6206875
+    ],
+    "pupil_center_2D_unrefracted_R": [
+     310.359,
+     510.836
+    ]
+   }
+  }
+ ]
+}

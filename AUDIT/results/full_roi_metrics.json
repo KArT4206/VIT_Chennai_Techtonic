@@ -1,0 +1,77 @@
+{
+ "name": "full_roi",
+ "sources": [
+  "/Users/b.karthik/Desktop/Projects/SyntheticEyes-Track1-research-work/clean_run_2026-11-23/abl/full"
+ ],
+ "n_pupils": 22,
+ "n_success": 15,
+ "success_rate": 0.6818,
+ "fail_threshold_px": 5.0,
+ "on_successful": {
+  "mae_x": 1.105,
+  "mae_y": 2.857,
+  "mean_bias_x": 0.059,
+  "mean_bias_y": 2.857,
+  "mean_euclid": 3.159,
+  "rmse": 3.344,
+  "median": 3.294,
+  "p95": 4.747,
+  "max": 4.875
+ },
+ "all_pupils_max_err": 7.443,
+ "by_confidence": [
+  {
+   "bin": [
+    0,
+    0.35
+   ],
+   "n": 5,
+   "median_err": 2.422
+  },
+  {
+   "bin": [
+    0.35,
+    0.5
+   ],
+   "n": 12,
+   "median_err": 4.09
+  },
+  {
+   "bin": [
+    0.5,
+    1.01
+   ],
+   "n": 5,
+   "median_err": 2.919
+  }
+ ],
+ "detector": {
+  "dark_levels": [
+   12,
+   16,
+   20,
+   25,
+   30,
+   40,
+   55
+  ],
+  "bright": 150.0,
+  "rays": 180,
+  "sha256": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+ },
+ "roi": [
+  [
+   221,
+   423,
+   401,
+   603
+  ],
+  [
+   623,
+   426,
+   803,
+   606
+  ]
+ ],
+ "n_missed_or_failed": 7
+}

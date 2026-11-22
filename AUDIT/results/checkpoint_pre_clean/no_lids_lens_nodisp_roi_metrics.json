@@ -1,0 +1,61 @@
+{
+ "name": "no_lids_lens_nodisp_roi",
+ "sources": [
+  "/private/tmp/claude-501/-Users-b-karthik-Desktop-Projects-SyntheticEyes/f99bc232-9512-4e15-bb31-3683cc998504/scratchpad/aud/abl/no_lids_lens_nodisp"
+ ],
+ "n_pupils": 22,
+ "n_success": 22,
+ "success_rate": 1.0,
+ "fail_threshold_px": 5.0,
+ "on_successful": {
+  "mae_x": 1.191,
+  "mae_y": 2.527,
+  "mean_bias_x": 1.086,
+  "mean_bias_y": 2.527,
+  "mean_euclid": 2.929,
+  "rmse": 3.082,
+  "median": 2.968,
+  "p95": 4.174,
+  "max": 4.187
+ },
+ "all_pupils_max_err": 4.187,
+ "by_confidence": [
+  {
+   "bin": [
+    0,
+    0.35
+   ],
+   "n": 0,
+   "median_err": null
+  },
+  {
+   "bin": [
+    0.35,
+    0.5
+   ],
+   "n": 0,
+   "median_err": null
+  },
+  {
+   "bin": [
+    0.5,
+    1.01
+   ],
+   "n": 22,
+   "median_err": 2.968
+  }
+ ],
+ "detector": {
+  "dark_levels": [
+   12,
+   16,
+   20,
+   25,
+   30,
+   40,
+   55
+  ],
+  "bright": 150.0,
+  "rays": 180
+ }
+}

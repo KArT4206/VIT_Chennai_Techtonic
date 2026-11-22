@@ -1,0 +1,115 @@
+{
+ "references": {
+  "saccade_duration": "Carpenter (1988), Movements of the Eyes: D ~ 21 ms + 2.2 ms/deg (approx., 5-50 deg)",
+  "saccade_peak_velocity": "Bahill, Clark & Stark (1975) main sequence; peak velocity rises with amplitude and saturates around 400-600 deg/s; ~300-450 deg/s for 10-20 deg saccades is typical of reported means",
+  "pursuit": "Lisberger, Morris & Tychsen (1987): pursuit latency ~100-150 ms; steady-state gain ~0.9-1.0 for slow (<~0.5 Hz) targets",
+  "vergence": "geometry: each eye aims at the same 3-D point; vergence angle = 2*atan((IPD/2)/d) for a midline target",
+  "blink": "Blink duration typically ~100-400 ms with the closing phase faster than the opening phase (e.g. VanderWerf et al. 2003)",
+  "fixation": "Drift during fixation is a slow random walk of the order of minutes of arc (e.g. Rolfs 2009 review); microsaccades are not modelled"
+ },
+ "ipd_m": 0.059404000000000005,
+ "saccade": {
+  "amplitude_deg": [
+   1.625,
+   3.25,
+   4.873,
+   6.494,
+   8.113,
+   9.729,
+   11.341,
+   12.948,
+   14.551,
+   16.148
+  ],
+  "duration_ms": [
+   24.6,
+   28.2,
+   31.8,
+   35.39,
+   38.98,
+   42.56,
+   46.13,
+   49.69,
+   53.24,
+   56.77
+  ],
+  "peak_velocity_dps": [
+   123.7,
+   215.9,
+   287.3,
+   344.2,
+   390.8,
+   429.5,
+   462.3,
+   490.6,
+   515.2,
+   536.8
+  ],
+  "peak_accel_dps2": [
+   15445.0,
+   23541.0,
+   27864.0,
+   30043.0,
+   30981.0,
+   31242.0,
+   31049.0,
+   30600.0,
+   30010.0,
+   29324.0
+  ],
+  "duration_formula_ms": "21 + 2.2*A (model input, matches reference by construction)",
+  "peak_velocity_over_duration_ratio": 1.8787,
+  "min_jerk_theory_ratio": 1.875,
+  "in_typical_range_10_20deg": [
+   true,
+   true,
+   true,
+   true
+  ],
+  "note": "peak velocity = 1.875*A/D for a minimum-jerk profile; compare with the reference range, not a fitted human dataset",
+  "example": {
+   "amplitude_cyclopean_deg": 16.966,
+   "duration_ms": 58.33,
+   "peak_speed_L_dps": 545.7,
+   "peak_speed_R_dps": 545.7,
+   "conjugacy_max_LR_speed_diff_dps": 12.25
+  }
+ },
+ "pursuit": {
+  "freq_hz": 0.4,
+  "target_amp_deg": 11.263,
+  "measured_gain": 0.9695,
+  "measured_latency_s": 0.1,
+  "rms_following_error_deg": 1.1504,
+  "max_following_error_deg": 1.6267,
+  "gain_in_reference_range": true,
+  "latency_in_reference_range": true
+ },
+ "vergence": {
+  "depth_m": [
+   0.35,
+   0.2
+  ],
+  "vergence_deg": [
+   9.7013,
+   16.8945
+  ],
+  "max_abs_error_vs_geometry_deg": 3.552713678800501e-15,
+  "peak_vergence_velocity_dps": 23.73,
+  "symmetric_eyes_max_deg": 0.0
+ },
+ "fixation": {
+  "rms_deviation_arcmin": 0.901,
+  "max_deviation_arcmin": 2.083,
+  "reproducible_with_seed": true
+ },
+ "blink": {
+  "total_ms": 300.0,
+  "closing_ms": 98.0,
+  "opening_ms": 147.0,
+  "closing_faster_than_opening": true,
+  "within_reference_duration": true,
+  "rendered": false,
+  "note": "closure curve only; lid bones are not driven to full closure (see KNOWN_LIMITATIONS)"
+ }
+}

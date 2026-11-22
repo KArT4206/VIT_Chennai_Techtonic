@@ -1,0 +1,61 @@
+{
+ "name": "dataset_roi",
+ "sources": [
+  "/private/tmp/claude-501/-Users-b-karthik-Desktop-Projects-SyntheticEyes/f99bc232-9512-4e15-bb31-3683cc998504/scratchpad/aud/dataset"
+ ],
+ "n_pupils": 80,
+ "n_success": 60,
+ "success_rate": 0.75,
+ "fail_threshold_px": 5.0,
+ "on_successful": {
+  "mae_x": 0.835,
+  "mae_y": 2.679,
+  "mean_bias_x": 0.315,
+  "mean_bias_y": 2.609,
+  "mean_euclid": 2.884,
+  "rmse": 3.045,
+  "median": 2.95,
+  "p95": 4.328,
+  "max": 4.862
+ },
+ "all_pupils_max_err": 402.564,
+ "by_confidence": [
+  {
+   "bin": [
+    0,
+    0.35
+   ],
+   "n": 18,
+   "median_err": 4.934
+  },
+  {
+   "bin": [
+    0.35,
+    0.5
+   ],
+   "n": 38,
+   "median_err": 3.538
+  },
+  {
+   "bin": [
+    0.5,
+    1.01
+   ],
+   "n": 24,
+   "median_err": 2.283
+  }
+ ],
+ "detector": {
+  "dark_levels": [
+   12,
+   16,
+   20,
+   25,
+   30,
+   40,
+   55
+  ],
+  "bright": 150.0,
+  "rays": 180
+ }
+}

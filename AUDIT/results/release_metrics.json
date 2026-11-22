@@ -1,0 +1,64 @@
+{
+ "name": "release",
+ "sources": [
+  "/Users/b.karthik/Desktop/Projects/SyntheticEyes-Track1-research-work/clean_run_2026-11-23/pkg"
+ ],
+ "n_pupils": 20,
+ "n_success": 18,
+ "success_rate": 0.9,
+ "fail_threshold_px": 5.0,
+ "on_successful": {
+  "mae_x": 1.171,
+  "mae_y": 3.079,
+  "mean_bias_x": 0.465,
+  "mean_bias_y": 3.079,
+  "mean_euclid": 3.398,
+  "rmse": 3.622,
+  "median": 3.596,
+  "p95": 4.953,
+  "max": 4.972
+ },
+ "all_pupils_max_err": 4.972,
+ "by_confidence": [
+  {
+   "bin": [
+    0,
+    0.35
+   ],
+   "n": 2,
+   "median_err": 1.866
+  },
+  {
+   "bin": [
+    0.35,
+    0.5
+   ],
+   "n": 10,
+   "median_err": 3.751
+  },
+  {
+   "bin": [
+    0.5,
+    1.01
+   ],
+   "n": 8,
+   "median_err": 3.491
+  }
+ ],
+ "detector": {
+  "dark_levels": [
+   12,
+   16,
+   20,
+   25,
+   30,
+   40,
+   55
+  ],
+  "bright": 150.0,
+  "rays": 180,
+  "sha256": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+ },
+ "roi": null,
+ "n_missed_or_failed": 2
+}

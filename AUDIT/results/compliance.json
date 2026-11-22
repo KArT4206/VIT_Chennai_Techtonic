@@ -1,0 +1,258 @@
+{
+ "blender": "5.3.0",
+ "passed": 40,
+ "failed": 0,
+ "checks": [
+  {
+   "name": "render resolution 1024x1024 @100%",
+   "ok": true,
+   "value": [
+    1024,
+    1024,
+    100
+   ]
+  },
+  {
+   "name": "eye bones eye.L / eye.R present",
+   "ok": true,
+   "value": [
+    "eye.L",
+    "eye.R"
+   ]
+  },
+  {
+   "name": "textured model (image textures in materials)",
+   "ok": true,
+   "value": 21
+  },
+  {
+   "name": "camera not animated / constrained (locked)",
+   "ok": true,
+   "value": {
+    "anim": false,
+    "constraints": 0
+   }
+  },
+  {
+   "name": "lighting not animated (constant)",
+   "ok": true,
+   "value": 5
+  },
+  {
+   "name": "midpoint = mean of eye pivots (mm)",
+   "ok": true,
+   "value": 0.0
+  },
+  {
+   "name": "camera 40 cm from eye midpoint (m)",
+   "ok": true,
+   "value": 0.4
+  },
+  {
+   "name": "camera faces the face: optical axis vs direction to midpoint (deg)",
+   "ok": true,
+   "value": 0.0
+  },
+  {
+   "name": "camera is in front (-Y side) of the face",
+   "ok": true,
+   "value": [
+    -0.5269,
+    -0.1269
+   ]
+  },
+  {
+   "name": "fixation target 35 cm forward of midpoint (m)",
+   "ok": true,
+   "value": 0.349999993
+  },
+  {
+   "name": "target displacement for (1,0) = 5 cm * input in the 35 cm plane",
+   "ok": true,
+   "value": [
+    0.05,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "target displacement for (-1,0) = 5 cm * input in the 35 cm plane",
+   "ok": true,
+   "value": [
+    -0.05,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "target displacement for (0,1) = 5 cm * input in the 35 cm plane",
+   "ok": true,
+   "value": [
+    0.0,
+    0.0,
+    0.05
+   ]
+  },
+  {
+   "name": "target displacement for (0,-1) = 5 cm * input in the 35 cm plane",
+   "ok": true,
+   "value": [
+    0.0,
+    0.0,
+    -0.05
+   ]
+  },
+  {
+   "name": "target displacement for (1,1) = 5 cm * input in the 35 cm plane",
+   "ok": true,
+   "value": [
+    0.05,
+    0.0,
+    0.05
+   ]
+  },
+  {
+   "name": "K[R|t] vs Blender projection on 500 random points (max px)",
+   "ok": true,
+   "value": 0.000198
+  },
+  {
+   "name": "eye midpoint projects near image centre (px from 512,512)",
+   "ok": true,
+   "value": [
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "R is orthonormal (|R^T R - I|)",
+   "ok": true,
+   "value": "ok"
+  },
+  {
+   "name": "eye L: pivot stays at eye centre over 10 poses (mm)",
+   "ok": true,
+   "value": 0
+  },
+  {
+   "name": "eye L: pupil stays on its sphere (radius change mm)",
+   "ok": true,
+   "value": 2.8e-05
+  },
+  {
+   "name": "eye L: mesh pupil aims at the fixation target (deg)",
+   "ok": true,
+   "value": 0
+  },
+  {
+   "name": "eye L: torsion about primary axis, Listing's law (deg)",
+   "ok": true,
+   "value": 0.0
+  },
+  {
+   "name": "eye R: pivot stays at eye centre over 10 poses (mm)",
+   "ok": true,
+   "value": 0
+  },
+  {
+   "name": "eye R: pupil stays on its sphere (radius change mm)",
+   "ok": true,
+   "value": 1.6e-05
+  },
+  {
+   "name": "eye R: mesh pupil aims at the fixation target (deg)",
+   "ok": true,
+   "value": 0
+  },
+  {
+   "name": "eye R: torsion about primary axis, Listing's law (deg)",
+   "ok": true,
+   "value": 0.0
+  },
+  {
+   "name": "out-of-range input clamped to [-1,1]",
+   "ok": true,
+   "value": {
+    "h": 1.0,
+    "v": -1.0
+   }
+  },
+  {
+   "name": "invalid input 'x' rejected with ValueError",
+   "ok": true,
+   "value": true
+  },
+  {
+   "name": "invalid input nan rejected with ValueError",
+   "ok": true,
+   "value": true
+  },
+  {
+   "name": "invalid input inf rejected with ValueError",
+   "ok": true,
+   "value": true
+  },
+  {
+   "name": "invalid input None rejected with ValueError",
+   "ok": true,
+   "value": true
+  },
+  {
+   "name": "reset after moves is identical to first reset",
+   "ok": true,
+   "value": [
+    713.698,
+    513.123
+   ]
+  },
+  {
+   "name": "reset input is (0,0)",
+   "ok": true,
+   "value": {
+    "h": 0.0,
+    "v": 0.0
+   }
+  },
+  {
+   "name": "repeated identical move gives identical state",
+   "ok": true,
+   "value": "ok"
+  },
+  {
+   "name": "pose is updated synchronously (bone matrix changes without frame change)",
+   "ok": true,
+   "value": 280.417
+  },
+  {
+   "name": "h=+1 moves pupils to image right of h=-1",
+   "ok": true,
+   "value": [
+    728.545,
+    699.23
+   ]
+  },
+  {
+   "name": "v=+1 moves pupils up in the image (smaller y)",
+   "ok": true,
+   "value": [
+    498.457,
+    527.79
+   ]
+  },
+  {
+   "name": "sequence theta_k=2*pi*k/10, h=sin, v=cos, starts top",
+   "ok": true,
+   "value": "10"
+  },
+  {
+   "name": "vergence angle at 35 cm (deg, both eyes on one target)",
+   "ok": true,
+   "value": 9.7013
+  },
+  {
+   "name": "interocular distance (mm)",
+   "ok": true,
+   "value": 59.404
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+acccb548c270bfab4719c3f173eda544a1b818fd858f56b1fe2d67a07790a0dc  /Users/b.karthik/Desktop/Projects/SyntheticEyes-Track1/dist/final/Techtonic.zip
+Blender 5.3.0
+ProductName:		macOS ProductVersion:		27.0.1 BuildVersion:		26A434 
+Apple M5
+python 3.14.7 numpy 2.5.4 scipy 1.18.1 Pillow 13.0.0 matplotlib 3.11.2
+315565560ab3964dfb9e8ff3a167abb71ed8cbae
+?? AUDIT/
+?? research/

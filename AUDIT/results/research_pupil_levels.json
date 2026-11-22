@@ -1,0 +1,797 @@
+{
+ "schema": "techtonic.research.pupil_levels/1.0",
+ "source_metadata_sha256": "1311429097e44578e021295ca2f2292952354379963f7f6a41586628c1bf1fbb",
+ "detector_sha256": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40",
+ "probe": "depth_probe_extended.json",
+ "conventions": {
+  "pixels": "origin top-left corner; x right, y down; pixel (i,j) centre at (i+0.5, j+0.5); 1024x1024",
+  "world": "Blender metres, +Z up, face looks along -Y",
+  "levels": {
+   "A": "anatomical pupil (wrapper geometry): 3D, straight projection, and analytic-cornea apparent point",
+   "B": "painted pupil of the rendered asset (mesh + texture, no fitted parameter); the Lens mesh does not refract",
+   "C": "image-only detector output; a prediction with confidence, never used as ground truth"
+  }
+ },
+ "frames": [
+  {
+   "frame": 0,
+   "file": "renders/frame_00.png",
+   "input": {
+    "h": 0.0,
+    "v": 1.0
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.028513,
+      -0.140991,
+      1.622353
+     ],
+     "projected_2D_px": [
+      713.764,
+      499.014
+     ],
+     "apparent_2D_analytic_px": [
+      713.709,
+      498.457
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      714.792,
+      499.231
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      713.574,
+      499.152
+     ],
+     "confidence": 0.365,
+     "status": "ok",
+     "radius_px": 15.8
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.028505,
+      -0.140886,
+      1.622696
+     ],
+     "projected_2D_px": [
+      310.348,
+      496.592
+     ],
+     "apparent_2D_analytic_px": [
+      310.371,
+      496.041
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      311.593,
+      496.881
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      310.773,
+      497.399
+     ],
+     "confidence": 0.3789,
+     "status": "ok",
+     "radius_px": 15.361
+    }
+   }
+  },
+  {
+   "frame": 1,
+   "file": "renders/frame_01.png",
+   "input": {
+    "h": 0.587785,
+    "v": 0.809017
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.029689,
+      -0.141089,
+      1.621983
+     ],
+     "projected_2D_px": [
+      722.135,
+      501.633
+     ],
+     "apparent_2D_analytic_px": [
+      722.384,
+      501.171
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      724.448,
+      502.274
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      723.697,
+      501.992
+     ],
+     "confidence": 0.0,
+     "status": "fail",
+     "radius_px": 15.202
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.027338,
+      -0.140789,
+      1.622301
+     ],
+     "projected_2D_px": [
+      318.654,
+      499.395
+     ],
+     "apparent_2D_analytic_px": [
+      318.973,
+      498.945
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      321.154,
+      500.117
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      320.992,
+      499.777
+     ],
+     "confidence": 0.0,
+     "status": "fail",
+     "radius_px": 15.41
+    }
+   }
+  },
+  {
+   "frame": 2,
+   "file": "renders/frame_02.png",
+   "input": {
+    "h": 0.951057,
+    "v": 0.309017
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.030424,
+      -0.141152,
+      1.620979
+     ],
+     "projected_2D_px": [
+      727.37,
+      508.739
+     ],
+     "apparent_2D_analytic_px": [
+      727.81,
+      508.537
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      730.457,
+      510.495
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      729.634,
+      510.982
+     ],
+     "confidence": 0.5499,
+     "status": "ok",
+     "radius_px": 15.306
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.026625,
+      -0.140729,
+      1.621298
+     ],
+     "projected_2D_px": [
+      323.728,
+      506.485
+     ],
+     "apparent_2D_analytic_px": [
+      324.228,
+      506.289
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      326.993,
+      508.274
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      326.518,
+      509.347
+     ],
+     "confidence": 0.4296,
+     "status": "ok",
+     "radius_px": 15.257
+    }
+   }
+  },
+  {
+   "frame": 3,
+   "file": "renders/frame_03.png",
+   "input": {
+    "h": 0.951057,
+    "v": -0.309017
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.030424,
+      -0.141152,
+      1.619729
+     ],
+     "projected_2D_px": [
+      727.371,
+      517.589
+     ],
+     "apparent_2D_analytic_px": [
+      727.811,
+      517.708
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      730.42,
+      520.709
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      729.877,
+      521.044
+     ],
+     "confidence": 0.4813,
+     "status": "ok",
+     "radius_px": 15.518
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.026625,
+      -0.140729,
+      1.620067
+     ],
+     "projected_2D_px": [
+      323.727,
+      515.187
+     ],
+     "apparent_2D_analytic_px": [
+      324.227,
+      515.303
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      327.001,
+      518.261
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      326.968,
+      518.75
+     ],
+     "confidence": 0.409,
+     "status": "ok",
+     "radius_px": 15.622
+    }
+   }
+  },
+  {
+   "frame": 4,
+   "file": "renders/frame_04.png",
+   "input": {
+    "h": 0.587785,
+    "v": -0.809017
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.029689,
+      -0.141091,
+      1.618724
+     ],
+     "projected_2D_px": [
+      722.136,
+      524.698
+     ],
+     "apparent_2D_analytic_px": [
+      722.386,
+      525.075
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      724.367,
+      528.899
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      723.781,
+      529.406
+     ],
+     "confidence": 0.5017,
+     "status": "ok",
+     "radius_px": 15.849
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.027339,
+      -0.140787,
+      1.619065
+     ],
+     "projected_2D_px": [
+      318.653,
+      522.276
+     ],
+     "apparent_2D_analytic_px": [
+      318.971,
+      522.645
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      321.19,
+      526.385
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      321.176,
+      527.101
+     ],
+     "confidence": 0.5056,
+     "status": "ok",
+     "radius_px": 15.951
+    }
+   }
+  },
+  {
+   "frame": 5,
+   "file": "renders/frame_05.png",
+   "input": {
+    "h": 0.0,
+    "v": -1.0
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.028513,
+      -0.140993,
+      1.618354
+     ],
+     "projected_2D_px": [
+      713.764,
+      527.317
+     ],
+     "apparent_2D_analytic_px": [
+      713.71,
+      527.79
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      714.722,
+      531.919
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      714.042,
+      532.728
+     ],
+     "confidence": 0.4656,
+     "status": "ok",
+     "radius_px": 16.293
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.028506,
+      -0.140884,
+      1.61867
+     ],
+     "projected_2D_px": [
+      310.348,
+      525.078
+     ],
+     "apparent_2D_analytic_px": [
+      310.369,
+      525.547
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      311.67,
+      529.6
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      280.946,
+      532.275
+     ],
+     "confidence": 0.3329,
+     "status": "low_confidence",
+     "radius_px": 10.095
+    }
+   }
+  },
+  {
+   "frame": 6,
+   "file": "renders/frame_06.png",
+   "input": {
+    "h": -0.587785,
+    "v": -0.809017
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.027354,
+      -0.140897,
+      1.618747
+     ],
+     "projected_2D_px": [
+      705.512,
+      524.533
+     ],
+     "apparent_2D_analytic_px": [
+      705.157,
+      524.905
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      705.221,
+      528.714
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      704.707,
+      529.19
+     ],
+     "confidence": 0.5108,
+     "status": "ok",
+     "radius_px": 16.097
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.029689,
+      -0.140983,
+      1.619043
+     ],
+     "projected_2D_px": [
+      301.924,
+      522.442
+     ],
+     "apparent_2D_analytic_px": [
+      301.644,
+      522.817
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      301.989,
+      526.586
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      301.791,
+      527.305
+     ],
+     "confidence": 0.5246,
+     "status": "ok",
+     "radius_px": 16.119
+    }
+   }
+  },
+  {
+   "frame": 7,
+   "file": "renders/frame_07.png",
+   "input": {
+    "h": -0.951057,
+    "v": -0.309017
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.026645,
+      -0.140838,
+      1.619742
+     ],
+     "projected_2D_px": [
+      700.471,
+      517.488
+     ],
+     "apparent_2D_analytic_px": [
+      699.931,
+      517.604
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      699.414,
+      520.589
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      698.807,
+      520.778
+     ],
+     "confidence": 0.5792,
+     "status": "ok",
+     "radius_px": 15.946
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.030429,
+      -0.141045,
+      1.620053
+     ],
+     "projected_2D_px": [
+      296.655,
+      515.289
+     ],
+     "apparent_2D_analytic_px": [
+      296.187,
+      515.408
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      295.902,
+      518.382
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      295.61,
+      518.976
+     ],
+     "confidence": 0.5807,
+     "status": "ok",
+     "radius_px": 15.764
+    }
+   }
+  },
+  {
+   "frame": 8,
+   "file": "renders/frame_08.png",
+   "input": {
+    "h": -0.951057,
+    "v": 0.309017
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.026646,
+      -0.140837,
+      1.620965
+     ],
+     "projected_2D_px": [
+      700.471,
+      508.841
+     ],
+     "apparent_2D_analytic_px": [
+      699.931,
+      508.642
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      699.42,
+      510.597
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      698.384,
+      510.732
+     ],
+     "confidence": 0.6212,
+     "status": "ok",
+     "radius_px": 15.521
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.030429,
+      -0.141046,
+      1.621312
+     ],
+     "projected_2D_px": [
+      296.655,
+      506.383
+     ],
+     "apparent_2D_analytic_px": [
+      296.187,
+      506.183
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      295.861,
+      508.145
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      295.48,
+      508.586
+     ],
+     "confidence": 0.6092,
+     "status": "ok",
+     "radius_px": 15.425
+    }
+   }
+  },
+  {
+   "frame": 9,
+   "file": "renders/frame_09.png",
+   "input": {
+    "h": -0.587785,
+    "v": 0.809017
+   },
+   "L": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      0.027354,
+      -0.140895,
+      1.62196
+     ],
+     "projected_2D_px": [
+      705.513,
+      501.797
+     ],
+     "apparent_2D_analytic_px": [
+      705.157,
+      501.341
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      705.254,
+      502.446
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      703.9,
+      502.213
+     ],
+     "confidence": 0.4154,
+     "status": "ok",
+     "radius_px": 15.977
+    }
+   },
+   "R": {
+    "A": {
+     "level": "anatomical ground truth",
+     "pupil_3D_world_m": [
+      -0.029689,
+      -0.140984,
+      1.622323
+     ],
+     "projected_2D_px": [
+      301.923,
+      499.229
+     ],
+     "apparent_2D_analytic_px": [
+      301.644,
+      498.774
+     ]
+    },
+    "B": {
+     "level": "rendered-asset ground truth",
+     "painted_pupil_2D_px": [
+      301.9,
+      499.912
+     ]
+    },
+    "C": {
+     "level": "prediction (not ground truth)",
+     "detected_2D_px": [
+      300.071,
+      502.386
+     ],
+     "confidence": 0.2443,
+     "status": "low_confidence",
+     "radius_px": 16.472
+    }
+   }
+  }
+ ]
+}

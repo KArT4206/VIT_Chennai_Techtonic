@@ -1,0 +1,12 @@
+{
+ "zip_sha256": "acccb548c270bfab4719c3f173eda544a1b818fd858f56b1fe2d67a07790a0dc",
+ "zip_ok": true,
+ "tag_commit": "315565560ab3964dfb9e8ff3a167abb71ed8cbae",
+ "tag_ok": true,
+ "submission_final_commit": "315565560ab3964dfb9e8ff3a167abb71ed8cbae",
+ "submission_final_ok": true,
+ "official_paths_diff_vs_tag": "",
+ "official_paths_untracked": "",
+ "official_paths_ok": true,
+ "ok": true
+}

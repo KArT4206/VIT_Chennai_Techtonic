@@ -1,0 +1,48 @@
+{
+ "device": "METAL",
+ "samples": 512,
+ "blender": "5.3.0",
+ "threads": 10,
+ "reset_render_s": [
+  67.01,
+  66.4,
+  66.36
+ ],
+ "repeat_max_abs_diff_255": [
+  1.0,
+  1.0
+ ],
+ "repeat_mean_abs_diff_255": [
+  0.00016,
+  7e-05
+ ],
+ "robustness": {
+  "corner_1_1": [
+   728.406,
+   498.422,
+   324.786,
+   496.357
+  ],
+  "corner_1_-1": [
+   728.409,
+   527.824,
+   324.781,
+   525.23
+  ],
+  "corner_-1_1": [
+   699.379,
+   498.769,
+   295.585,
+   496.008
+  ],
+  "corner_-1_-1": [
+   699.379,
+   527.476,
+   295.587,
+   525.581
+  ],
+  "reset_after_each_direction_identical": true,
+  "invalid_input_leaves_pose_unchanged": true
+ },
+ "peak_rss_mb": 6595.0
+}

@@ -1,0 +1,24 @@
+PASS test_detector_subpixel_on_synthetic_pair
+PASS test_detector_never_needs_ground_truth
+PASS same seed -> identical output: ok
+PASS different seed -> different output: ok
+PASS motion keeps disc centroid at (50,50): [np.float64(50.0), np.float64(50.0)]
+PASS defocus keeps disc centroid at (50,50): [np.float64(50.0), np.float64(50.0)]
+PASS exposure keeps disc centroid at (50,50): [np.float64(50.0), np.float64(50.0)]
+PASS motion kernel sums to 1: ok
+PASS exposure 0 stops is identity (<1e-12): 6.938893903907228e-18
+PASS test_degrade_selftest
+PASS test_degrade_preserves_label_bytes
+PASS saccade starts/ends exactly at endpoints: (-1, 1)
+PASS saccade monotonic: ok
+PASS saccade duration follows main sequence (ms): 56.77
+PASS saccade peak velocity plausible (deg/s, 100-700 for 5-20 deg): 536.9
+PASS min-jerk velocity zero at start and end: (0.0, 0.0)
+PASS pursuit lags target by latency (h at t=latency is 0): 0.0
+PASS pursuit gain <= 1: ok
+PASS vergence depth monotonic 0.35 -> 0.20 m: ok
+PASS fixation drift reproducible with seed: ok
+PASS fixation drift stays within 0.05 input units: 0.0058
+PASS blink closes fully and reopens: ok
+PASS test_dynamics_selftest
+PASS test_gpu_queue_serialises_jobs

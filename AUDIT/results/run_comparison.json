@@ -1,0 +1,591 @@
+{
+ "detector": {
+  "dataset_roi_metrics.json": {
+   "success_rate": {
+    "before": 0.75,
+    "clean": 0.75,
+    "diff": 0.0
+   },
+   "n_success": {
+    "before": 60,
+    "clean": 60,
+    "diff": 0
+   },
+   "on_successful.mae_x": {
+    "before": 0.835,
+    "clean": 0.834,
+    "diff": -0.001
+   },
+   "on_successful.mae_y": {
+    "before": 2.679,
+    "clean": 2.689,
+    "diff": 0.01
+   },
+   "on_successful.rmse": {
+    "before": 3.045,
+    "clean": 3.051,
+    "diff": 0.006
+   },
+   "on_successful.median": {
+    "before": 2.95,
+    "clean": 2.95,
+    "diff": 0.0
+   },
+   "on_successful.p95": {
+    "before": 4.328,
+    "clean": 4.328,
+    "diff": 0.0
+   },
+   "on_successful.max": {
+    "before": 4.862,
+    "clean": 4.862,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_x": {
+    "before": 0.315,
+    "clean": 0.309,
+    "diff": -0.006
+   },
+   "on_successful.mean_bias_y": {
+    "before": 2.609,
+    "clean": 2.619,
+    "diff": 0.01
+   },
+   "clean_file": "ws6_dataset_v1/dataset_roi_metrics.json",
+   "detector_sha256_before": "not recorded (pre-hash file; corrected detector per checkpoint README)",
+   "detector_sha256_clean": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+  },
+  "full_roi_metrics.json": {
+   "success_rate": {
+    "before": 0.6818,
+    "clean": 0.6818,
+    "diff": 0.0
+   },
+   "n_success": {
+    "before": 15,
+    "clean": 15,
+    "diff": 0
+   },
+   "on_successful.mae_x": {
+    "before": 1.105,
+    "clean": 1.105,
+    "diff": 0.0
+   },
+   "on_successful.mae_y": {
+    "before": 2.857,
+    "clean": 2.857,
+    "diff": 0.0
+   },
+   "on_successful.rmse": {
+    "before": 3.344,
+    "clean": 3.344,
+    "diff": 0.0
+   },
+   "on_successful.median": {
+    "before": 3.294,
+    "clean": 3.294,
+    "diff": 0.0
+   },
+   "on_successful.p95": {
+    "before": 4.747,
+    "clean": 4.747,
+    "diff": 0.0
+   },
+   "on_successful.max": {
+    "before": 4.875,
+    "clean": 4.875,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_x": {
+    "before": 0.059,
+    "clean": 0.059,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_y": {
+    "before": 2.857,
+    "clean": 2.857,
+    "diff": 0.0
+   },
+   "clean_file": "full_roi_metrics.json",
+   "detector_sha256_before": "not recorded (pre-hash file; corrected detector per checkpoint README)",
+   "detector_sha256_clean": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+  },
+  "no_lids_lens_flat_roi_metrics.json": {
+   "success_rate": {
+    "before": 1.0,
+    "clean": 1.0,
+    "diff": 0.0
+   },
+   "n_success": {
+    "before": 22,
+    "clean": 22,
+    "diff": 0
+   },
+   "on_successful.mae_x": {
+    "before": 1.174,
+    "clean": 1.174,
+    "diff": 0.0
+   },
+   "on_successful.mae_y": {
+    "before": 2.444,
+    "clean": 2.444,
+    "diff": 0.0
+   },
+   "on_successful.rmse": {
+    "before": 3.003,
+    "clean": 3.003,
+    "diff": 0.0
+   },
+   "on_successful.median": {
+    "before": 2.946,
+    "clean": 2.946,
+    "diff": 0.0
+   },
+   "on_successful.p95": {
+    "before": 4.084,
+    "clean": 4.084,
+    "diff": 0.0
+   },
+   "on_successful.max": {
+    "before": 4.136,
+    "clean": 4.136,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_x": {
+    "before": 1.098,
+    "clean": 1.098,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_y": {
+    "before": 2.444,
+    "clean": 2.444,
+    "diff": 0.0
+   },
+   "clean_file": "no_lids_lens_flat_roi_metrics.json",
+   "detector_sha256_before": "not recorded (pre-hash file; corrected detector per checkpoint README)",
+   "detector_sha256_clean": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+  },
+  "no_lids_lens_nodisp_roi_metrics.json": {
+   "success_rate": {
+    "before": 1.0,
+    "clean": 1.0,
+    "diff": 0.0
+   },
+   "n_success": {
+    "before": 22,
+    "clean": 22,
+    "diff": 0
+   },
+   "on_successful.mae_x": {
+    "before": 1.191,
+    "clean": 1.191,
+    "diff": 0.0
+   },
+   "on_successful.mae_y": {
+    "before": 2.527,
+    "clean": 2.527,
+    "diff": 0.0
+   },
+   "on_successful.rmse": {
+    "before": 3.082,
+    "clean": 3.082,
+    "diff": 0.0
+   },
+   "on_successful.median": {
+    "before": 2.968,
+    "clean": 2.968,
+    "diff": 0.0
+   },
+   "on_successful.p95": {
+    "before": 4.174,
+    "clean": 4.174,
+    "diff": 0.0
+   },
+   "on_successful.max": {
+    "before": 4.187,
+    "clean": 4.187,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_x": {
+    "before": 1.086,
+    "clean": 1.086,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_y": {
+    "before": 2.527,
+    "clean": 2.527,
+    "diff": 0.0
+   },
+   "clean_file": "no_lids_lens_nodisp_roi_metrics.json",
+   "detector_sha256_before": "not recorded (pre-hash file; corrected detector per checkpoint README)",
+   "detector_sha256_clean": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+  },
+  "no_lids_lens_roi_metrics.json": {
+   "success_rate": {
+    "before": 1.0,
+    "clean": 1.0,
+    "diff": 0.0
+   },
+   "n_success": {
+    "before": 22,
+    "clean": 22,
+    "diff": 0
+   },
+   "on_successful.mae_x": {
+    "before": 1.051,
+    "clean": 1.051,
+    "diff": 0.0
+   },
+   "on_successful.mae_y": {
+    "before": 2.894,
+    "clean": 2.894,
+    "diff": 0.0
+   },
+   "on_successful.rmse": {
+    "before": 3.317,
+    "clean": 3.317,
+    "diff": 0.0
+   },
+   "on_successful.median": {
+    "before": 3.282,
+    "clean": 3.282,
+    "diff": 0.0
+   },
+   "on_successful.p95": {
+    "before": 4.494,
+    "clean": 4.494,
+    "diff": 0.0
+   },
+   "on_successful.max": {
+    "before": 4.502,
+    "clean": 4.502,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_x": {
+    "before": 0.836,
+    "clean": 0.836,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_y": {
+    "before": 2.894,
+    "clean": 2.894,
+    "diff": 0.0
+   },
+   "clean_file": "no_lids_lens_roi_metrics.json",
+   "detector_sha256_before": "not recorded (pre-hash file; corrected detector per checkpoint README)",
+   "detector_sha256_clean": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+  },
+  "no_lids_roi_metrics.json": {
+   "success_rate": {
+    "before": 0.8636,
+    "clean": 0.8636,
+    "diff": 0.0
+   },
+   "n_success": {
+    "before": 19,
+    "clean": 19,
+    "diff": 0
+   },
+   "on_successful.mae_x": {
+    "before": 1.047,
+    "clean": 1.047,
+    "diff": 0.0
+   },
+   "on_successful.mae_y": {
+    "before": 3.106,
+    "clean": 3.106,
+    "diff": 0.0
+   },
+   "on_successful.rmse": {
+    "before": 3.5,
+    "clean": 3.5,
+    "diff": 0.0
+   },
+   "on_successful.median": {
+    "before": 3.471,
+    "clean": 3.471,
+    "diff": 0.0
+   },
+   "on_successful.p95": {
+    "before": 4.75,
+    "clean": 4.75,
+    "diff": 0.0
+   },
+   "on_successful.max": {
+    "before": 4.895,
+    "clean": 4.895,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_x": {
+    "before": 0.572,
+    "clean": 0.572,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_y": {
+    "before": 3.106,
+    "clean": 3.106,
+    "diff": 0.0
+   },
+   "clean_file": "no_lids_roi_metrics.json",
+   "detector_sha256_before": "not recorded (pre-hash file; corrected detector per checkpoint README)",
+   "detector_sha256_clean": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+  },
+  "release_metrics.json": {
+   "success_rate": {
+    "before": 0.9,
+    "clean": 0.9,
+    "diff": 0.0
+   },
+   "n_success": {
+    "before": 18,
+    "clean": 18,
+    "diff": 0
+   },
+   "on_successful.mae_x": {
+    "before": 1.171,
+    "clean": 1.171,
+    "diff": 0.0
+   },
+   "on_successful.mae_y": {
+    "before": 3.079,
+    "clean": 3.079,
+    "diff": 0.0
+   },
+   "on_successful.rmse": {
+    "before": 3.622,
+    "clean": 3.622,
+    "diff": 0.0
+   },
+   "on_successful.median": {
+    "before": 3.596,
+    "clean": 3.596,
+    "diff": 0.0
+   },
+   "on_successful.p95": {
+    "before": 4.953,
+    "clean": 4.953,
+    "diff": 0.0
+   },
+   "on_successful.max": {
+    "before": 4.972,
+    "clean": 4.972,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_x": {
+    "before": 0.465,
+    "clean": 0.465,
+    "diff": 0.0
+   },
+   "on_successful.mean_bias_y": {
+    "before": 3.079,
+    "clean": 3.079,
+    "diff": 0.0
+   },
+   "clean_file": "release_metrics.json",
+   "detector_sha256_before": "not recorded (pre-hash file; corrected detector per checkpoint README)",
+   "detector_sha256_clean": "90ee623b4b68a04480a51911a9897b0d348f3f5c3eee9f63943cb38de1335a40"
+  }
+ },
+ "depth_fit": {
+  "no_lids_lens.L": {
+   "best_depth_mm": {
+    "baseline": 16.1,
+    "clean": 16.1
+   },
+   "bootstrap_depth_mm": {
+    "baseline": {
+     "p2_5": 16.05,
+     "p50": 16.1,
+     "p97_5": 16.15
+    },
+    "clean": {
+     "p2_5": 16.05,
+     "p50": 16.1,
+     "p97_5": 16.15
+    }
+   },
+   "leave_one_pose_out_range_mm": {
+    "baseline": [
+     16.1,
+     16.1
+    ],
+    "clean": [
+     16.1,
+     16.1
+    ]
+   },
+   "heldout_fitted_depth_model.rmse_px": {
+    "baseline": 0.116,
+    "clean": 0.116
+   },
+   "heldout_mesh_painted_no_fit.rmse_px": {
+    "baseline": 0.503,
+    "clean": 0.503
+   },
+   "heldout_wrapper_gt_no_offset.rmse_px": {
+    "baseline": 3.136,
+    "clean": 3.137
+   },
+   "fit_offset_at_best_px": {
+    "baseline": [
+     0.838,
+     2.857
+    ],
+    "clean": [
+     0.838,
+     2.857
+    ]
+   }
+  },
+  "no_lids_lens.R": {
+   "best_depth_mm": {
+    "baseline": 16.15,
+    "clean": 16.15
+   },
+   "bootstrap_depth_mm": {
+    "baseline": {
+     "p2_5": 16.1,
+     "p50": 16.15,
+     "p97_5": 16.2
+    },
+    "clean": {
+     "p2_5": 16.1,
+     "p50": 16.15,
+     "p97_5": 16.2
+    }
+   },
+   "leave_one_pose_out_range_mm": {
+    "baseline": [
+     16.15,
+     16.15
+    ],
+    "clean": [
+     16.15,
+     16.15
+    ]
+   },
+   "heldout_fitted_depth_model.rmse_px": {
+    "baseline": 0.136,
+    "clean": 0.136
+   },
+   "heldout_mesh_painted_no_fit.rmse_px": {
+    "baseline": 0.533,
+    "clean": 0.533
+   },
+   "heldout_wrapper_gt_no_offset.rmse_px": {
+    "baseline": 3.152,
+    "clean": 3.152
+   },
+   "fit_offset_at_best_px": {
+    "baseline": [
+     0.804,
+     2.849
+    ],
+    "clean": [
+     0.804,
+     2.849
+    ]
+   }
+  },
+  "full.L": {
+   "best_depth_mm": {
+    "baseline": 16.6,
+    "clean": 16.6
+   },
+   "bootstrap_depth_mm": {
+    "baseline": {
+     "p2_5": 16.35,
+     "p50": 16.6,
+     "p97_5": 16.9
+    },
+    "clean": {
+     "p2_5": 16.35,
+     "p50": 16.6,
+     "p97_5": 16.9
+    }
+   },
+   "leave_one_pose_out_range_mm": {
+    "baseline": [
+     16.5,
+     16.65
+    ],
+    "clean": [
+     16.5,
+     16.65
+    ]
+   },
+   "heldout_fitted_depth_model.rmse_px": {
+    "baseline": 0.421,
+    "clean": 0.421
+   },
+   "heldout_mesh_painted_no_fit.rmse_px": {
+    "baseline": 1.214,
+    "clean": 1.214
+   },
+   "heldout_wrapper_gt_no_offset.rmse_px": {
+    "baseline": 3.277,
+    "clean": 3.277
+   },
+   "fit_offset_at_best_px": {
+    "baseline": [
+     0.223,
+     2.873
+    ],
+    "clean": [
+     0.223,
+     2.873
+    ]
+   }
+  },
+  "full.R": {
+   "best_depth_mm": {
+    "baseline": 16.45,
+    "clean": 16.45
+   },
+   "bootstrap_depth_mm": {
+    "baseline": {
+     "p2_5": 15.65,
+     "p50": 16.45,
+     "p97_5": 17.15
+    },
+    "clean": {
+     "p2_5": 15.65,
+     "p50": 16.45,
+     "p97_5": 17.15
+    }
+   },
+   "leave_one_pose_out_range_mm": {
+    "baseline": [
+     16.25,
+     16.65
+    ],
+    "clean": [
+     16.25,
+     16.65
+    ]
+   },
+   "heldout_fitted_depth_model.rmse_px": {
+    "baseline": 0.749,
+    "clean": 0.749
+   },
+   "heldout_mesh_painted_no_fit.rmse_px": {
+    "baseline": 0.765,
+    "clean": 0.765
+   },
+   "heldout_wrapper_gt_no_offset.rmse_px": {
+    "baseline": 3.514,
+    "clean": 3.514
+   },
+   "fit_offset_at_best_px": {
+    "baseline": [
+     0.317,
+     3.207
+    ],
+    "clean": [
+     0.317,
+     3.207
+    ]
+   }
+  }
+ }
+}

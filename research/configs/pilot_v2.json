@@ -1,0 +1,19 @@
+{
+ "name": "techtonic_pilot_v2",
+ "schema_version": "2.0",
+ "seed": 20261122,
+ "samples": 32,
+ "n_static": 12,
+ "gaze": {"mode": "uniform", "box": 1.0},
+ "profiles": {"n": 2, "kinds": ["saccade", "pursuit"], "frames_per_profile": 5},
+ "iris": {"hue_shift": [0.0, 0.05], "value": [0.45, 1.15]},
+ "lighting": {"light_gain": [0.6, 1.4], "world_gain": [0.6, 1.4], "exposure": [-0.4, 0.4]},
+ "camera": {"p_variant": 0.25, "distance_m": [0.35, 0.45], "lens_scale": [0.9, 1.1]},
+ "occlusion": {"p": 0.3, "extra_upper_lid_deg": [2.0, 10.0]},
+ "quality": {"p": 0.5, "ops": [
+   {"op": "noise", "full_well_e": [250, 4000]},
+   {"op": "motion", "length_px": [2, 10], "angle_deg": [0, 180]},
+   {"op": "defocus", "radius_px": [0.5, 3]},
+   {"op": "jpeg", "quality": [30, 90]},
+   {"op": "exposure", "stops": [-1, 1]}]}
+}

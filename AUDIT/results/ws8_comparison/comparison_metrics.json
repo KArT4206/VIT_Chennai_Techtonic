@@ -1,0 +1,668 @@
+{
+ "cmp_dir": "/Users/b.karthik/Desktop/Projects/SyntheticEyes-Track1-research-work/clean_run_2026-11-23/cmp",
+ "n": 14,
+ "sphere_vs_anatomical_mean_abs": {
+  "mean": 7.35,
+  "max": 11.868
+ },
+ "planar_vs_anatomical_mean_abs": {
+  "mean": 5.286,
+  "max": 8.772
+ },
+ "planar_translation_mm": {
+  "mean": 1.778,
+  "max": 2.107
+ },
+ "planar_residual_px": {
+  "mean": 0.0,
+  "max": 0.001
+ },
+ "detector_err_vs_gt": {
+  "anatomical": {
+   "mean": 3.941
+  },
+  "sphere": {
+   "mean": 3.151
+  },
+  "planar": {
+   "mean": 3.371
+  }
+ },
+ "detector_radius": {
+  "anatomical": 15.805,
+  "sphere": 15.823,
+  "planar": 17.888
+ },
+ "rows": [
+  {
+   "pose": "down",
+   "eye": "L",
+   "input": {
+    "h": 0.0,
+    "v": -1.0
+   },
+   "gt": [
+    713.71,
+    527.79
+   ],
+   "planar_translation_mm": 2.0692,
+   "planar_residual_px": 0.00086,
+   "sphere_vs_anatomical_mean_abs": 5.026,
+   "sphere_vs_anatomical_p95_abs": 19.0,
+   "planar_vs_anatomical_mean_abs": 4.019,
+   "planar_vs_anatomical_p95_abs": 13.0,
+   "anatomical_detector": {
+    "centre": [
+     714.0354430283923,
+     532.8877927265661
+    ],
+    "radius": 16.428,
+    "status": "ok",
+    "err_vs_gt_px": 5.108
+   },
+   "sphere_detector": {
+    "centre": [
+     714.2185541402929,
+     533.0648485255701
+    ],
+    "radius": 16.453,
+    "status": "ok",
+    "err_vs_gt_px": 5.299
+   },
+   "planar_detector": {
+    "centre": [
+     714.0864925872947,
+     531.0601495469239
+    ],
+    "radius": 16.056,
+    "status": "ok",
+    "err_vs_gt_px": 3.292
+   }
+  },
+  {
+   "pose": "down",
+   "eye": "R",
+   "input": {
+    "h": 0.0,
+    "v": -1.0
+   },
+   "gt": [
+    310.369,
+    525.547
+   ],
+   "planar_translation_mm": 2.0816,
+   "planar_residual_px": 0.00024,
+   "sphere_vs_anatomical_mean_abs": 7.208,
+   "sphere_vs_anatomical_p95_abs": 37.0,
+   "planar_vs_anatomical_mean_abs": 4.054,
+   "planar_vs_anatomical_p95_abs": 13.0,
+   "anatomical_detector": {
+    "centre": [
+     311.79170346464207,
+     530.946509010444
+    ],
+    "radius": 16.759,
+    "status": "ok",
+    "err_vs_gt_px": 5.584
+   },
+   "sphere_detector": {
+    "centre": [
+     311.7017039077436,
+     530.4255606905025
+    ],
+    "radius": 16.055,
+    "status": "ok",
+    "err_vs_gt_px": 5.057
+   },
+   "planar_detector": {
+    "centre": [
+     311.48822391381856,
+     529.1171837183155
+    ],
+    "radius": 16.296,
+    "status": "ok",
+    "err_vs_gt_px": 3.742
+   }
+  },
+  {
+   "pose": "down_left",
+   "eye": "L",
+   "input": {
+    "h": -0.707,
+    "v": -0.707
+   },
+   "gt": [
+    703.437,
+    523.405
+   ],
+   "planar_translation_mm": 2.0495,
+   "planar_residual_px": 0.00012,
+   "sphere_vs_anatomical_mean_abs": 3.542,
+   "sphere_vs_anatomical_p95_abs": 15.0,
+   "planar_vs_anatomical_mean_abs": 4.031,
+   "planar_vs_anatomical_p95_abs": 14.0,
+   "anatomical_detector": {
+    "centre": [
+     702.6110714720236,
+     527.5133193233916
+    ],
+    "radius": 16.272,
+    "status": "ok",
+    "err_vs_gt_px": 4.191
+   },
+   "sphere_detector": {
+    "centre": [
+     703.0062316325383,
+     527.3358075519824
+    ],
+    "radius": 15.64,
+    "status": "ok",
+    "err_vs_gt_px": 3.954
+   },
+   "planar_detector": {
+    "centre": [
+     703.5113949276845,
+     526.7511500241222
+    ],
+    "radius": 16.362,
+    "status": "ok",
+    "err_vs_gt_px": 3.347
+   }
+  },
+  {
+   "pose": "down_left",
+   "eye": "R",
+   "input": {
+    "h": -0.707,
+    "v": -0.707
+   },
+   "gt": [
+    299.859,
+    521.316
+   ],
+   "planar_translation_mm": 2.0999,
+   "planar_residual_px": 0.00019,
+   "sphere_vs_anatomical_mean_abs": 10.132,
+   "sphere_vs_anatomical_p95_abs": 49.0,
+   "planar_vs_anatomical_mean_abs": 6.512,
+   "planar_vs_anatomical_p95_abs": 25.0,
+   "anatomical_detector": {
+    "centre": [
+     300.0015925597244,
+     525.1080168842511
+    ],
+    "radius": 15.725,
+    "status": "ok",
+    "err_vs_gt_px": 3.795
+   },
+   "sphere_detector": {
+    "centre": [
+     300.00881071546996,
+     525.2250203512488
+    ],
+    "radius": 15.686,
+    "status": "ok",
+    "err_vs_gt_px": 3.912
+   },
+   "planar_detector": {
+    "centre": [
+     301.05986587520925,
+     524.3868556946168
+    ],
+    "radius": 15.828,
+    "status": "ok",
+    "err_vs_gt_px": 3.297
+   }
+  },
+  {
+   "pose": "left",
+   "eye": "L",
+   "input": {
+    "h": -1.0,
+    "v": 0.0
+   },
+   "gt": [
+    699.23,
+    513.123
+   ],
+   "planar_translation_mm": 2.0413,
+   "planar_residual_px": 0.00044,
+   "sphere_vs_anatomical_mean_abs": 3.305,
+   "sphere_vs_anatomical_p95_abs": 14.0,
+   "planar_vs_anatomical_mean_abs": 4.333,
+   "planar_vs_anatomical_p95_abs": 15.0,
+   "anatomical_detector": {
+    "centre": [
+     696.8291865185629,
+     515.9581712049365
+    ],
+    "radius": 16.493,
+    "status": "ok",
+    "err_vs_gt_px": 3.715
+   },
+   "sphere_detector": {
+    "centre": [
+     696.5997952712694,
+     515.5621992899805
+    ],
+    "radius": 17.256,
+    "status": "low_confidence",
+    "err_vs_gt_px": 3.587
+   },
+   "planar_detector": {
+    "centre": [
+     698.9880218167999,
+     515.8160582907168
+    ],
+    "radius": 15.982,
+    "status": "ok",
+    "err_vs_gt_px": 2.704
+   }
+  },
+  {
+   "pose": "left",
+   "eye": "R",
+   "input": {
+    "h": -1.0,
+    "v": 0.0
+   },
+   "gt": [
+    295.448,
+    510.796
+   ],
+   "planar_translation_mm": 2.1075,
+   "planar_residual_px": 0.00067,
+   "sphere_vs_anatomical_mean_abs": 11.097,
+   "sphere_vs_anatomical_p95_abs": 53.0,
+   "planar_vs_anatomical_mean_abs": 7.021,
+   "planar_vs_anatomical_p95_abs": 27.0,
+   "anatomical_detector": {
+    "centre": [
+     294.73901654646653,
+     513.6369739613008
+    ],
+    "radius": 15.556,
+    "status": "ok",
+    "err_vs_gt_px": 2.928
+   },
+   "sphere_detector": {
+    "centre": [
+     295.0865682945127,
+     513.4593392992656
+    ],
+    "radius": 15.607,
+    "status": "ok",
+    "err_vs_gt_px": 2.688
+   },
+   "planar_detector": {
+    "centre": [
+     296.1145664853131,
+     513.9323005590678
+    ],
+    "radius": 15.663,
+    "status": "ok",
+    "err_vs_gt_px": 3.206
+   }
+  },
+  {
+   "pose": "reset",
+   "eye": "L",
+   "input": {
+    "h": 0.0,
+    "v": 0.0
+   },
+   "gt": [
+    713.698,
+    513.123
+   ],
+   "planar_translation_mm": 0.0,
+   "planar_residual_px": 0.0006,
+   "sphere_vs_anatomical_mean_abs": 6.151,
+   "sphere_vs_anatomical_p95_abs": 25.0,
+   "planar_vs_anatomical_mean_abs": 0.0,
+   "planar_vs_anatomical_p95_abs": 0.0,
+   "anatomical_detector": {
+    "centre": [
+     713.819262282292,
+     516.4145558487753
+    ],
+    "radius": 15.817,
+    "status": "ok",
+    "err_vs_gt_px": 3.294
+   },
+   "sphere_detector": {
+    "centre": [
+     714.144629197079,
+     515.9859096239657
+    ],
+    "radius": 15.602,
+    "status": "ok",
+    "err_vs_gt_px": 2.898
+   },
+   "planar_detector": {
+    "centre": [
+     713.819262282292,
+     516.4145558487753
+    ],
+    "radius": 15.817,
+    "status": "ok",
+    "err_vs_gt_px": 3.294
+   }
+  },
+  {
+   "pose": "reset",
+   "eye": "R",
+   "input": {
+    "h": 0.0,
+    "v": 0.0
+   },
+   "gt": [
+    310.381,
+    510.796
+   ],
+   "planar_translation_mm": 0.0,
+   "planar_residual_px": 0.00056,
+   "sphere_vs_anatomical_mean_abs": 9.438,
+   "sphere_vs_anatomical_p95_abs": 49.0,
+   "planar_vs_anatomical_mean_abs": 0.0,
+   "planar_vs_anatomical_p95_abs": 0.0,
+   "anatomical_detector": {
+    "centre": [
+     314.32000927216114,
+     517.1111046005914
+    ],
+    "radius": 20.877,
+    "status": "low_confidence",
+    "err_vs_gt_px": 7.443
+   },
+   "sphere_detector": {
+    "centre": [
+     311.7439096352363,
+     513.2844584469194
+    ],
+    "radius": 15.709,
+    "status": "ok",
+    "err_vs_gt_px": 2.837
+   },
+   "planar_detector": {
+    "centre": [
+     314.32000927216114,
+     517.1111046005914
+    ],
+    "radius": 20.877,
+    "status": "low_confidence",
+    "err_vs_gt_px": 7.443
+   }
+  },
+  {
+   "pose": "right",
+   "eye": "L",
+   "input": {
+    "h": 1.0,
+    "v": 0.0
+   },
+   "gt": [
+    728.545,
+    513.122
+   ],
+   "planar_translation_mm": 2.0947,
+   "planar_residual_px": 0.00055,
+   "sphere_vs_anatomical_mean_abs": 6.471,
+   "sphere_vs_anatomical_p95_abs": 26.0,
+   "planar_vs_anatomical_mean_abs": 8.772,
+   "planar_vs_anatomical_p95_abs": 45.0,
+   "anatomical_detector": {
+    "centre": [
+     730.5093017775305,
+     516.3761226397149
+    ],
+    "radius": 15.643,
+    "status": "ok",
+    "err_vs_gt_px": 3.801
+   },
+   "sphere_detector": {
+    "centre": [
+     730.5289498763763,
+     515.8610519839139
+    ],
+    "radius": 15.403,
+    "status": "ok",
+    "err_vs_gt_px": 3.382
+   },
+   "planar_detector": {
+    "centre": [
+     729.0412675704825,
+     515.9987502053564
+    ],
+    "radius": 15.559,
+    "status": "ok",
+    "err_vs_gt_px": 2.919
+   }
+  },
+  {
+   "pose": "right",
+   "eye": "R",
+   "input": {
+    "h": 1.0,
+    "v": 0.0
+   },
+   "gt": [
+    324.933,
+    510.796
+   ],
+   "planar_translation_mm": 2.0536,
+   "planar_residual_px": 0.0006,
+   "sphere_vs_anatomical_mean_abs": 5.884,
+   "sphere_vs_anatomical_p95_abs": 26.0,
+   "planar_vs_anatomical_mean_abs": 7.814,
+   "planar_vs_anatomical_p95_abs": 30.0,
+   "anatomical_detector": {
+    "centre": [
+     327.9438071438848,
+     513.4644596372265
+    ],
+    "radius": 15.722,
+    "status": "ok",
+    "err_vs_gt_px": 4.023
+   },
+   "sphere_detector": {
+    "centre": [
+     327.5975711969516,
+     513.7854715630831
+    ],
+    "radius": 15.572,
+    "status": "ok",
+    "err_vs_gt_px": 4.005
+   },
+   "planar_detector": {
+    "centre": [
+     326.26178254916505,
+     513.63755377471
+    ],
+    "radius": 15.797,
+    "status": "ok",
+    "err_vs_gt_px": 3.137
+   }
+  },
+  {
+   "pose": "up",
+   "eye": "L",
+   "input": {
+    "h": 0.0,
+    "v": 1.0
+   },
+   "gt": [
+    713.709,
+    498.457
+   ],
+   "planar_translation_mm": 2.0692,
+   "planar_residual_px": 0.00015,
+   "sphere_vs_anatomical_mean_abs": 8.052,
+   "sphere_vs_anatomical_p95_abs": 39.0,
+   "planar_vs_anatomical_mean_abs": 5.678,
+   "planar_vs_anatomical_p95_abs": 22.0,
+   "anatomical_detector": {
+    "centre": [
+     713.2517830100786,
+     498.554820888692
+    ],
+    "radius": 16.597,
+    "status": "low_confidence",
+    "err_vs_gt_px": 0.468
+   },
+   "sphere_detector": {
+    "centre": [
+     714.1444372185666,
+     498.9223879961688
+    ],
+    "radius": 15.846,
+    "status": "ok",
+    "err_vs_gt_px": 0.637
+   },
+   "planar_detector": {
+    "centre": [
+     713.4807370185355,
+     501.1479454793013
+    ],
+    "radius": 16.239,
+    "status": "low_confidence",
+    "err_vs_gt_px": 2.701
+   }
+  },
+  {
+   "pose": "up",
+   "eye": "R",
+   "input": {
+    "h": 0.0,
+    "v": 1.0
+   },
+   "gt": [
+    310.371,
+    496.041
+   ],
+   "planar_translation_mm": 2.0825,
+   "planar_residual_px": 0.00052,
+   "sphere_vs_anatomical_mean_abs": 11.868,
+   "sphere_vs_anatomical_p95_abs": 55.0,
+   "planar_vs_anatomical_mean_abs": 5.947,
+   "planar_vs_anatomical_p95_abs": 21.0,
+   "anatomical_detector": {
+    "centre": [
+     304.60224227047684,
+     495.89427703464804
+    ],
+    "radius": 9.168,
+    "status": "ok",
+    "err_vs_gt_px": 5.771
+   },
+   "sphere_detector": {
+    "centre": [
+     311.5088446423905,
+     496.6111548605708
+    ],
+    "radius": 15.754,
+    "status": "ok",
+    "err_vs_gt_px": 1.273
+   },
+   "planar_detector": {
+    "centre": [
+     309.5752068920549,
+     498.18911695990334
+    ],
+    "radius": 38.887,
+    "status": "low_confidence",
+    "err_vs_gt_px": 2.291
+   }
+  },
+  {
+   "pose": "up_right",
+   "eye": "L",
+   "input": {
+    "h": 0.707,
+    "v": 0.707
+   },
+   "gt": [
+    724.159,
+    502.663
+   ],
+   "planar_translation_mm": 2.0871,
+   "planar_residual_px": 0.00011,
+   "sphere_vs_anatomical_mean_abs": 7.512,
+   "sphere_vs_anatomical_p95_abs": 41.0,
+   "planar_vs_anatomical_mean_abs": 7.962,
+   "planar_vs_anatomical_p95_abs": 37.0,
+   "anatomical_detector": {
+    "centre": [
+     725.1709953980412,
+     504.82774125322044
+    ],
+    "radius": 14.891,
+    "status": "ok",
+    "err_vs_gt_px": 2.39
+   },
+   "sphere_detector": {
+    "centre": [
+     725.7027006073534,
+     503.90909838999795
+    ],
+    "radius": 15.353,
+    "status": "ok",
+    "err_vs_gt_px": 1.984
+   },
+   "planar_detector": {
+    "centre": [
+     724.4230557723931,
+     505.29587882815133
+    ],
+    "radius": 15.248,
+    "status": "ok",
+    "err_vs_gt_px": 2.646
+   }
+  },
+  {
+   "pose": "up_right",
+   "eye": "R",
+   "input": {
+    "h": 0.707,
+    "v": 0.707
+   },
+   "gt": [
+    320.703,
+    500.453
+   ],
+   "planar_translation_mm": 2.0622,
+   "planar_residual_px": 3e-05,
+   "sphere_vs_anatomical_mean_abs": 7.212,
+   "sphere_vs_anatomical_p95_abs": 36.0,
+   "planar_vs_anatomical_mean_abs": 7.86,
+   "planar_vs_anatomical_p95_abs": 33.0,
+   "anatomical_detector": {
+    "centre": [
+     323.2168021680217,
+     501.32249322493226
+    ],
+    "radius": 15.327,
+    "status": "fail",
+    "err_vs_gt_px": 2.66
+   },
+   "sphere_detector": {
+    "centre": [
+     322.96038024809434,
+     501.74218687034124
+    ],
+    "radius": 15.59,
+    "status": "ok",
+    "err_vs_gt_px": 2.6
+   },
+   "planar_detector": {
+    "centre": [
+     321.58718246561523,
+     503.5043745250885
+    ],
+    "radius": 15.82,
+    "status": "ok",
+    "err_vs_gt_px": 3.177
+   }
+  }
+ ]
+}

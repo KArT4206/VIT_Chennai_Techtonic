@@ -1,0 +1,137 @@
+{
+ "masks_dir": "/private/tmp/claude-501/-Users-b-karthik-Desktop-Projects-SyntheticEyes/71762cfb-4b3c-4621-b1e4-a883993d3000/scratchpad/masks",
+ "n_poses": 11,
+ "validation_problems": [
+  "frame_00: unclassified 0.1295",
+  "frame_01: unclassified 0.1295",
+  "frame_02: unclassified 0.1296",
+  "frame_03: unclassified 0.1296",
+  "frame_04: unclassified 0.1296",
+  "frame_05: unclassified 0.1296",
+  "frame_06: unclassified 0.1295",
+  "frame_07: unclassified 0.1295",
+  "frame_08: unclassified 0.1295",
+  "frame_09: unclassified 0.1295",
+  "frame_10: unclassified 0.1295"
+ ],
+ "validation_ok": false,
+ "landmark": {
+  "unoccluded_refracted_centroid_vs_gt_apparent": {
+   "n": 22,
+   "mean": 2.5773,
+   "median": 2.7571,
+   "p95": 3.7768,
+   "max": 3.7805,
+   "min": 1.021
+  },
+  "unoccluded_refracted_centroid_vs_gt_unrefracted": {
+   "n": 22,
+   "mean": 2.7276,
+   "median": 2.9905,
+   "p95": 4.2321,
+   "max": 4.2372,
+   "min": 0.6586
+  },
+  "visible_refracted_centroid_vs_gt_apparent": {
+   "n": 22,
+   "mean": 2.3692,
+   "median": 2.4593,
+   "p95": 3.4408,
+   "max": 3.4956,
+   "min": 1.0322
+  },
+  "visible_unrefracted_centroid_vs_gt_unrefracted": {
+   "n": 22,
+   "mean": 2.5165,
+   "median": 2.798,
+   "p95": 3.8217,
+   "max": 3.9161,
+   "min": 0.6743
+  },
+  "detector_vs_unoccluded_mask_centroid": {
+   "n": 20,
+   "mean": 2.4442,
+   "median": 0.8559,
+   "p95": 4.3659,
+   "max": 30.5472,
+   "min": 0.3705
+  },
+  "bias_unoccluded_refr_minus_gt_apparent": {
+   "mean_dx": 0.7718,
+   "mean_dy": 2.2461
+  },
+  "bias_detector_minus_unoccluded_centroid": {
+   "mean_dx": -1.7714,
+   "mean_dy": 0.8039
+  }
+ },
+ "segmentation": {
+  "iou_detector_vs_visible": {
+   "n": 20,
+   "mean": 0.6463,
+   "median": 0.6874,
+   "p95": 0.7311,
+   "max": 0.7465,
+   "min": 0.0
+  },
+  "dice_detector_vs_visible": {
+   "n": 20,
+   "mean": 0.7682,
+   "median": 0.8147,
+   "p95": 0.8446,
+   "max": 0.8549,
+   "min": 0.0
+  },
+  "iou_detector_vs_unoccluded": {
+   "n": 20,
+   "mean": 0.657,
+   "median": 0.6893,
+   "p95": 0.7324,
+   "max": 0.7465,
+   "min": 0.0
+  },
+  "iou_refr_vs_unrefr": {
+   "n": 22,
+   "mean": 1.0,
+   "median": 1.0,
+   "p95": 1.0,
+   "max": 1.0,
+   "min": 1.0
+  },
+  "dice_refr_vs_unrefr": {
+   "n": 22,
+   "mean": 1.0,
+   "median": 1.0,
+   "p95": 1.0,
+   "max": 1.0,
+   "min": 1.0
+  }
+ },
+ "visibility": {
+  "visible_fraction": {
+   "n": 22,
+   "mean": 0.9809,
+   "median": 1.0,
+   "p95": 1.0,
+   "max": 1.0,
+   "min": 0.8574
+  },
+  "cornea_covers_pupil": {
+   "n": 22,
+   "mean": 1.0,
+   "median": 1.0,
+   "p95": 1.0,
+   "max": 1.0,
+   "min": 1.0
+  },
+  "pupil_ring_iris_fraction": {
+   "n": 22,
+   "mean": 0.9317,
+   "median": 1.0,
+   "p95": 1.0,
+   "max": 1.0,
+   "min": 0.6842
+  }
+ },
+ "unclassified_fraction_max": 0.12961483001708984
+}

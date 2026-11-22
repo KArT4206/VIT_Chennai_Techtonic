@@ -1,0 +1,73 @@
+PASS bundle contains scene.blend
+PASS bundle contains wrapper/eyes.py
+PASS bundle contains renders
+PASS bundle contains metadata.json
+PASS bundle contains README.md
+PASS 10 frames in metadata (got 10)
+PASS camera 0.40 m from eye midpoint (0.4)
+PASS fixation distance 0.35 m
+PASS frame 0: theta=0.0000 h=sin, v=cos
+PASS frame 0: 1024x1024 PNG
+PASS frame 0 L: K[R|t] reprojects the seen pupil to 2D (err 0.0003 px)
+FAIL frame 0 L: rendered pupil at metadata 2D point (off by 12.60 px)
+PASS frame 0 R: K[R|t] reprojects the seen pupil to 2D (err 0.0002 px)
+FAIL frame 0 R: rendered pupil at metadata 2D point (off by 7.90 px)
+PASS frame 1: theta=0.6283 h=sin, v=cos
+PASS frame 1: 1024x1024 PNG
+PASS frame 1 L: K[R|t] reprojects the seen pupil to 2D (err 0.0002 px)
+FAIL frame 1 L: rendered pupil at metadata 2D point (off by 6.93 px)
+PASS frame 1 R: K[R|t] reprojects the seen pupil to 2D (err 0.0008 px)
+FAIL frame 1 R: rendered pupil at metadata 2D point (off by 9.16 px)
+PASS frame 2: theta=1.2566 h=sin, v=cos
+PASS frame 2: 1024x1024 PNG
+PASS frame 2 L: K[R|t] reprojects the seen pupil to 2D (err 0.0006 px)
+FAIL frame 2 L: rendered pupil at metadata 2D point (off by 8.55 px)
+PASS frame 2 R: K[R|t] reprojects the seen pupil to 2D (err 0.0011 px)
+FAIL frame 2 R: rendered pupil at metadata 2D point (off by 11.87 px)
+PASS frame 3: theta=1.8850 h=sin, v=cos
+PASS frame 3: 1024x1024 PNG
+PASS frame 3 L: K[R|t] reprojects the seen pupil to 2D (err 0.0002 px)
+FAIL frame 3 L: rendered pupil at metadata 2D point (off by 11.42 px)
+PASS frame 3 R: K[R|t] reprojects the seen pupil to 2D (err 0.0003 px)
+FAIL frame 3 R: rendered pupil at metadata 2D point (off by 11.93 px)
+PASS frame 4: theta=2.5133 h=sin, v=cos
+PASS frame 4: 1024x1024 PNG
+PASS frame 4 L: K[R|t] reprojects the seen pupil to 2D (err 0.0001 px)
+FAIL frame 4 L: rendered pupil at metadata 2D point (off by 8.15 px)
+PASS frame 4 R: K[R|t] reprojects the seen pupil to 2D (err 0.0002 px)
+FAIL frame 4 R: rendered pupil at metadata 2D point (off by 7.15 px)
+PASS frame 5: theta=3.1416 h=sin, v=cos
+PASS frame 5: 1024x1024 PNG
+PASS frame 5 L: K[R|t] reprojects the seen pupil to 2D (err 0.0005 px)
+FAIL frame 5 L: rendered pupil at metadata 2D point (off by 6.48 px)
+PASS frame 5 R: K[R|t] reprojects the seen pupil to 2D (err 0.0011 px)
+FAIL frame 5 R: rendered pupil at metadata 2D point (off by 7.60 px)
+PASS frame 6: theta=3.7699 h=sin, v=cos
+PASS frame 6: 1024x1024 PNG
+PASS frame 6 L: K[R|t] reprojects the seen pupil to 2D (err 0.0007 px)
+FAIL frame 6 L: rendered pupil at metadata 2D point (off by 7.06 px)
+PASS frame 6 R: K[R|t] reprojects the seen pupil to 2D (err 0.0006 px)
+FAIL frame 6 R: rendered pupil at metadata 2D point (off by 9.76 px)
+PASS frame 7: theta=4.3982 h=sin, v=cos
+PASS frame 7: 1024x1024 PNG
+PASS frame 7 L: K[R|t] reprojects the seen pupil to 2D (err 0.0012 px)
+FAIL frame 7 L: rendered pupil at metadata 2D point (off by 8.54 px)
+PASS frame 7 R: K[R|t] reprojects the seen pupil to 2D (err 0.0007 px)
+FAIL frame 7 R: rendered pupil at metadata 2D point (off by 11.43 px)
+PASS frame 8: theta=5.0265 h=sin, v=cos
+PASS frame 8: 1024x1024 PNG
+PASS frame 8 L: K[R|t] reprojects the seen pupil to 2D (err 0.0003 px)
+FAIL frame 8 L: rendered pupil at metadata 2D point (off by 5.83 px)
+PASS frame 8 R: K[R|t] reprojects the seen pupil to 2D (err 0.0002 px)
+FAIL frame 8 R: rendered pupil at metadata 2D point (off by 10.21 px)
+PASS frame 9: theta=5.6549 h=sin, v=cos
+PASS frame 9: 1024x1024 PNG
+PASS frame 9 L: K[R|t] reprojects the seen pupil to 2D (err 0.0001 px)
+FAIL frame 9 L: rendered pupil at metadata 2D point (off by 7.81 px)
+PASS frame 9 R: K[R|t] reprojects the seen pupil to 2D (err 0.0009 px)
+FAIL frame 9 R: rendered pupil at metadata 2D point (off by 8.86 px)
+PASS eye L: every frame's rendered pupil moves in the commanded direction (min cosine 0.932, shift 19.9 px)
+PASS eye R: every frame's rendered pupil moves in the commanded direction (min cosine 0.919, shift 22.6 px)
+PASS sequence starts at top and runs clockwise on screen
+
+20 CHECK(S) FAILED

@@ -1,0 +1,284 @@
+{
+ "dataset_name": "techtonic_pilot_v2",
+ "schema_version": "2.0",
+ "config": {
+  "name": "techtonic_pilot_v2",
+  "schema_version": "2.0",
+  "seed": 20261122,
+  "samples": 32,
+  "n_static": 12,
+  "gaze": {
+   "mode": "uniform",
+   "box": 1.0
+  },
+  "profiles": {
+   "n": 2,
+   "kinds": [
+    "saccade",
+    "pursuit"
+   ],
+   "frames_per_profile": 5
+  },
+  "iris": {
+   "hue_shift": [
+    0.0,
+    0.05
+   ],
+   "value": [
+    0.45,
+    1.15
+   ]
+  },
+  "lighting": {
+   "light_gain": [
+    0.6,
+    1.4
+   ],
+   "world_gain": [
+    0.6,
+    1.4
+   ],
+   "exposure": [
+    -0.4,
+    0.4
+   ]
+  },
+  "camera": {
+   "p_variant": 0.25,
+   "distance_m": [
+    0.35,
+    0.45
+   ],
+   "lens_scale": [
+    0.9,
+    1.1
+   ]
+  },
+  "occlusion": {
+   "p": 0.3,
+   "extra_upper_lid_deg": [
+    2.0,
+    10.0
+   ]
+  },
+  "quality": {
+   "p": 0.5,
+   "ops": [
+    {
+     "op": "noise",
+     "full_well_e": [
+      250,
+      4000
+     ]
+    },
+    {
+     "op": "motion",
+     "length_px": [
+      2,
+      10
+     ],
+     "angle_deg": [
+      0,
+      180
+     ]
+    },
+    {
+     "op": "defocus",
+     "radius_px": [
+      0.5,
+      3
+     ]
+    },
+    {
+     "op": "jpeg",
+     "quality": [
+      30,
+      90
+     ]
+    },
+    {
+     "op": "exposure",
+     "stops": [
+      -1,
+      1
+     ]
+    }
+   ]
+  }
+ },
+ "config_sha256": "7f9cc382c4731365728d6c0ac4566f335bdd29a90ab395faf4204312f31a81fd",
+ "git_commit": "315565560ab3964dfb9e8ff3a167abb71ed8cbae",
+ "provenance": {
+  "blender": "5.3.0",
+  "python": "3.13.13",
+  "os": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "render_device": "METAL",
+  "eye_band_px": null
+ },
+ "samples": {
+  "d0a7abf5c009": {
+   "index": 0,
+   "image": "clean/d0a7abf5c009.png",
+   "annotation": "annotations/d0a7abf5c009.json",
+   "image_sha256": "ab6dc545332035c50b87165d55eb4d527bf1faf2da5ee8c8f48065c60d342630",
+   "annotation_sha256": "be773795e1c31a952ea526cd22913163c62c01c648ce469bfeb5adf912d6bbfb"
+  },
+  "195350f560b4": {
+   "index": 1,
+   "image": "clean/195350f560b4.png",
+   "annotation": "annotations/195350f560b4.json",
+   "image_sha256": "0dcc6edfa304a404b7e6f0b9f3570faae74725bb8a4cd16890c725e52bbf2d20",
+   "annotation_sha256": "a11130a8b20b9d0796b74c7d257f457517f6e54ae869c86923f072f750517f05"
+  },
+  "2e6110c7c498": {
+   "index": 2,
+   "image": "clean/2e6110c7c498.png",
+   "annotation": "annotations/2e6110c7c498.json",
+   "image_sha256": "13cc3c86f0ee3c22ddb1a28c67deefbe2695539cb3c388d08c55e5ba3157c02b",
+   "annotation_sha256": "023572aaff9008fd5891546ea4a528515b273c2197b0e346854a7ba38668b743"
+  },
+  "067db344cb36": {
+   "index": 3,
+   "image": "clean/067db344cb36.png",
+   "annotation": "annotations/067db344cb36.json",
+   "image_sha256": "9d0dfaf028489accdfcb87671ba1f455ee7b3a2e070a055580c2146b1912da76",
+   "annotation_sha256": "110a7620803268985db8d0896f96b2a343cd9781cb5061658746ed889f3ac9c5"
+  },
+  "e3d42b68062f": {
+   "index": 4,
+   "image": "clean/e3d42b68062f.png",
+   "annotation": "annotations/e3d42b68062f.json",
+   "image_sha256": "97950c7de170339475ce3fbacfeb433888b9649d811ccf634021e9efb752419c",
+   "annotation_sha256": "19aac7dc7d78b6442aec536f1d419b9f1ff891a5933f8810ecaf132766182739"
+  },
+  "109bbecc1a96": {
+   "index": 5,
+   "image": "clean/109bbecc1a96.png",
+   "annotation": "annotations/109bbecc1a96.json",
+   "image_sha256": "f195c3c1c02675508f88ebc97c561c3db15028c9c36c021bbcc2f20a5534c33c",
+   "annotation_sha256": "5f3fc7e24bee78091ee5d97322cf0289fde0ba04061f26916c39e23431fa9b50"
+  },
+  "3ac656df4c4e": {
+   "index": 6,
+   "image": "clean/3ac656df4c4e.png",
+   "annotation": "annotations/3ac656df4c4e.json",
+   "image_sha256": "981d5aa4841a94f90da9f441424fefb88eb6a532f181cbb7bea33521d0f92cbc",
+   "annotation_sha256": "1ed9115519893f5b49131c54cc834ff2aa8b56e188065a87d98abf7a885cc154"
+  },
+  "3dff39f493d1": {
+   "index": 7,
+   "image": "clean/3dff39f493d1.png",
+   "annotation": "annotations/3dff39f493d1.json",
+   "image_sha256": "7d5bc6226819584f9c63df1d0737666ea30e37d5d4704062c756194b65c1f097",
+   "annotation_sha256": "f495ab37716679bfeea53064acd1f37faeddccce688aaf1bf87adb025a4c894f"
+  },
+  "fa4e57b139d6": {
+   "index": 8,
+   "image": "clean/fa4e57b139d6.png",
+   "annotation": "annotations/fa4e57b139d6.json",
+   "image_sha256": "a764a8f8700e02abb67d25fceb305a861a8c8eae9633651cd9dde64bf25376e0",
+   "annotation_sha256": "eee252a6573d23c10b5c6b302ca70763bf7562ec55625364c72bd5b10e34741c"
+  },
+  "f70674ca1df8": {
+   "index": 9,
+   "image": "clean/f70674ca1df8.png",
+   "annotation": "annotations/f70674ca1df8.json",
+   "image_sha256": "604f77e24ed8ea74eee1790445835c762b80ab360f0a678b35b75361e347531a",
+   "annotation_sha256": "4fa763fea041d0c4567ddbc119201978ffb24c7cd10d97a28b453c0a6b61acf6"
+  },
+  "a1ce3b9d33d2": {
+   "index": 10,
+   "image": "clean/a1ce3b9d33d2.png",
+   "annotation": "annotations/a1ce3b9d33d2.json",
+   "image_sha256": "99788183d1203c279a18c1b862f17f5074f5b35cd412cdb56d4b3cc7ec7a3b4a",
+   "annotation_sha256": "a4c9d7d3771f7bb57198519b206c4f248d2b0161ef84d6904171538d0b2b61b7"
+  },
+  "660da86d5979": {
+   "index": 11,
+   "image": "clean/660da86d5979.png",
+   "annotation": "annotations/660da86d5979.json",
+   "image_sha256": "a7aa34c359019805a1cd91f5c7c26b49a0ca3e420049ca8f960301b2d42ce0b6",
+   "annotation_sha256": "7959db1bda07477cb98f92e45665b364fdc4bec6c10322c294d10402d192a7ba"
+  },
+  "9be6d4ad5247": {
+   "index": 12,
+   "image": "clean/9be6d4ad5247.png",
+   "annotation": "annotations/9be6d4ad5247.json",
+   "image_sha256": "5a1260db8235357dc37e3536cebe418b88233d691aefbd9c68f4f7a523821bfb",
+   "annotation_sha256": "595cd6053b0c58d944ccff6a2eec4aeed7685ce559359977f1c0f6827fe3121c"
+  },
+  "a25c006fcbce": {
+   "index": 13,
+   "image": "clean/a25c006fcbce.png",
+   "annotation": "annotations/a25c006fcbce.json",
+   "image_sha256": "d2405b96836b3ea6beb23c3d5f98b9b38bb7cd281730c38aea5ee6c9daa7b095",
+   "annotation_sha256": "db261e5883f01a04277efc172646dd0d014109dcea16c3cd2ef5ee2362c123fb"
+  },
+  "d9deb7c9f147": {
+   "index": 14,
+   "image": "clean/d9deb7c9f147.png",
+   "annotation": "annotations/d9deb7c9f147.json",
+   "image_sha256": "3c7477981c1a46a0d185831fd0b5e4d656982807cf50ee52d29a81e6e2d03424",
+   "annotation_sha256": "b474dee687aac4bd7bdf3e1386603cb16e1d2c00788fffa410002653502468fd"
+  },
+  "1bfe9ef35a42": {
+   "index": 15,
+   "image": "clean/1bfe9ef35a42.png",
+   "annotation": "annotations/1bfe9ef35a42.json",
+   "image_sha256": "20797ebd3cd5c8896dc73ab2952e92c8bd3b91ad4ba20dcafab4f442823c5fd2",
+   "annotation_sha256": "7a95c5c53f008887665cb444b625b67c84f23c97cf458c53bd1848aea19defe8"
+  },
+  "8ed47154c706": {
+   "index": 16,
+   "image": "clean/8ed47154c706.png",
+   "annotation": "annotations/8ed47154c706.json",
+   "image_sha256": "5249a102e1c3448211073c46ddd7a2286f48a27ec1daf8e27a27c10570107936",
+   "annotation_sha256": "ab1b6c411d25d62c31d993a26a445c224640e84d59d3c68b70a41e5f5945a84a"
+  },
+  "fae9e44935da": {
+   "index": 17,
+   "image": "clean/fae9e44935da.png",
+   "annotation": "annotations/fae9e44935da.json",
+   "image_sha256": "8dfbff0c9d874e6e4bdaf2f5ea57bfff31bf9fe7aabd13bd450998f8f21b922b",
+   "annotation_sha256": "c41ba7a8c90168d0cc8f399bf4b3c0813a4a68f231eb5777d6a832df9d8fafdf"
+  },
+  "f8a241746310": {
+   "index": 18,
+   "image": "clean/f8a241746310.png",
+   "annotation": "annotations/f8a241746310.json",
+   "image_sha256": "1525938f32bf5a73fc0ebb47b56062aa8edc86d829cd439a0e4523989ed78a25",
+   "annotation_sha256": "daa40ed2012e3e003eb7119f6abb636e35f4c8e4ee1688ab80727c4b521a0739"
+  },
+  "0d8f1997615e": {
+   "index": 19,
+   "image": "clean/0d8f1997615e.png",
+   "annotation": "annotations/0d8f1997615e.json",
+   "image_sha256": "ef8a8f2d4d682c9f9ec5b6c66f7a75489340c8f6e36865eecdf39caf91528a17",
+   "annotation_sha256": "0749e2de0ee1a886a31bd1942849415012bd650abc48311a7d623a1fbe6a4b53"
+  },
+  "98609a60db26": {
+   "index": 20,
+   "image": "clean/98609a60db26.png",
+   "annotation": "annotations/98609a60db26.json",
+   "image_sha256": "35fe74886b78640d6b3b34afd0ef07cdfe4e67fe4e1007b665b9f942b2089a67",
+   "annotation_sha256": "fe0f14b0f9e6697f2c69a31c3f36165449105a457f0c932cfdf49fd8cf6c9b15"
+  },
+  "92274f5c84a3": {
+   "index": 21,
+   "image": "clean/92274f5c84a3.png",
+   "annotation": "annotations/92274f5c84a3.json",
+   "image_sha256": "23112b8882d1b8726504478eb8ed87044c2475b3467ad21da8b06fda1b0e6b3e",
+   "annotation_sha256": "98669401cd3eb43c3461f332d54d24ae9386a648dd1f6ff1a8a540a5a936c50a"
+  }
+ },
+ "failures": {},
+ "runs": [
+  {
+   "started": "2026-11-22T20:05:19.515745+00:00",
+   "finished": "2026-11-22T20:08:13.191592+00:00",
+   "rendered": 22,
+   "planned": 22
+  }
+ ],
+ "planned_samples": 22
+}
