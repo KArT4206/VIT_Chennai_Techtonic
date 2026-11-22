@@ -1,0 +1,219 @@
+{
+ "numbers": {
+  "comp": 40,
+  "compTot": 40,
+  "anatL": 14.187380467594023,
+  "anatR": 14.291030666512544,
+  "paintL": 16.279235686610605,
+  "paintR": 16.34833563072391,
+  "fitL": 16.1,
+  "fitR": 16.15,
+  "ciL": {
+   "p2_5": 16.05,
+   "p50": 16.1,
+   "p97_5": 16.15
+  },
+  "ciR": {
+   "p2_5": 16.1,
+   "p50": 16.15,
+   "p97_5": 16.2
+  },
+  "hoFitL": 0.116,
+  "hoFitR": 0.136,
+  "hoMeshL": 0.503,
+  "hoMeshR": 0.533,
+  "hoGtL": 3.137,
+  "hoGtR": 3.152,
+  "nHeld": 14,
+  "sacL": 33.94,
+  "sacR": 37.06,
+  "sacCmd": 36.72,
+  "sacDt": 4.167,
+  "glitch": 8.088,
+  "lag": 100,
+  "lagRes": 33.3,
+  "gainL": 0.951,
+  "gainR": 0.948,
+  "pers": 1.121,
+  "persMax": 1,
+  "roiIn": 37,
+  "roiEdge": 181,
+  "legP": 51,
+  "legF": 20
+ },
+ "detector": [
+  [
+   "Released frames",
+   0.9
+  ],
+  [
+   "Full scene",
+   0.6818
+  ],
+  [
+   "Clean condition",
+   1
+  ],
+  [
+   "40-sample dataset",
+   0.75
+  ]
+ ],
+ "checks": [
+  {
+   "value": 40,
+   "agreed": 40,
+   "tol": 0
+  },
+  {
+   "value": 40,
+   "agreed": 40,
+   "tol": 0
+  },
+  {
+   "value": 14.187380467594023,
+   "agreed": 14.19,
+   "tol": 0.01
+  },
+  {
+   "value": 14.291030666512544,
+   "agreed": 14.29,
+   "tol": 0.01
+  },
+  {
+   "value": 16.279235686610605,
+   "agreed": 16.28,
+   "tol": 0.01
+  },
+  {
+   "value": 16.34833563072391,
+   "agreed": 16.35,
+   "tol": 0.01
+  },
+  {
+   "value": 16.1,
+   "agreed": 16.1,
+   "tol": 1e-9
+  },
+  {
+   "value": 16.15,
+   "agreed": 16.15,
+   "tol": 1e-9
+  },
+  {
+   "value": 0.116,
+   "agreed": 0.116,
+   "tol": 1e-9
+  },
+  {
+   "value": 0.136,
+   "agreed": 0.136,
+   "tol": 1e-9
+  },
+  {
+   "value": 3.137,
+   "agreed": 3.14,
+   "tol": 0.005
+  },
+  {
+   "value": 3.152,
+   "agreed": 3.15,
+   "tol": 0.005
+  },
+  {
+   "value": 14,
+   "agreed": 14,
+   "tol": 0
+  },
+  {
+   "value": 0.9,
+   "agreed": 0.9,
+   "tol": 0.005
+  },
+  {
+   "value": 0.6818,
+   "agreed": 0.68,
+   "tol": 0.005
+  },
+  {
+   "value": 1,
+   "agreed": 1,
+   "tol": 1e-9
+  },
+  {
+   "value": 0.75,
+   "agreed": 0.75,
+   "tol": 1e-9
+  },
+  {
+   "value": 40,
+   "agreed": 40,
+   "tol": 0
+  },
+  {
+   "value": 22,
+   "agreed": 22,
+   "tol": 0
+  },
+  {
+   "value": 33.94,
+   "agreed": 33.9,
+   "tol": 0.05
+  },
+  {
+   "value": 37.06,
+   "agreed": 37.1,
+   "tol": 0.05
+  },
+  {
+   "value": 36.72,
+   "agreed": 36.7,
+   "tol": 0.05
+  },
+  {
+   "value": 100,
+   "agreed": 100,
+   "tol": 0
+  },
+  {
+   "value": 33.3,
+   "agreed": 33.3,
+   "tol": 0.05
+  },
+  {
+   "value": 8.088,
+   "agreed": 8.09,
+   "tol": 0.005
+  },
+  {
+   "value": 1.121,
+   "agreed": 1.12,
+   "tol": 0.005
+  },
+  {
+   "value": 1,
+   "agreed": 1,
+   "tol": 0
+  },
+  {
+   "value": 37,
+   "agreed": 37,
+   "tol": 0
+  },
+  {
+   "value": 181,
+   "agreed": 181,
+   "tol": 0
+  },
+  {
+   "value": 51,
+   "agreed": 51,
+   "tol": 0
+  },
+  {
+   "value": 20,
+   "agreed": 20,
+   "tol": 0
+  }
+ ]
+}

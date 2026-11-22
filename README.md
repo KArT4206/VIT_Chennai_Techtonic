@@ -1,178 +1,229 @@
-# VIT_Chennai_Techtonic: Synthetic Eye Movement & Virtual Camera Rendering (Track 1)
+# VIT_Chennai_Techtonic — Synthetic Eye Movement & Virtual Camera Rendering
 
-**Samsung PRISM XR Hackathon 2026, Track 1. Team Techtonic, VIT Chennai.**
+**Samsung PRISM XR Hackathon 2026 · Track 01 (XR Perception Group) · Team Techtonic, VIT Chennai**
 
-## Submission checklist
+This page is the navigation hub for the whole repository, on branch `research/upgrade`. The repository holds two separate things:
 
-| Item | Where |
-|---|---|
-| Submission package (`Techtonic.zip`: `scene.blend`, `wrapper/eyes.py`, `renders/`, `metadata.json`, `README.md`) | [Release v1.0](../../releases/tag/v1.0) (145 MB, too large for a git file) |
-| Source code | this repository: `wrapper/`, `tools/`, `demo/`, `expression/`, `packaging/` |
-| Presentation | `submission/VIT_Chennai_Techtonic.pptx` and `.pdf` (official template), plus `submission/VIT_Chennai_Techtonic_detailed_deck.pptx` |
-| Video | `submission/VIT_Chennai_Techtonic.mp4` (also attached to the release) |
-| AI disclosure | [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md) |
-| README | this file; the evaluator README is `packaging/README_scan.md` (inside the zip as `README.md`) |
-| APK/SDK | not applicable (Blender + Python) |
-| Other | `submission/evidence/` (contact sheet, direction proof, validation logs), `submission/SUBMISSION_MANIFEST.md` |
+| | What it is | Where | Status |
+|---|---|---|---|
+| **Original submission (baseline)** | The Track 01 package: Blender scene, `wrapper/eyes.py`, 10 renders, `metadata.json`, deck and video | branch `submission/final`, tag [`submission-baseline-v1.0`](https://github.com/KArT4206/VIT_Chennai_Techtonic/tree/submission-baseline-v1.0), commit `3155655`, [Release v1.0](https://github.com/KArT4206/VIT_Chennai_Techtonic/releases/tag/v1.0) | **frozen**; the research work never modifies it |
+| **Research upgrade** | Post-deadline validation: compliance suite, pupil-depth investigation, independent detector, datasets, eye-movement dynamics, render benchmarks | [`research/`](research/), [`AUDIT/results/`](AUDIT/results/) on branch `research/upgrade` | validated by a clean-extraction run; **not** part of the submitted package |
+| **Experimental / provisional** | Semantic masks (WS3); eye-band (ROI) rendering | [`AUDIT/results/ws3_masks/`](AUDIT/results/ws3_masks/), [`AUDIT/results/ws6_performance/band_audit.json`](AUDIT/results/ws6_performance/band_audit.json) | masks **provisional**; ROI rendering **rejected** |
+| **Superseded documentation** | Draft reports written before the clean run; validation of an earlier bundle | [`AUDIT/results/superseded_drafts/`](AUDIT/results/superseded_drafts/), [`validation/VALIDATION.md`](validation/VALIDATION.md) | do not cite |
 
-**Quick start:** download `Techtonic.zip` from the release, unzip, then run
-`blender -b scene.blend -P wrapper/eyes.py` (Blender 5.3). It renders the 10 clockwise frames to `renders/` and writes `metadata.json`.
-
-**Verified results:** pupil ground truth vs a lighting-free mask, mean 0.24 px / max 0.39 px; 19/19 API tests; regenerated metadata byte-identical; all five directions pass (14.5–14.9 px shifts, reset within 0.10 px).
-
-**Licence note:** the scanned head is the 3D Scan Store Free HD Head, used with the vendor's permission for this hackathon submission only. It may not be reused or redistributed outside this project.
+The original submission README is preserved unchanged at the baseline tag: [README @ submission-baseline-v1.0](https://github.com/KArT4206/VIT_Chennai_Techtonic/blob/submission-baseline-v1.0/README.md).
 
 ---
 
-## Development notes
+## Quick navigation
 
+| I want to… | Go to |
+|---|---|
+| Read the authoritative research report | [`AUDIT/results/INTEGRATION_REPORT.md`](AUDIT/results/INTEGRATION_REPORT.md) |
+| See the research release note | [`AUDIT/results/RELEASE_NOTE.md`](AUDIT/results/RELEASE_NOTE.md) |
+| Browse all research results by folder | the [index](AUDIT/results/README.md) or the [dashboard](AUDIT/results/dashboard/index.html) |
+| Watch the final-round video (silent, 1:55) | [`research/demo/final_round_silent.mp4`](research/demo/final_round_silent.mp4) · [production report](research/demo/VIDEO_PRODUCTION_REPORT.md) |
+| Open the final-round presentation | [`research/demo/final_round_presentation.pptx`](research/demo/final_round_presentation.pptx) · [PDF](research/demo/final_round_presentation.pdf) |
+| Get the evaluator package | [Release v1.0 → `Techtonic.zip`](https://github.com/KArT4206/VIT_Chennai_Techtonic/releases/tag/v1.0) (145 MB, not stored in git) |
+| See the original submission deck and video | [`submission/`](submission/) ([manifest](submission/SUBMISSION_MANIFEST.md)) |
+| Use the gaze API | [`wrapper/eyes.py`](wrapper/eyes.py) · [API reference](#python-api-reference) |
+| Re-run all research validation | [`research/verify_all.sh`](research/verify_all.sh) · [commands](#research-validation) |
+| Read about AI assistance | [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md) |
 
-A textured, rigged human face in Blender with a Python wrapper that rotates both eyeballs
-about their true centres and renders calibrated 1024×1024 frames with per-frame ground truth.
+---
 
-## Repository vs evaluator package
+## Problem
 
-This is the **development repository**. The evaluator ZIP contains only the brief's core layout
-(`scene.blend`, `wrapper/eyes.py`, `renders/`, `metadata.json`, `README.md`), and its README is
-`packaging/README.md`. Build it with `tools/build_package.sh <new_staging_dir>`. The `tools/` and
-`directions/` folders described below exist only in this repository.
+Eye tracking for XR needs gaze images with exact ground truth: where each pupil is, how each eye is rotated and how the camera sees it. Real captures cannot give that ground truth precisely. A pupil that simply slides across a flat image does not look like a rotating eyeball. Track 01 asks for a textured, articulated face whose eyes rotate about their real centres under a calibrated camera, with machine-readable ground truth for every frame.
 
-## Requirements
+## System architecture
 
-- **Blender 5.3.0** (the only version tested; older versions are not verified). No add-ons are
-  needed: every texture is packed inside `scene.blend`.
-- Optional, for `tools/verify.py` only: Python 3 with `numpy` and `pillow`.
+```
+scene.blend (scanned head, eye.L / eye.R bones, corneal Lens meshes, locked camera, constant lights)
+      │
+wrapper/eyes.py ── move(h, v) → fixation target 35 cm ahead, displaced by (h, v)·5 cm
+      │             each eyeball rotates about its own pivot (shortest arc, no torsion); lids follow
+      ├── render(path) → 1024×1024 PNG (Cycles, GPU if available)
+      └── state()      → inputs, rotations, 2-D/3-D pupil centres, K, [R|t]  → metadata.json
+```
 
-## Run
+---
 
-From this folder (on macOS the binary is `/Applications/Blender.app/Contents/MacOS/Blender`):
+## Repository structure
+
+| Folder / file | Contents | Belongs to |
+|---|---|---|
+| [`wrapper/eyes.py`](wrapper/eyes.py) | Gaze controller and renderer (public API); byte-identical to the one in `Techtonic.zip` | submission |
+| [`scene.blend`](scene.blend), [`renders/`](renders/), [`metadata.json`](metadata.json), [`directions/`](directions/), [`contact_sheet.png`](contact_sheet.png) | **Early development baseline** (MakeHuman head, first commit `f31eb4e`), **not** the submitted scanned-head package. The submitted `scene.blend`, renders and `metadata.json` are only in Release v1.0 `Techtonic.zip` | development history |
+| [`packaging/`](packaging/) | Evaluator README sources (`README_scan.md` is the one inside `Techtonic.zip`) | submission |
+| [`submission/`](submission/) | Official deck (PPTX/PDF), detailed deck, video, manifest, evidence | submission |
+| [`deck/`](deck/) | Deck build script and assets | submission |
+| [`tools/`](tools/) | Scene build, original evaluator `verify.py`, mask check, early dataset and gaze-model tools | submission (`verify.py` unchanged) |
+| [`demo/`](demo/) | Demo runners, scene views and the composition scripts for the submission video | submission |
+| [`expression/`](expression/) | Prototype expression and eye-motion engine | development |
+| [`experiments/`](experiments/), [`staging/`](staging/), [`exports/`](exports/) | Earlier qualification experiments (alternative heads, MakeHuman export) | development history |
+| [`validation/`](validation/) | 17 Nov validation of an **earlier** bundle | superseded |
+| [`research/`](research/) | Research-upgrade code: compliance, depth probe, detector, datasets, dynamics, benchmarks, report builders ([README](research/README.md)) | research upgrade |
+| [`research/demo/`](research/demo/) | Final-round video, presentation and their reproducible sources | research upgrade |
+| [`AUDIT/results/`](AUDIT/results/) | All research result files, reports and the dashboard ([index](AUDIT/results/README.md)) | research upgrade |
+| [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md) | AI-assistance disclosure | both |
+
+---
+
+## Installation and dependencies
+
+- **Blender 5.3.0**, the only version tested. No add-ons are needed, because every texture is packed.
+  - The macOS binary is `/Applications/Blender.app/Contents/MacOS/Blender`; elsewhere it is `blender`.
+  - A GPU is optional (Metal, OptiX, CUDA, HIP or oneAPI), with CPU fallback.
+- **Python 3** with `numpy`, `scipy`, `Pillow` and `matplotlib`, for the analysis scripts only. `tools/verify.py` needs only `numpy` and `Pillow`.
+  - Results were measured with Python 3.14.7, numpy 2.5.4, scipy 1.18.1, Pillow 13.0.0 and matplotlib 3.11.2 ([`run_environment.txt`](AUDIT/results/run_environment.txt)).
+- **ffmpeg / ffprobe**, only for rebuilding the final-round video.
+
+## Running in Blender
+
+Run these from the folder that contains `scene.blend`. Use an extracted `Techtonic.zip` for the submitted scanned head. The repository root works too, but its `scene.blend` is the early MakeHuman head.
 
 ```bash
-blender -b scene.blend -P wrapper/eyes.py
+blender -b scene.blend -P wrapper/eyes.py                              # 10 clockwise renders -> renders/, metadata.json
+blender -b scene.blend -P wrapper/eyes.py -- --move -1 0 --out out     # one frame, pupils to image left
+blender -b scene.blend -P wrapper/eyes.py -- --reset --out out         # one frame, centre gaze
+blender -b scene.blend -P wrapper/eyes.py -- --samples 128             # faster, lower-quality preview
+blender -b scene.blend -P wrapper/eyes.py -- --cpu                     # force CPU
 ```
 
-That renders the 10 clockwise frames to `renders/` and writes `metadata.json`.
-It uses a GPU automatically (Metal, OptiX, CUDA, HIP, oneAPI) and falls back to the CPU.
+## Python API reference
 
-Other commands:
+Use these inside Blender's Python with `scene.blend` open (`sys.path.append("<folder>/wrapper"); import eyes`):
 
-```bash
-blender -b scene.blend -P wrapper/eyes.py -- --move -1 0 --out out   # one frame, eyes to image left
-blender -b scene.blend -P wrapper/eyes.py -- --reset --out out       # one frame, centre gaze
-blender -b scene.blend -P wrapper/eyes.py -- --samples 128           # faster preview quality
-blender -b scene.blend -P wrapper/eyes.py -- --cpu                   # force CPU
-```
+| Call | Effect / return |
+|---|---|
+| `eyes.move(h, v)` | Points both eyes at the fixation target for normalised `h, v` ∈ [−1, 1]. Values are clamped; non-numbers, NaN and inf raise `ValueError`. The lids follow. Returns `state()` |
+| `eyes.reset()` | Same as `move(0, 0)` |
+| `eyes.render(path)` | Renders the current gaze to a PNG and returns `state()` |
+| `eyes.state()` | Inputs, fixation target, per-eye rotation (Euler XYZ in degrees, plus quaternion), 2-D/3-D pupil centres |
+| `eyes.render_sequence(out_dir)` | The 10-frame clockwise sequence + `metadata.json` |
+| `eyes.camera_matrices()` | OpenCV K (3×3) and world→camera [R\|t] (3×4) |
+| `eyes.use_best_device()` | Selects a GPU backend if available, else CPU |
 
-From Blender's Python console with `scene.blend` open:
-
-```python
-import sys; sys.path.append("/path/to/bundle/wrapper"); import eyes
-eyes.move(0.5, -0.3)     # h, v in [-1, 1]
-eyes.render("frame.png") # returns inputs, rotations and pupil centres
-eyes.reset()
-```
-
-## Conventions
+## Gaze control and calibration
 
 | Item | Value |
 |---|---|
-| Inputs | `h`, `v` normalised to [-1, +1], clamped; non-numbers are rejected |
-| Direction | `h > 0` pupils move to the **image's right**, `v > 0` pupils move **up** |
+| Inputs | `h > 0` moves the pupils to the image's right, `v > 0` moves them up |
 | Fixation target | 35 cm in front of the eye midpoint, displaced by (h, v) × 5 cm |
-| Camera | locked 40 cm in front of the eye midpoint, facing the face, 1024×1024 PNG |
-| Lighting | constant studio lighting (key, fill, rim, neutral world) |
-| Sequence | θₖ = 2πk/10, h = sin θₖ, v = cos θₖ, k = 0..9: starts at the top, clockwise on screen |
-| World frame | Blender world, metres, +Z up, the face looks along −Y, subject's left eye at +X |
+| Camera | locked 40 cm in front of the eye midpoint, facing the face; 1024 × 1024 PNG |
+| Rotation | each eyeball about its own bone pivot, shortest arc from primary gaze (Listing's law, zero torsion); the eyes converge |
+| Sequence | θk = 2πk/10, h = sin θk, v = cos θk, k = 0..9; starts at the top and runs clockwise on screen |
+| World frame | Blender metres, +Z up, the face looks along −Y |
 
-Each eyeball rotates about its own centre to look at the fixation target, so the eyes converge
-naturally. The rotation is the shortest arc from the primary gaze direction (Listing's law), so
-the eyes never twist about the gaze axis.
+The measured values (camera distance, K, projection agreement, pivot stability, torsion) are in [`AUDIT/results/compliance.json`](AUDIT/results/compliance.json): **40/40 research compliance checks pass**.
 
-The eyelids follow vertical gaze as real lids do: the upper lid rotates with 110 % of the eye's
-vertical rotation and the lower lid with 35 %. Looking up therefore lifts the lid instead of
-hiding the pupil under it, and looking down lowers it. The lashes carry the lid skin's weights, so
-they stay rooted on the lid margin.
+## Metadata format
 
-## `metadata.json`
-
-One record per frame:
+`metadata.json` has one record per frame. The released file is inside `Techtonic.zip`; the root `metadata.json` uses the same format but belongs to the early baseline.
 
 | Field | Meaning |
 |---|---|
-| `frame`, `file`, `theta` | index, image path, θₖ in radians |
+| `frame`, `file`, `theta` | Frame index, image path, θk in radians |
 | `input` | `{h, v}` |
-| `eye_rotation_L/R` | world-frame rotation from primary gaze, Euler XYZ in degrees |
-| `eye_rotation_quat_L/R` | the same rotation as a quaternion (w, x, y, z) |
-| `pupil_center_2D_L/R` | pupil centre in pixels, origin top-left, x right, y down |
-| `pupil_center_3D_L/R` | anatomical pupil centre (centre of the pupil opening) in world metres |
-| `pupil_center_cornea_3D_L/R` | where the ray to the seen pupil crosses the cornea; projects exactly to the 2D point |
-| `pupil_center_2D_unrefracted_L/R` | straight projection of the anatomical centre, ignoring corneal refraction |
-| `camera_matrix` | OpenCV intrinsics K (3×3) |
-| `camera_extrinsic_world_to_cam` | OpenCV extrinsics [R\|t] (3×4), world metres |
-| `fixation_target` | world position of the target the eyes look at |
+| `fixation_target` | World position of the target the eyes look at |
+| `eye_rotation_L/R` | Rotation from primary gaze, Euler XYZ in degrees |
+| `eye_rotation_quat_L/R` | The same rotation as a quaternion (w, x, y, z) |
+| `pupil_center_2D_L/R` | Pupil centre in pixels: origin top-left, x right, y down; includes analytic corneal refraction |
+| `pupil_center_2D_unrefracted_L/R` | Straight projection of the anatomical pupil centre |
+| `pupil_center_3D_L/R` | Anatomical pupil centre, world metres |
+| `pupil_center_cornea_3D_L/R` | Where the ray to the seen pupil crosses the cornea |
+| `camera_matrix` | OpenCV intrinsics K |
+| `camera_extrinsic_world_to_cam` | OpenCV extrinsics [R\|t] |
 
-The 2D pupil centre is where the pupil is *seen*. The cornea refracts like a real eye's (it
-magnifies and shifts the pupil by up to about 0.4 px here), so the wrapper solves for the camera
-ray that, refracted at the cornea, lands on the anatomical pupil centre. That ray's pixel is the
-ground truth, and it matches the rendered pupils.
+The research upgrade adds a separate three-level annotation, [`AUDIT/results/research_pupil_levels.json`](AUDIT/results/research_pupil_levels.json), and never changes `metadata.json`:
+- **A:** the anatomical pupil (the official ground truth);
+- **B:** the pupil painted on the rendered asset;
+- **C:** the independent detector's prediction.
 
-## Verify
+## Dataset generation
+
+| Generator | Command | Result |
+|---|---|---|
+| v1: 40 samples, iris and lighting variants, resumable | `blender -b --factory-startup scene.blend -P research/dataset_engine.py -- --config research/configs_dataset_40.json --out DS` | [`AUDIT/results/ws6_dataset_v1/`](AUDIT/results/ws6_dataset_v1/): 40/40 samples, 0 failures, 0 integrity problems |
+| v2 pilot: static, saccade and pursuit samples, with camera, occlusion and quality variants | `blender -b --factory-startup scene.blend -P research/dataset_v2_render.py -- --config research/configs/pilot_v2.json --out DS2`, then `python3 research/dataset_v2_post.py DS2` | [`AUDIT/results/ws4_dataset/`](AUDIT/results/ws4_dataset/): 22/22 samples, integrity ok |
+| Original, from the submission | `blender -b --factory-startup scene.blend -P tools/generate_dataset.py -- --out DIR` | not re-validated in the research run |
+
+Generating a dataset successfully says nothing about detector accuracy. Detector results are reported separately below.
+
+---
+
+## Research validation
+
+One command reproduces every research result from a clean extraction of the release ZIP. It takes about 70 minutes on an Apple M5 and runs one Blender job at a time through [`research/gpuq.py`](research/gpuq.py):
 
 ```bash
-python3 tools/verify.py .
+PYTHON=<python with numpy scipy pillow matplotlib> research/verify_all.sh <path/to/Techtonic.zip> <new_empty_work_dir>
 ```
 
-It is independent of `eyes.py`. It checks the layout, the sequence, the 1024×1024 PNGs and the
-40 cm / 35 cm calibration. It also finds the pupils in the rendered pixels and checks that they sit
-at the metadata points and move in the commanded direction, and it reprojects the 3D pupils
-through K[R|t].
+Three further checks:
 
-## How it was built
+```bash
+python3 research/check_results.py AUDIT/results AUDIT/results/results_check.json      # completeness and staleness
+python3 research/integrity_check.py . AUDIT/results/integrity_check.json              # submission untouched
+python3 research/tests/test_research.py                                              # 6 tests, no Blender
+```
 
-`tools/build_scene.py` rebuilds `scene.blend` from scratch with the MPFB add-on. Evaluators do
-not need to run it. It does the following:
+`Techtonic.zip` comes from Release v1.0; it is not tracked in git. Three scripts regenerate the reports from the result files: [`research/build_report.py`](research/build_report.py), [`research/build_release_note.py`](research/build_release_note.py) and [`research/dashboard.py`](research/dashboard.py).
 
-- Creates an MPFB (MakeHuman) human: CC0 skin, high-poly eyes, brows, lashes and hair.
-- Uses the default rig, with `eye.L` / `eye.R` bones.
-- Replaces MPFB's painted eye with an anatomical eye (`tools/eye_model.py`). It has a sclera with
-  subsurface scattering, conjunctival veins, a tear-film coat and lid occlusion. Its recessed
-  procedural iris has radial fibres, crypts, a collarette and a soft limbal ring around a real
-  pupil opening. Its refractive cornea has true adult geometry (7.8 mm curvature, 3.6 mm
-  anterior chamber, index 1.3375).
-- Adds a wet tear line along each lid margin, found by ray casting where the lid meets the eye and
-  weighted to the lid bones so it rides with the lids.
-- Adds a small eye light, linked to the corneas only, for one crisp catchlight on the iris clear of
-  the pupil. The key and fill lights are excluded from the corneas.
-- Transfers the eyelid skin weights onto the lashes, so they move with the lids.
-- Connects the hair's strand normal map (MPFB leaves it unused) and removes the hair's specular.
-  Without these, the rim light glares white across the crown.
-- Uses coarser, stronger skin pores and more subsurface scattering than MPFB's defaults, so the
-  skin doesn't look airbrushed at 1024 px.
-- Uses small key and fill lights at about 5:1. This gives crisp white catchlights instead of dull
-  grey discs, and keeps the face's shape.
-- Adds young-adult expression lines as fine relief: faint forehead lines, nasolabial folds and
-  under-eye creases. They are placed from facial landmarks and drawn per pixel from the rest
-  pose, so they stay sharp and in place. Freckles and small spots are added too.
-- Grows real strand hair (`tools/hair_strands.py`): 60,000 curves rooted on the scalp under
-  MPFB's hair cap. It is a short textured crop, about 3 cm and lifted on top, 8 mm and lying flat
-  on the sides, with clumping and a soft, natural hairline. It is shaded with Cycles' Principled
-  Hair BSDF (melanin model). The cap stays underneath as a darkened base layer.
-- Packs every texture into `scene.blend`.
-- Fits a sphere to each eyeball. The fitted centre matches the eye bone pivot within 0.4 mm.
-- Places the camera, the fixation target and the lights.
+### Pupil-depth investigation
 
-## Realism check against a real photo
+The official 2-D ground truth uses the wrapper's anatomical pupil. It sits about 14.2–14.3 mm from the eye centre and is refracted through an analytic cornea. The scanned eyeball, however, paints its pupil further out on its surface, and its `Lens` material does not refract light.
 
-`tools/photo_similarity.py <render.png> <photo.jpg>` compares a render with a real portrait at
-matched scale. It scores cheek skin colour (CIE Lab ΔE), skin micro-texture, face contrast and
-stubble darkening. The reference used is a studio headshot of a young man (see licences below);
-it is used only to judge realism, not to copy the person's likeness.
-Current score: 84 % (colour 0.57, texture 0.97, contrast 0.92, stubble 0.90).
+A per-eye effective depth was fitted on 11 gaze poses. It predicts 14 held-out poses far better than the official ground truth does. The fit is in [`AUDIT/results/ws1_depth/depth_fit.json`](AUDIT/results/ws1_depth/depth_fit.json), and §4 of the [integration report](AUDIT/results/INTEGRATION_REPORT.md) explains it.
 
-## Assets and licences
+**These depths are effective fitted parameters of this asset as seen by this detector, not anatomical measurements.** The official `metadata.json` is unchanged.
 
-- Human, skin, eyes, brows, lashes, hair: MakeHuman system assets, **CC0**
-  (makehumancommunity.org), created with MPFB 2.0.18 (GPL-3.0, used as a tool only).
-- Reference photo for the realism check (not shipped): "Max Hechtman Headshot 2024" by HM2021,
-  Wikimedia Commons, CC BY 4.0.
-- Code in this repository: MIT.
+### Detector evaluation
+
+The pupil detector ([`research/pupil_detector.py`](research/pupil_detector.py)) works from the image only and is frozen ([`research/DETECTOR_FREEZE.txt`](research/DETECTOR_FREEZE.txt)). It is evaluated against the official ground truth in each condition, with per-pupil CSVs and overlays that include the failures:
+- [`release_metrics.json`](AUDIT/results/release_metrics.json)
+- [`full_roi_metrics.json`](AUDIT/results/full_roi_metrics.json)
+- [`no_lids_lens_roi_metrics.json`](AUDIT/results/no_lids_lens_roi_metrics.json)
+- [`ws6_dataset_v1/dataset_roi_metrics.json`](AUDIT/results/ws6_dataset_v1/dataset_roi_metrics.json)
+
+The original evaluator [`tools/verify.py`](tools/verify.py), unmodified, reports **51 PASS / 20 FAIL** test records on the released bundle ([`verify_py_release_bundle.txt`](AUDIT/results/verify_py_release_bundle.txt)). Its FAILs come from its own pupil detector, which was tuned on an earlier head. This is a separate tool from the 40/40 research compliance suite.
+
+### Dynamic eye movement experiments
+
+[`research/dynamics.py`](research/dynamics.py) defines profiles for saccades, smooth pursuit, vergence, fixation drift and blinks. They are validated two ways:
+- as models: [`ws5_dynamics/dynamics_validation.json`](AUDIT/results/ws5_dynamics/dynamics_validation.json);
+- as rendered frames measured by the detector: [`ws5_dynamics/dynamics_render_check.json`](AUDIT/results/ws5_dynamics/dynamics_render_check.json).
+
+They are simulations, not human-subject data, and blinks are not rendered.
+
+### Performance benchmarks
+
+Results are in [`ws6_performance/`](AUDIT/results/ws6_performance/):
+- **Persistent data** (keeping scene data loaded between renders) passed the equivalence test.
+- **Eye-band (ROI) rendering** failed it and is not adopted. Its timing is not claimed as a speed-up.
+- Repeat renders on the same machine are compared in `benchmark_gpu_scene_samples.json` (GPU) and `benchmark_cpu_64spp.json` (CPU).
+
+---
+
+## Known limitations
+
+- One face asset, one detector and one machine. No pixel-identical results across different hardware are claimed.
+- The 2-D ground truth in `metadata.json` includes analytic corneal refraction, but the rendered `Lens` material does not refract. It also sits at the anatomical pupil depth, not the painted one (see the pupil-depth investigation).
+- Semantic segmentation (WS3) is **provisional**: about 13.1 % of mask pixels are unclassified ([`unclassified_audit.json`](AUDIT/results/ws3_masks/unclassified_audit.json)).
+- The eye-movement profiles are first-order models, and blinks are not rendered.
+- Only Blender 5.3.0 has been tested.
+- The full list is in [§10 of the integration report](AUDIT/results/INTEGRATION_REPORT.md) and in [`research/README.md`](research/README.md).
+
+## Licence and asset attribution
+
+- **Head scan:** 3D Scan Store "Free HD Head", used with the vendor's permission for this hackathon publication only. It may not be reused or redistributed outside this project.
+- **MakeHuman comparison assets** (in `experiments/` and `exports/`): CC0 (makehumancommunity.org). MPFB 2.0.18 (GPL-3.0) was used as a tool only.
+- **Code** in this repository: MIT.
+- **AI assistance:** disclosed in [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).
+
+## Final-round materials
+
+- **Video:** [`research/demo/final_round_silent.mp4`](research/demo/final_round_silent.mp4), silent with an instrumental soundtrack, 1:55, 1920×1080. See also the [production report](research/demo/VIDEO_PRODUCTION_REPORT.md), [quality check](research/demo/final_quality_check.json) and [sources](research/demo/source/).
+- **Presentation:** [`research/demo/final_round_presentation.pptx`](research/demo/final_round_presentation.pptx) · [PDF](research/demo/final_round_presentation.pdf).
+- **Original submission video and decks** (unchanged): [`submission/`](submission/).

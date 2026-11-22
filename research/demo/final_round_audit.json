@@ -1,0 +1,711 @@
+{
+ "readme_links": {
+  "total": 81,
+  "unresolved": [],
+  "links": [
+   {
+    "link": "https://github.com/KArT4206/VIT_Chennai_Techtonic/tree/submission-baseline-v1.0",
+    "kind": "external",
+    "resolves": true
+   },
+   {
+    "link": "https://github.com/KArT4206/VIT_Chennai_Techtonic/releases/tag/v1.0",
+    "kind": "external",
+    "resolves": true
+   },
+   {
+    "link": "research/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws3_masks/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws6_performance/band_audit.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/superseded_drafts/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "validation/VALIDATION.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "https://github.com/KArT4206/VIT_Chennai_Techtonic/blob/submission-baseline-v1.0/README.md",
+    "kind": "external",
+    "resolves": true
+   },
+   {
+    "link": "AUDIT/results/INTEGRATION_REPORT.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/RELEASE_NOTE.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/README.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/dashboard/index.html",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/demo/final_round_silent.mp4",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "research/demo/VIDEO_PRODUCTION_REPORT.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "research/demo/final_round_presentation.pptx",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "research/demo/final_round_presentation.pdf",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "https://github.com/KArT4206/VIT_Chennai_Techtonic/releases/tag/v1.0",
+    "kind": "external",
+    "resolves": true
+   },
+   {
+    "link": "submission/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "submission/SUBMISSION_MANIFEST.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "wrapper/eyes.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "#python-api-reference",
+    "kind": "anchor",
+    "resolves": true
+   },
+   {
+    "link": "research/verify_all.sh",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "#research-validation",
+    "kind": "anchor",
+    "resolves": true
+   },
+   {
+    "link": "AI_DISCLOSURE.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "wrapper/eyes.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "scene.blend",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "renders/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "metadata.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "directions/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "contact_sheet.png",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "packaging/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "submission/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "deck/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "tools/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "demo/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "expression/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "experiments/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "staging/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "exports/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "validation/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/README.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/demo/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "AUDIT/results/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/README.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AI_DISCLOSURE.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/run_environment.txt",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/compliance.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/research_pupil_levels.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws6_dataset_v1/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws4_dataset/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/gpuq.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/build_report.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/build_release_note.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/dashboard.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws1_depth/depth_fit.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/INTEGRATION_REPORT.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/pupil_detector.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/DETECTOR_FREEZE.txt",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/release_metrics.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/full_roi_metrics.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/no_lids_lens_roi_metrics.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws6_dataset_v1/dataset_roi_metrics.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "tools/verify.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/verify_py_release_bundle.txt",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/dynamics.py",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws5_dynamics/dynamics_validation.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws5_dynamics/dynamics_render_check.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws6_performance/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/ws3_masks/unclassified_audit.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AUDIT/results/INTEGRATION_REPORT.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/README.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "AI_DISCLOSURE.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   },
+   {
+    "link": "research/demo/final_round_silent.mp4",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "research/demo/VIDEO_PRODUCTION_REPORT.md",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "research/demo/final_quality_check.json",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "research/demo/source/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "research/demo/final_round_presentation.pptx",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "research/demo/final_round_presentation.pdf",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": false,
+    "note": "new file in this change (uncommitted)"
+   },
+   {
+    "link": "submission/",
+    "kind": "relative",
+    "resolves": true,
+    "tracked_in_git": true,
+    "note": null
+   }
+  ]
+ },
+ "readme_commands": [
+  {
+   "command": "blender -b scene.blend -P wrapper/eyes.py",
+   "referenced_files": [
+    "wrapper/eyes.py"
+   ],
+   "missing": [],
+   "kind": "blender: syntax and referenced files checked, not executed here"
+  },
+  {
+   "command": "blender -b scene.blend -P wrapper/eyes.py -- --move -1 0 --out out",
+   "referenced_files": [
+    "wrapper/eyes.py"
+   ],
+   "missing": [],
+   "kind": "blender: syntax and referenced files checked, not executed here"
+  },
+  {
+   "command": "blender -b scene.blend -P wrapper/eyes.py -- --reset --out out",
+   "referenced_files": [
+    "wrapper/eyes.py"
+   ],
+   "missing": [],
+   "kind": "blender: syntax and referenced files checked, not executed here"
+  },
+  {
+   "command": "blender -b scene.blend -P wrapper/eyes.py -- --samples 128",
+   "referenced_files": [
+    "wrapper/eyes.py"
+   ],
+   "missing": [],
+   "kind": "blender: syntax and referenced files checked, not executed here"
+  },
+  {
+   "command": "blender -b scene.blend -P wrapper/eyes.py -- --cpu",
+   "referenced_files": [
+    "wrapper/eyes.py"
+   ],
+   "missing": [],
+   "kind": "blender: syntax and referenced files checked, not executed here"
+  },
+  {
+   "command": "PYTHON=<python with numpy scipy pillow matplotlib> research/verify_all.sh <path/to/Techtonic.zip> <new_empty_work_dir>",
+   "referenced_files": [
+    "research/verify_all.sh"
+   ],
+   "missing": [],
+   "kind": "blender: syntax and referenced files checked, not executed here"
+  },
+  {
+   "command": "python3 research/check_results.py AUDIT/results AUDIT/results/results_check.json",
+   "referenced_files": [
+    "research/check_results.py"
+   ],
+   "missing": [],
+   "kind": "python: executed",
+   "exit_code": 0
+  },
+  {
+   "command": "python3 research/integrity_check.py . AUDIT/results/integrity_check.json",
+   "referenced_files": [
+    "research/integrity_check.py"
+   ],
+   "missing": [],
+   "kind": "python: executed",
+   "exit_code": 0
+  },
+  {
+   "command": "python3 research/tests/test_research.py",
+   "referenced_files": [
+    "research/tests/test_research.py"
+   ],
+   "missing": [],
+   "kind": "python: executed",
+   "exit_code": 0
+  },
+  {
+   "command": "blender -b --factory-startup scene.blend -P research/dataset_engine.py -- --config research/configs_dataset_40.json --out DS",
+   "referenced_files": [
+    "research/dataset_engine.py",
+    "research/configs_dataset_40.json"
+   ],
+   "missing": [],
+   "kind": "inline: referenced files checked, not executed"
+  },
+  {
+   "command": "blender -b --factory-startup scene.blend -P research/dataset_v2_render.py -- --config research/configs/pilot_v2.json --out DS2",
+   "referenced_files": [
+    "research/dataset_v2_render.py",
+    "research/configs/pilot_v2.json"
+   ],
+   "missing": [],
+   "kind": "inline: referenced files checked, not executed"
+  },
+  {
+   "command": "python3 research/dataset_v2_post.py DS2",
+   "referenced_files": [
+    "research/dataset_v2_post.py"
+   ],
+   "missing": [],
+   "kind": "inline: referenced files checked, not executed"
+  },
+  {
+   "command": "blender -b --factory-startup scene.blend -P tools/generate_dataset.py -- --out DIR",
+   "referenced_files": [
+    "tools/generate_dataset.py"
+   ],
+   "missing": [],
+   "kind": "inline: referenced files checked, not executed"
+  }
+ ],
+ "deck_wording": {
+  "effective fitted label": true,
+  "ROI rejected": true,
+  "segmentation provisional": true,
+  "legacy verifier": true,
+  "research suite": true,
+  "held-out": true,
+  "glitch": true,
+  "dataset vs detector": true,
+  "condition-specific": true,
+  "not human": true
+ },
+ "deck_video_same_figures": {
+  "video_checks": 34,
+  "deck_checks": 31,
+  "video_pass": true,
+  "deck_pass": true,
+  "shared_figures": 28,
+  "deck_only": [],
+  "video_only": [
+   5,
+   12
+  ]
+ },
+ "video_unchanged_since_qc": true,
+ "protection": {
+  "branch": "research/upgrade",
+  "submission_final": "3155655",
+  "origin_submission_final": "3155655",
+  "baseline_tag": "3155655",
+  "zip_ok": true,
+  "original_video_ok": true,
+  "original_pptx_ok": true,
+  "tracked_changes_outside_scope": [],
+  "release_v1_assets": "[\"Techtonic.zip\",\"VIT_Chennai_Techtonic.mp4\",\"VIT_Chennai_Techtonic.pdf\",\"VIT_Chennai_Techtonic.pptx\"]"
+ },
+ "all_pass": true
+}

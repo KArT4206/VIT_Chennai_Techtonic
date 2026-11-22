@@ -1,0 +1,11 @@
+scene,start_s,end_s,duration_s
+1 Hook,0,7,7
+2 The challenge,7,17,10
+3 Our system,17,31,14
+4 Calibration and compliance,31,43,12
+5 Pupil alignment discovery,43,66,23
+6 Detector validation,66,78,12
+7 Dataset generation,78,91,13
+8 Dynamic eye movement,91,102,11
+9 Performance engineering,102,111,9
+10 Final message,111,115,4

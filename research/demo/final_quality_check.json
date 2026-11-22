@@ -1,0 +1,44 @@
+{
+ "video": "research/demo/final_round_silent.mp4",
+ "video_sha256": "9af3912fd114a756fe084b1b9cf3688da6bb0a9a8cbb2404d782ceb2fe374361",
+ "ffprobe": {
+  "duration_s": 115.0,
+  "size_bytes": 14183117,
+  "video": {
+   "codec_name": "h264",
+   "codec_type": "video",
+   "width": 1920,
+   "height": 1080,
+   "pix_fmt": "yuv420p",
+   "r_frame_rate": "30/1"
+  },
+  "audio": [
+   {
+    "codec_name": "aac",
+    "codec_type": "audio",
+    "sample_rate": "48000",
+    "channels": 2,
+    "r_frame_rate": "0/0"
+   }
+  ]
+ },
+ "audio_levels": {
+  "mean_volume": "-18.2 dB",
+  "max_volume": "-3.6 dB"
+ },
+ "checks": {
+  "container_mp4_h264": true,
+  "resolution_1920x1080": true,
+  "aspect_16_9": true,
+  "fps_30": true,
+  "pix_fmt_yuv420p": true,
+  "duration_about_1m55s": true,
+  "audio_instrumental_only": true,
+  "no_voice_no_narration_no_avatar": true,
+  "all_numbers_match_result_files": true,
+  "original_submission_video_unchanged": true,
+  "original_submission_zip_unchanged": true
+ },
+ "all_pass": true,
+ "manual_review": "frame contact sheet assets/review_sheet.png inspected for spelling, overlap, legibility and that every claim matches its source; see VIDEO_PRODUCTION_REPORT.md"
+}
