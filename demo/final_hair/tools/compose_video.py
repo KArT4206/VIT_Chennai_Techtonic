@@ -40,7 +40,7 @@ def header(b, step, title):
     A.render_box(b, 80, 175, 1840, 178, [0.25, 0.26, 0.3], fill=True)
 
 
-def footer(b, s="Samsung PRISM Hackathon 2026 · Track 1 · Team Techtonic · 3D Scan Store Free HD Head (used with permission) release package"):
+def footer(b, s="Samsung PRISM Hackathon 2026 · Track 1 · Team Techtonic · VIT Chennai"):
     text(b, 80, 1048, s, 22, DIM)
 
 
@@ -89,12 +89,12 @@ footer(b); cards.append((save(b, "s1.png"), 10))
 
 # ---------------- Scene 2: head model and calibration (15 s)
 for name, title, sec in (("overview", "The actual Blender scene: head, fixation target, locked camera", 8),
-                         ("eyes_cutaway", "Eye bones and eye centres (skin hidden for this view)", 7)):
+                         ("eyes_cutaway", "Both eyes, eye centres and gaze lines to the target", 7)):
     b = canvas(); header(b, "2 · MODEL AND CALIBRATION", title)
     paste(b, os.path.join(S, "scene", name + ".png"), 80, 200, 1440, 810)
     sx, sy = 1440 / 1920, 810 / 1080
     px = ann[name]
-    hidden_L = " (inside the eyeball)" if name == "eyes_cutaway" else ""
+    hidden_L = ""
     lab = {"render_camera_40cm": (f"{facts['camera']} (render camera) {facts['camera_distance_m'] * 100:.2f} cm", BLU),
            "fixation_target_35cm": (f"fixation target {facts['fixation_distance_m'] * 100:.2f} cm", GRN),
            "eye_centre_R": ("eye centre R", ACC), "eye_centre_L": ("eye centre L" + hidden_L, ACC)}

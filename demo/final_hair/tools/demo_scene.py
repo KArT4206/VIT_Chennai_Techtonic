@@ -148,9 +148,27 @@ def observe(name, eye_pos, at, hide=()):
 
 ss = sc.cycles.samples; sc.cycles.samples = min(ss, 256)
 observe("overview", mid + Vector((0.62, -0.30, 0.16)), mid + Vector((0.0, -0.21, -0.02)))
-observe("eyes_cutaway", mid + Vector((0.075, -0.13, 0.035)), mid + Vector((0, -0.01, 0)),
-        hide={"Head", "Brows", "Lashes", "Eye Wet", "Teeth", "Tongue", "Lens Left", "Lens Right",
-              "Realtime Eyeball Right"})   # right eyeball hidden: reveals its centre
+def ghost(names, alpha):
+    """Make these objects' materials partly see-through for the cutaway (render-only copy of each material)."""
+    for o in bpy.data.objects:
+        if o.name not in names: continue
+        for slot in o.material_slots:
+            m = slot.material
+            if not m or not m.use_nodes: continue
+            m = m.copy(); slot.link = "OBJECT"; slot.material = m
+            nt = m.node_tree; out_n = next(n for n in nt.nodes if n.type == "OUTPUT_MATERIAL")
+            if not out_n.inputs["Surface"].links: continue
+            src = out_n.inputs["Surface"].links[0].from_socket
+            tr = nt.nodes.new("ShaderNodeBsdfTransparent"); mx = nt.nodes.new("ShaderNodeMixShader")
+            # back faces (e.g. the inside of the mouth seen through the skin) are fully see-through
+            geo = nt.nodes.new("ShaderNodeNewGeometry"); mf = nt.nodes.new("ShaderNodeMath"); mf.operation = "MAXIMUM"
+            mf.inputs[0].default_value = alpha; nt.links.new(geo.outputs["Backfacing"], mf.inputs[1]); nt.links.new(mf.outputs[0], mx.inputs[0])
+            nt.links.new(src, mx.inputs[1]); nt.links.new(tr.outputs[0], mx.inputs[2]); nt.links.new(mx.outputs[0], out_n.inputs["Surface"])
+            o.visible_shadow = False
+
+
+# full photoreal face (both eyes visible); eye centres are marked from scene data on the card
+observe("eyes_cutaway", mid + Vector((0.10, -0.24, 0.05)), mid + Vector((0, 0, -0.012)))
 sc.cycles.samples = ss
 json.dump(dict(points={k: list(v) for k, v in (("eye_centre_L", cL), ("eye_centre_R", cR), ("fixation_target", T), ("render_camera", P))},
                pixels=annotations), open(os.path.join(out, "scene", "annotations.json"), "w"), indent=1)
